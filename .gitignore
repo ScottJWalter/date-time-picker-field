@@ -9,3 +9,15 @@ Thumbs.db
 # SVN #
 ##########
 svn
+
+# Visual Studio Code #
+######################
+settings.json
+
+# Composer Files #
+composer.json
+composer.lock
+vendor/autoload.php
+vendor/squizlabs
+vendor/composer
+vendor/bin

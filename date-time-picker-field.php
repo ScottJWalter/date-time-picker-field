@@ -7,7 +7,7 @@
  * Author URI:      https://cmoreira.net
  * Text Domain:     date-time-picker-field
  * Domain Path:     /languages
- * Version:         1.2.1
+ * Version:         1.2.2
  * Text Domain:     dtpicker
  *
  * @package date-time-picker-field
@@ -15,6 +15,9 @@
 
 /**
  * Version Log
+ * v.1.2.2 - 16.07.2018
+ * - Included option to prevent keyboard edit
+ *
  * v.1.2.1 - 16.07.2018
  * - Added option to allow original placeholder to be kept
  *

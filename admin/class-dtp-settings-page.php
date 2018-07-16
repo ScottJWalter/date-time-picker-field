@@ -164,6 +164,15 @@ if ( ! class_exists( 'dtpicker_Settings_API_Test' ) ) :
 					),
 
 					array(
+						'name'    => 'preventkeyboard',
+						'label'   => __( 'Prevent Keyboard Edit', 'dtpicker' ),
+						'desc'    => __( 'If enabled, it wont be possible to edit the text. This will also prevent the keyboard on mobile devices to display when selecting the date.', 'dtpicker' ),
+						'type'    => 'checkbox',
+						'value'   => 'on',
+						'default' => 'off',
+					),
+
+					array(
 						'name'              => 'step',
 						'label'             => __( 'Time Step', 'dtpicker' ),
 						'desc'              => __( 'Time interval in minutes for time picker options', 'dtpicker' ),

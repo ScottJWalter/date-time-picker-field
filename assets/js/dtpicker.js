@@ -1,6 +1,13 @@
 jQuery(document).ready(function(){
     jQuery.datetimepicker.setDateFormatter('moment');
-    jQuery.datetimepicker.setLocale(datepickeropts.locale);
+	jQuery.datetimepicker.setLocale(datepickeropts.locale);
+	
+	if(datepickeropts.preventkeyboard == 'on'){
+		jQuery(datepickeropts.selector).focus(function() {
+			jQuery( this ).blur();
+		});
+	}
+
     jQuery(datepickeropts.selector).datetimepicker({
         value: datepickeropts.value,
         format:datepickeropts.format,

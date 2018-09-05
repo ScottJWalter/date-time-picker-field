@@ -217,6 +217,8 @@ if ( ! class_exists( 'dtpicker_Settings_API_Test' ) ) :
 						'type'    => 'radio',
 						'options' => array(
 							'full'      => __( 'Across the full website', 'dtpicker' ),
+							'admin'     => __( 'Admin panel only', 'dtpicker' ),
+							'fulladmin' => __( 'Full website including admin panel', 'dtpicker' ),
 							'shortcode' => __( 'Only when shortcode [datetimepicker] exists on a page.', 'dtpicker' ),
 						),
 						'default' => 'full',

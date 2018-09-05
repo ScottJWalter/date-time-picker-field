@@ -7,7 +7,7 @@
  * Author URI:      https://cmoreira.net
  * Text Domain:     date-time-picker-field
  * Domain Path:     /languages
- * Version:         1.2.2
+ * Version:         1.4
  * Text Domain:     dtpicker
  *
  * @package date-time-picker-field
@@ -15,6 +15,12 @@
 
 /**
  * Version Log
+ * v.1.4 - 05.09.2018
+ * - Option to add script also in admin
+ *
+ * v.1.3 - 24.07.2018
+ * - PHP Error "missing file" solved
+ *
  * v.1.2.2 - 16.07.2018
  * - Included option to prevent keyboard edit
  *
@@ -72,18 +78,23 @@ function dtpicker_scripts() {
 	wp_localize_script( 'dtpicker-build', 'datepickeropts', $opts );
 }
 
-//Enqueue scripts according to options
+// Enqueue scripts according to options
 add_action( 'init', 'dtp_enqueue_scripts' );
 function dtp_enqueue_scripts() {
 	$opts = get_option( 'dtpicker' );
 	if ( isset( $opts['load'] ) && 'full' === $opts['load'] ) {
+		add_action( 'wp_enqueue_scripts', 'dtpicker_scripts' );
+	} elseif ( isset( $opts['load'] ) && 'admin' === $opts['load'] ) {
+		add_action( 'admin_enqueue_scripts', 'dtpicker_scripts' );
+	} elseif ( isset( $opts['load'] ) && 'fulladmin' === $opts['load'] ) {
+		add_action( 'admin_enqueue_scripts', 'dtpicker_scripts' );
 		add_action( 'wp_enqueue_scripts', 'dtpicker_scripts' );
 	} else {
 		add_shortcode( 'datetimepicker', 'dtpicker_scripts' );
 	}
 }
 
-//Adds link to settings page
+// Adds link to settings page
 add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'dtp_add_action_links' );
 
 function dtp_add_action_links( $links ) {

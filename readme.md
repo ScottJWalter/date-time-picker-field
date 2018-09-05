@@ -5,7 +5,7 @@ Tags: datetimepicker, datetime, date picker, jquery
 Requires at least: 4.5
 Tested up to: 5.0
 Requires PHP: 5.3
-Stable tag: 1.2.2
+Stable tag: 1.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,7 +27,7 @@ Using this plugin you can convert any text input field into a data time picker f
 
 = How do I prevent the datetimepicker scripts and styles from loading across all my website? =
 
-In the settings page for the plugin you can find the option to load the necessary files only when the shortcode [datetimepicker] exists on the page. 
+In the settings page for the plugin you can find the option to load the necessary files only when the shortcode [datetimepicker] exists on the page.
 If you have this option selected, the plugin will only look for fields to convert when this shortcode exists on that page.
 
 == Screenshots ==
@@ -36,6 +36,12 @@ If you have this option selected, the plugin will only look for fields to conver
 2. Date and Timer picker.
 
 == Changelog ==
+= v.1.4 =
+ * Option to add datetime field also in admin
+
+= v.1.3 =
+ * Solved PHP missing file
+
 = v.1.2.2 =
  * Included option to prevent keyboard edit
 
@@ -53,6 +59,9 @@ If you have this option selected, the plugin will only look for fields to conver
 * Initial Release
 
 == Upgrade Notice ==
+= v.1.3 =
+ * Solved PHP missing file
+
 = v.1.2.2 =
  * Included option to prevent keyboard edit
 
@@ -72,8 +81,8 @@ If you have this option selected, the plugin will only look for fields to conver
 == Screenshots ==
 
 == Credits ==
-* [xdsoft.net datetimepicker jQuery plugin](https://xdsoft.net/jqplugins/datetimepicker/) 
-* [Moment JavaScript date library](https://momentjs.com/) 
+* [xdsoft.net datetimepicker jQuery plugin](https://xdsoft.net/jqplugins/datetimepicker/)
+* [Moment JavaScript date library](https://momentjs.com/)
 * [Icon by Paomedia](https://github.com/paomedia/small-n-flat)
 
 

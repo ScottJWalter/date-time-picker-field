@@ -8,9 +8,7 @@ jQuery(document).ready(function(){
 		});
 	}
 
-    jQuery(datepickeropts.selector).datetimepicker({
-		//minTime:'08:00 AM',
-		//maxTime:'06:00 PM'
+	var opts = {
         value: datepickeropts.value,
         format:datepickeropts.format,
         formatDate: datepickeropts.dateformat,
@@ -19,8 +17,23 @@ jQuery(document).ready(function(){
         timepicker: (datepickeropts.timepicker == 'on'),
         datepicker: (datepickeropts.datepicker == 'on'),
         step: parseInt(datepickeropts.step),
-        timepickerScrollbar: true,
-    });
+		timepickerScrollbar: true,
+		dayOfWeekStart: parseInt(datepickeropts.dayOfWeekStart),
+	};
+
+	if( datepickeropts.minTime !== '' ){
+		opts.minTime = datepickeropts.minTime;
+	}
+
+	if( datepickeropts.maxTime !== '' ){
+		opts.maxTime = datepickeropts.maxTime;
+	}
+
+	if( datepickeropts.minDate === 'on' ){
+		opts.minDate = 0;
+	}
+
+    jQuery(datepickeropts.selector).datetimepicker( opts );
 });
 
 

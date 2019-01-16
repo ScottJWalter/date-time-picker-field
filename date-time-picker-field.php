@@ -7,7 +7,7 @@
  * Author URI:      https://cmoreira.net
  * Text Domain:     date-time-picker-field
  * Domain Path:     /languages
- * Version:         1.4
+ * Version:         1.6
  * Text Domain:     dtpicker
  *
  * @package date-time-picker-field
@@ -15,6 +15,14 @@
 
 /**
  * Version Log
+ *  * v.1.6 - 16.01.2019
+ * - Start of the week now follows general settings option
+ * - Added new Day.Month.Year format
+ *
+ * v.1.5 - 04.10.2018
+ * - Option to add minimum and maximum time entries
+ * - Option to disable past dates
+ *
  * v.1.4 - 05.09.2018
  * - Option to add script also in admin
  *
@@ -71,9 +79,13 @@ function dtpicker_scripts() {
 	$opts['value']  = date( 'Y-m-d' );
 	$opts['format'] = $format;
 
+
 	if ( isset( $opts['placeholder'] ) && 'on' === $opts['placeholder'] ) {
 		$opts['value'] = '';
 	}
+
+	// day of start of week
+	$opts['dayOfWeekStart'] = get_option( 'start_of_week' );
 
 	wp_localize_script( 'dtpicker-build', 'datepickeropts', $opts );
 }

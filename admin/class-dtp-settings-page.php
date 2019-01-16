@@ -173,12 +173,38 @@ if ( ! class_exists( 'dtpicker_Settings_API_Test' ) ) :
 					),
 
 					array(
+						'name'    => 'minDate',
+						'label'   => __( 'Disable Past Dates', 'dtpicker' ),
+						'desc'    => __( 'If enabled, past dates can\'t be selected', 'dtpicker' ),
+						'type'    => 'checkbox',
+						'value'   => 'on',
+						'default' => 'off',
+					),
+
+					array(
 						'name'              => 'step',
 						'label'             => __( 'Time Step', 'dtpicker' ),
 						'desc'              => __( 'Time interval in minutes for time picker options', 'dtpicker' ),
-						'placeholder'       => __( '.class_name or #field_id', 'dtpicker' ),
 						'type'              => 'text',
 						'default'           => '60',
+						'sanitize_callback' => 'sanitize_text_field',
+					),
+
+					array(
+						'name'              => 'minTime',
+						'label'             => __( 'Minimum Time', 'dtpicker' ),
+						'desc'              => __( 'Time options will start from this. Leave empty for none. Use the format you selected for the time. For example: 08:00 AM', 'dtpicker' ),
+						'type'              => 'text',
+						'default'           => '',
+						'sanitize_callback' => 'sanitize_text_field',
+					),
+
+					array(
+						'name'              => 'maxTime',
+						'label'             => __( 'Maximum Time', 'dtpicker' ),
+						'desc'              => __( 'Time options will not be later than this specified time. Leave empty for none. Use the format you selected for the time. For example: 08:00 PM', 'dtpicker' ),
+						'type'              => 'text',
+						'default'           => '',
 						'sanitize_callback' => 'sanitize_text_field',
 					),
 
@@ -194,6 +220,7 @@ if ( ! class_exists( 'dtpicker_Settings_API_Test' ) ) :
 							'DD/MM/YYYY' => __( 'Day/Month/Year', 'dtpicker' ) . ' ' . date( 'd/m/Y' ),
 							'MM-DD-YYYY' => __( 'Month-Day-Year', 'dtpicker' ) . ' ' . date( 'm-d-Y' ),
 							'MM/DD/YYYY' => __( 'Month/Day/Year', 'dtpicker' ) . ' ' . date( 'm/d/Y' ),
+							'DD.MM.YYYY' => __( 'Day.Month.Year', 'dtpicker' ) . ' ' . date( 'd.m.Y' ),
 						),
 						'default' => 'YYYY-MM-DD',
 					),

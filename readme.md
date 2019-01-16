@@ -5,7 +5,7 @@ Tags: datetimepicker, datetime, date picker, jquery
 Requires at least: 4.5
 Tested up to: 5.0
 Requires PHP: 5.3
-Stable tag: 1.4
+Stable tag: 1.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -36,6 +36,14 @@ If you have this option selected, the plugin will only look for fields to conver
 2. Date and Timer picker.
 
 == Changelog ==
+= v.1.6 =
+ * Start of the week now follows general settings option
+ * Added new Day.Month.Year format
+
+= v.1.5 =
+ * Option to add minimum and maximum time entries
+ * Option to disable past dates
+
 = v.1.4 =
  * Option to add datetime field also in admin
 

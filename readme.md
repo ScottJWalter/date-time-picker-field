@@ -3,7 +3,7 @@ Contributors: carlosmoreirapt
 Donate link: https://cmoreira.net/date-and-time-picker-for-wordpress/
 Tags: datetimepicker, datetime, date picker, jquery
 Requires at least: 4.5
-Tested up to: 5.0
+Tested up to: 5.1
 Requires PHP: 5.3
 Stable tag: 1.6
 License: GPLv2 or later
@@ -17,6 +17,8 @@ This plugin will allow you to create date and time picker fields using CSS selec
 * More Information and Tutorials at <https://cmoreira.net/date-and-time-picker-for-wordpress/>
 
 Convert any input field on your website into a date time picker field using CSS selectors. You can display a calendar with just a date picker funcionality or enable a time picker also.
+
+Compatible with [Contact Form 7](https://cmoreira.net/blog/date-and-time-picker-field-on-contact-form-7/), [Divi Forms](https://cmoreira.net/blog/date-picker-in-divi-contact-form/) and others.
 
 == Frequently Asked Questions ==
 

@@ -31,6 +31,11 @@ Using this plugin you can convert any text input field into a data time picker f
 In the settings page for the plugin you can find the option to load the necessary files only when the shortcode [datetimepicker] exists on the page.
 If you have this option selected, the plugin will only look for fields to convert when this shortcode exists on that page.
 
+
+= How do I add specific times for different days? For example, for weekends? =
+
+In the settings page for the plugin you can find a 'Advanced Settings' tab were you'll find some options to set available times for each day. You'll need to individually set each time available as default, for example '09:00,09:30,09:50,10:50,11:30' and then override this default values for each day you need. It will not work well if you don't setup a default list of allowed times. The list of times still needs to be inside the minimum and maximum times set in the 'Basic Settings' tab.
+
 == Screenshots ==
 
 1. Options Panel.

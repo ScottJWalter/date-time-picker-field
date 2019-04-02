@@ -35,13 +35,13 @@ if ( ! class_exists( 'dtpicker_Settings_API_Test' ) ) :
 			$sections = array(
 				array(
 					'id'    => 'dtpicker',
-					'title' => __( 'Date & Time Picker Settings', 'dtpicker' ),
+					'title' => __( 'Basic Settings', 'dtpicker' ),
 				),
-			/*
-			array(
-				'id'    => 'dtpicker_advanced',
-				'title' => __( 'Advanced Settings', 'dtpicker' )
-			)*/
+
+				array(
+					'id'    => 'dtpicker_advanced',
+					'title' => __( 'Advanced Settings', 'dtpicker' ),
+				),
 			);
 			return $sections;
 		}
@@ -52,8 +52,82 @@ if ( ! class_exists( 'dtpicker_Settings_API_Test' ) ) :
 		 * @return array settings fields
 		 */
 		public function get_settings_fields() {
+
 			$settings_fields = array(
-				'dtpicker' => array(
+				'dtpicker_advanced' => array(
+					array(
+						'name'    => 'disabled_days',
+						'label'   => __( 'Disable Days', 'dtpicker' ),
+						'desc'    => __( 'Select days you want to <strong>disable</strong>', 'dtpicker' ),
+						'type'    => 'multicheck',
+						'default' => array(),
+						'options' => array(
+							'0' => __( 'Sunday', 'dtpicker' ),
+							'1' => __( 'Monday', 'dtpicker' ),
+							'2' => __( 'Tuesday', 'dtpicker' ),
+							'3' => __( 'Wednesday', 'dtpicker' ),
+							'4' => __( 'Thursday', 'dtpicker' ),
+							'5' => __( 'Friday', 'dtpicker' ),
+							'6' => __( 'Saturday', 'dtpicker' ),
+						),
+					),
+
+					array(
+						'name'    => 'allowed_times',
+						'label'   => __( 'Default List of allowed times' ),
+						'desc'    => __( 'Write the allowed times to <strong>override</strong> the time step and serve as default if you use the options below.<br> Values still need to be within minimum and maximum times defined in the basic settings.<br> Use the time format separated by commas. Example: 09:00,11:00,12:00,21:00<br>You need to list all the options', 'dtpicker' ),
+						'default' => '',
+					),
+
+					array(
+						'name'    => 'sunday_times',
+						'label'   => __( 'Allowed times for Sunday' ),
+
+						'default' => '',
+					),
+
+					array(
+						'name'    => 'monday_times',
+						'label'   => __( 'Allowed times for Monday' ),
+
+						'default' => '',
+					),
+
+					array(
+						'name'    => 'tuesday_times',
+						'label'   => __( 'Allowed times for Tuesday' ),
+
+						'default' => '',
+					),
+
+					array(
+						'name'    => 'wednesday_times',
+						'label'   => __( 'Allowed times for Wednesday' ),
+
+						'default' => '',
+					),
+					array(
+						'name'    => 'thursday_times',
+						'label'   => __( 'Allowed times for Thursday' ),
+
+						'default' => '',
+					),
+					array(
+						'name'    => 'friday_times',
+						'label'   => __( 'Allowed times for Friday' ),
+
+						'default' => '',
+					),
+					array(
+						'name'    => 'saturday_times',
+						'label'   => __( 'Allowed times for Saturday' ),
+
+						'default' => '',
+					),
+
+				),
+
+				'dtpicker'          => array(
 					array(
 						'name'              => 'selector',
 						'label'             => __( 'CSS Selector', 'dtpicker' ),
@@ -236,7 +310,6 @@ if ( ! class_exists( 'dtpicker_Settings_API_Test' ) ) :
 						),
 						'default' => 'hh:mm A',
 					),
-
 					array(
 						'name'    => 'load',
 						'label'   => __( 'When to Load', 'dtpicker' ),
@@ -249,7 +322,6 @@ if ( ! class_exists( 'dtpicker_Settings_API_Test' ) ) :
 							'shortcode' => __( 'Only when shortcode [datetimepicker] exists on a page.', 'dtpicker' ),
 						),
 						'default' => 'full',
-
 					),
 				),
 			);
@@ -259,6 +331,8 @@ if ( ! class_exists( 'dtpicker_Settings_API_Test' ) ) :
 
 		public function plugin_page() {
 			echo '<div class="wrap">';
+
+			echo '<h2>' . __( 'Date & Time Picker Settings', 'dtp' ) . '</h2>';
 
 			$this->settings_api->show_navigation();
 			$this->settings_api->show_forms();

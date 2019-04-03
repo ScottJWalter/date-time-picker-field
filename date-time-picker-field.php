@@ -7,7 +7,7 @@
  * Author URI:      https://cmoreira.net
  * Text Domain:     date-time-picker-field
  * Domain Path:     /languages
- * Version:         1.7.2
+ * Version:         1.7.3
  * Text Domain:     dtpicker
  *
  * @package date-time-picker-field
@@ -78,17 +78,21 @@ function dtpicker_scripts() {
 	}
 
 	$format = '';
+	$value  = '';
 
 	if ( isset( $opts['datepicker'] ) && 'on' === $opts['datepicker'] ) {
 		$format .= $opts['dateformat'];
+		$value  .= date( 'Y-m-d' );
 	}
 
 	if ( isset( $opts['timepicker'] ) && 'on' === $opts['timepicker'] ) {
 		$format .= ' ' . $opts['hourformat'];
+		$value  .= ' ' . date( 'H:00' );
 	}
 
-	$opts['value']  = date( 'Y-m-d' );
+
 	$opts['format'] = $format;
+	$opts['value']  = $value;
 
 
 	if ( isset( $opts['placeholder'] ) && 'on' === $opts['placeholder'] ) {

@@ -7,7 +7,9 @@ jQuery(document).ready(function(){
 
 function dtp_init() {
 
-	jQuery.datetimepicker.setDateFormatter('moment');
+	//removed in 1.7.3 in favour of php format
+	//jQuery.datetimepicker.setDateFormatter('moment');
+
 	jQuery.datetimepicker.setLocale(datepickeropts.locale);
 
 	if(datepickeropts.preventkeyboard == 'on'){
@@ -17,63 +19,71 @@ function dtp_init() {
 	}
 
 	// custom times logic
-	var logic = function( currentDateTime ){
+	var logic = function( currentDateTime) {};
 
-		if( currentDateTime.getDay()==0 && datepickeropts.sunday_times !== '' ){
-			this.setOptions({
-				allowTimes:datepickeropts.sunday_times
-			});
-		} else if( currentDateTime.getDay()==1 && datepickeropts.monday_times !== '' ){
-			this.setOptions({
-				allowTimes:datepickeropts.monday_times
-			});
-		} else if( currentDateTime.getDay()==2 && datepickeropts.tuesday_times !== '' ){
-			this.setOptions({
-				allowTimes:datepickeropts.tuesday_times
-			});
-		} else if( currentDateTime.getDay()==3 && datepickeropts.wednesday_times !== '' ){
-			this.setOptions({
-				allowTimes:datepickeropts.wednesday_times
-			});
-		} else if( currentDateTime.getDay()==4 && datepickeropts.thursday_times !== '' ){
-			this.setOptions({
-				allowTimes:datepickeropts.thursday_times
-			});
-		} else if( currentDateTime.getDay()==5 && datepickeropts.friday_times !== '' ){
-			this.setOptions({
-				allowTimes:datepickeropts.friday_times
-			});
-		} else if( currentDateTime.getDay()==6 && datepickeropts.saturday_times !== '' ){
-			this.setOptions({
-				allowTimes:datepickeropts.saturday_times
-			});
-		} else {
-			if( datepickeropts.allowed_times !== ''){
+	if( datepickeropts.timepicker === 'on' && datepickeropts.allowed_times !== '' ){
+		logic = function( currentDateTime, $input ){
+
+			if( currentDateTime.getDay()==0 && datepickeropts.sunday_times !== '' ){
 				this.setOptions({
-					allowTimes:datepickeropts.allowed_times
+					allowTimes:datepickeropts.sunday_times
+				});
+			} else if( currentDateTime.getDay()==1 && datepickeropts.monday_times !== '' ){
+				this.setOptions({
+					allowTimes:datepickeropts.monday_times
+				});
+			} else if( currentDateTime.getDay()==2 && datepickeropts.tuesday_times !== '' ){
+				this.setOptions({
+					allowTimes:datepickeropts.tuesday_times
+				});
+			} else if( currentDateTime.getDay()==3 && datepickeropts.wednesday_times !== '' ){
+				this.setOptions({
+					allowTimes:datepickeropts.wednesday_times
+				});
+			} else if( currentDateTime.getDay()==4 && datepickeropts.thursday_times !== '' ){
+				this.setOptions({
+					allowTimes:datepickeropts.thursday_times
+				});
+			} else if( currentDateTime.getDay()==5 && datepickeropts.friday_times !== '' ){
+				this.setOptions({
+					allowTimes:datepickeropts.friday_times
+				});
+			} else if( currentDateTime.getDay()==6 && datepickeropts.saturday_times !== '' ){
+				this.setOptions({
+					allowTimes:datepickeropts.saturday_times
 				});
 			} else {
-
-				this.setOptions({
-					allowTimes:[],
-					step: parseInt(datepickeropts.step),
-				});
-
-				if( datepickeropts.minTime !== '' ){
+				if( datepickeropts.allowed_times !== ''){
 					this.setOptions({
-						minTime:datepickeropts.minTime
+						allowTimes:datepickeropts.allowed_times
 					});
-				}
+				} else {
 
-				if( datepickeropts.maxTime !== '' ){
 					this.setOptions({
-						maxTime:datepickeropts.maxTime
+						allowTimes:[],
+						step: parseInt(datepickeropts.step),
 					});
+
+					if( datepickeropts.minTime !== '' ){
+						this.setOptions({
+							minTime:datepickeropts.minTime
+						});
+					}
+
+					if( datepickeropts.maxTime !== '' ){
+						this.setOptions({
+							maxTime:datepickeropts.maxTime
+						});
+					}
 				}
 			}
-		}
+		};
+	}
 
-	};
+	// fix formatter issue
+	datepickeropts.format = dtp_cleanup_format( datepickeropts.format );
+	datepickeropts.dateformat = dtp_cleanup_format( datepickeropts.dateformat );
+	datepickeropts.hourformat = dtp_cleanup_format( datepickeropts.hourformat );
 
 	var opts = {
 		value: datepickeropts.value,
@@ -114,4 +124,10 @@ function dtp_init() {
 
 }
 
+// to replace moment formatter which was causing issues in some languages
+function dtp_cleanup_format( format ){
 
+	format = format.replace(/DD/g, 'd').replace(/MM/g, 'm').replace(/YYYY/g, 'Y').replace(/HH/g, 'H').replace(/hh/g, 'h').replace(/mm/g, 'i');
+	return format;
+
+}

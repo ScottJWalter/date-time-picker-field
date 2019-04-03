@@ -7,7 +7,7 @@
  * Author URI:      https://cmoreira.net
  * Text Domain:     date-time-picker-field
  * Domain Path:     /languages
- * Version:         1.7
+ * Version:         1.7.2
  * Text Domain:     dtpicker
  *
  * @package date-time-picker-field
@@ -15,7 +15,10 @@
 
 /**
  * Version Log
-*  * v.1.7 - 02.04.2019
+ * v.1.7.2 - 03.04.2019
+ * - Fix IE11 issue
+ *
+ * v.1.7.1 - 02.04.2019
  * - Added advanced options to better control time options for individual days
  *
  *  * v.1.6 - 16.01.2019
@@ -64,7 +67,7 @@ new DTP_Settings_Page();
 function dtpicker_scripts() {
 	wp_enqueue_style( 'dtpicker', plugins_url( 'vendor/datetimepicker/jquery.datetimepicker.min.css', __FILE__ ) );
 	wp_enqueue_script( 'dtpicker-moment', plugins_url( 'vendor/moment/moment.js', __FILE__ ), array(), '1.0.0', true );
-	wp_enqueue_script( 'dtpicker', plugins_url( 'vendor/datetimepicker/jquery.datetimepicker.min.js', __FILE__ ), array( 'jquery', 'dtpicker-moment' ), '1.0.0', true );
+	wp_enqueue_script( 'dtpicker', plugins_url( 'vendor/datetimepicker/jquery.datetimepicker.full.min.js', __FILE__ ), array( 'jquery', 'dtpicker-moment' ), '1.0.0', true );
 	wp_enqueue_script( 'dtpicker-build', plugins_url( 'assets/js/dtpicker.js', __FILE__ ), array( 'dtpicker' ), '1.0.0', true );
 
 	$opts    = get_option( 'dtpicker' );

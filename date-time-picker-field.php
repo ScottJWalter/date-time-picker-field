@@ -6,9 +6,9 @@
  * Author:          Carlos Moreira
  * Author URI:      https://cmoreira.net
  * Text Domain:     date-time-picker-field
- * Domain Path:     /languages
+ * Domain Path:     /lang
  * Version:         1.7.3
- * Text Domain:     dtpicker
+ * Text Domain:     date-time-picker-field
  *
  * @package date-time-picker-field
  */
@@ -52,6 +52,11 @@
  * - Initial Release
  */
 
+function dtp_load_plugin_textdomain() {
+	load_plugin_textdomain( 'date-time-picker-field', '', basename( dirname( __FILE__ ) ) . '/lang/' );
+}
+add_action( 'plugins_loaded', 'dtp_load_plugin_textdomain' );
+
 // Add Settings Page.
 require_once dirname( __FILE__ ) . '/includes/class.settings-api.php';
 require_once dirname( __FILE__ ) . '/admin/class-dtp-settings-page.php';
@@ -73,7 +78,7 @@ function dtpicker_scripts() {
 	$opts    = get_option( 'dtpicker' );
 	$optsadv = get_option( 'dtpicker_advanced' );
 	// merge advanced options
-	if ( is_array( $opts ) && is_array( $optsadv ) ){
+	if ( is_array( $opts ) && is_array( $optsadv ) ) {
 		$opts = array_merge( $opts, $optsadv );
 	}
 
@@ -90,10 +95,8 @@ function dtpicker_scripts() {
 		$value  .= ' ' . date( 'H:00' );
 	}
 
-
 	$opts['format'] = $format;
 	$opts['value']  = $value;
-
 
 	if ( isset( $opts['placeholder'] ) && 'on' === $opts['placeholder'] ) {
 		$opts['value'] = '';
@@ -112,7 +115,6 @@ function dtpicker_scripts() {
 	$opts['thursday_times']  = isset( $opts['thursday_times'] ) && '' !== $opts['thursday_times'] ? explode( ',', $opts['thursday_times'] ) : '';
 	$opts['friday_times']    = isset( $opts['friday_times'] ) && '' !== $opts['friday_times'] ? explode( ',', $opts['friday_times'] ) : '';
 	$opts['saturday_times']  = isset( $opts['saturday_times'] ) && '' !== $opts['saturday_times'] ? explode( ',', $opts['saturday_times'] ) : '';
-
 
 	wp_localize_script( 'dtpicker-build', 'datepickeropts', $opts );
 }

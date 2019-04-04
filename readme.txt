@@ -43,6 +43,11 @@ In the settings page for the plugin you can find a 'Advanced Settings' tab were 
 3. Advanced Settings.
 
 == Changelog ==
+= v.1.7.4 =
+ * language files
+ * add version to loaded scripts and styles
+ * remove unused files
+
 = v.1.7.3 =
  * fixed data format issue in some languages
  * Removed moment library in favour of custom formatter

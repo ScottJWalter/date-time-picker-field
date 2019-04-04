@@ -7,7 +7,7 @@
  * Author URI:      https://cmoreira.net
  * Text Domain:     date-time-picker-field
  * Domain Path:     /lang
- * Version:         1.7.3
+ * Version:         1.7.4
  * Text Domain:     date-time-picker-field
  *
  * @package date-time-picker-field
@@ -15,6 +15,15 @@
 
 /**
  * Version Log
+ *  * v.1.7.4 - 05.04.2019
+ * - language files
+ * - add version to loaded scrips and styles
+ * - remove unused files
+ *
+ *  * v.1.7.3 - 03.04.2019
+ * - Fixed data format issue in some languages
+ * - Removed moment library in favour of custom formatter
+ *
  * v.1.7.2 - 03.04.2019
  * - Fix IE11 issue
  *
@@ -53,7 +62,7 @@
  */
 
 function dtp_load_plugin_textdomain() {
-	load_plugin_textdomain( 'date-time-picker-field', '', basename( dirname( __FILE__ ) ) . '/lang/' );
+	load_plugin_textdomain( 'date-time-picker-field', "", basename( dirname( __FILE__ ) ) . '/lang/' );
 }
 add_action( 'plugins_loaded', 'dtp_load_plugin_textdomain' );
 
@@ -70,10 +79,12 @@ new DTP_Settings_Page();
  * @return void
  */
 function dtpicker_scripts() {
-	wp_enqueue_style( 'dtpicker', plugins_url( 'vendor/datetimepicker/jquery.datetimepicker.min.css', __FILE__ ) );
-	wp_enqueue_script( 'dtpicker-moment', plugins_url( 'vendor/moment/moment.js', __FILE__ ), array(), '1.0.0', true );
-	wp_enqueue_script( 'dtpicker', plugins_url( 'vendor/datetimepicker/jquery.datetimepicker.full.min.js', __FILE__ ), array( 'jquery', 'dtpicker-moment' ), '1.0.0', true );
-	wp_enqueue_script( 'dtpicker-build', plugins_url( 'assets/js/dtpicker.js', __FILE__ ), array( 'dtpicker' ), '1.0.0', true );
+
+	$version = dtp_get_version();
+
+	wp_enqueue_style( 'dtpicker', plugins_url( 'vendor/datetimepicker/jquery.datetimepicker.min.css', __FILE__ ), array(), $version, 'all' );
+	wp_enqueue_script( 'dtpicker', plugins_url( 'vendor/datetimepicker/jquery.datetimepicker.full.min.js', __FILE__ ), array( 'jquery' ), $version, true );
+	wp_enqueue_script( 'dtpicker-build', plugins_url( 'assets/js/dtpicker.js', __FILE__ ), array( 'dtpicker' ), $version, true );
 
 	$opts    = get_option( 'dtpicker' );
 	$optsadv = get_option( 'dtpicker_advanced' );
@@ -144,4 +155,10 @@ function dtp_add_action_links( $links ) {
 	);
 
 	return array_merge( $mylinks, $links );
+}
+
+function dtp_get_version() {
+	$plugin_data    = get_plugin_data( __FILE__ );
+	$plugin_version = $plugin_data['Version'];
+	return $plugin_version;
 }

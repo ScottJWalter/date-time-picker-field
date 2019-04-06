@@ -8,17 +8,17 @@
  * Text Domain:     date-time-picker-field
  * Domain Path:     /lang
  * Version:         1.7.4
- * Text Domain:     date-time-picker-field
  *
  * @package date-time-picker-field
  */
 
 /**
  * Version Log
- *  * v.1.7.4 - 05.04.2019
+ *  * v.1.7.4 - 06.04.2019
  * - language files
  * - add version to loaded scrips and styles
  * - remove unused files
+ * - fixed bug on AM/PM time format
  *
  *  * v.1.7.3 - 03.04.2019
  * - Fixed data format issue in some languages
@@ -83,6 +83,7 @@ function dtpicker_scripts() {
 	$version = dtp_get_version();
 
 	wp_enqueue_style( 'dtpicker', plugins_url( 'vendor/datetimepicker/jquery.datetimepicker.min.css', __FILE__ ), array(), $version, 'all' );
+	//wp_enqueue_script( 'dtp-moment', plugins_url( 'vendor/moment/moment.js', __FILE__ ), array( 'jquery' ), $version, true );
 	wp_enqueue_script( 'dtpicker', plugins_url( 'vendor/datetimepicker/jquery.datetimepicker.full.min.js', __FILE__ ), array( 'jquery' ), $version, true );
 	wp_enqueue_script( 'dtpicker-build', plugins_url( 'assets/js/dtpicker.js', __FILE__ ), array( 'dtpicker' ), $version, true );
 
@@ -96,14 +97,19 @@ function dtpicker_scripts() {
 	$format = '';
 	$value  = '';
 
+	// fix format
+	$opts['hourformat'] = dtp_format( $opts['hourformat'] );
+	$opts['dateformat'] = dtp_format( $opts['dateformat'] );
+
 	if ( isset( $opts['datepicker'] ) && 'on' === $opts['datepicker'] ) {
 		$format .= $opts['dateformat'];
-		$value  .= date( 'Y-m-d' );
+		$value  .= date( $format );
 	}
 
 	if ( isset( $opts['timepicker'] ) && 'on' === $opts['timepicker'] ) {
-		$format .= ' ' . $opts['hourformat'];
-		$value  .= ' ' . date( 'H:00' );
+		$hformat = $opts['hourformat'];
+		$format .= ' ' . $hformat;
+		$value  .= ' ' . date( $hformat );
 	}
 
 	$opts['format'] = $format;
@@ -161,4 +167,27 @@ function dtp_get_version() {
 	$plugin_data    = get_plugin_data( __FILE__ );
 	$plugin_version = $plugin_data['Version'];
 	return $plugin_version;
+}
+
+function dtp_format( $string ) {
+	$replace = array(
+		'hh',
+		'HH',
+		'mm',
+		'A',
+		'YYYY',
+		'MM',
+		'DD'
+	);
+	$replaceby = array(
+		'h',
+		'H',
+		'i',
+		'A',
+		'Y',
+		'm',
+		'd'
+	);
+
+	return str_replace( $replace, $replaceby, $string );
 }

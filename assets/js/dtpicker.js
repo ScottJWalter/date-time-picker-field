@@ -80,11 +80,6 @@ function dtp_init() {
 		};
 	}
 
-	// fix formatter issue
-	datepickeropts.format = dtp_cleanup_format( datepickeropts.format );
-	datepickeropts.dateformat = dtp_cleanup_format( datepickeropts.dateformat );
-	datepickeropts.hourformat = dtp_cleanup_format( datepickeropts.hourformat );
-
 	var opts = {
 		value: datepickeropts.value,
 		format:datepickeropts.format,
@@ -97,7 +92,8 @@ function dtp_init() {
 		timepickerScrollbar: true,
 		dayOfWeekStart: parseInt(datepickeropts.dayOfWeekStart),
 		onChangeDateTime:logic,
-		onShow:logic
+		onShow:logic,
+		validateOnBlur:false //added on 1.7.4 to prevent AM/PM format from jumping to 1h before.
 	};
 
 	if( datepickeropts.minTime !== '' ){
@@ -121,13 +117,5 @@ function dtp_init() {
 	}
 
 	jQuery(datepickeropts.selector).datetimepicker( opts );
-
-}
-
-// to replace moment formatter which was causing issues in some languages
-function dtp_cleanup_format( format ){
-
-	format = format.replace(/DD/g, 'd').replace(/MM/g, 'm').replace(/YYYY/g, 'Y').replace(/HH/g, 'H').replace(/hh/g, 'h').replace(/mm/g, 'i');
-	return format;
 
 }

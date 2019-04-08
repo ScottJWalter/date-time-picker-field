@@ -7,13 +7,16 @@
  * Author URI:      https://cmoreira.net
  * Text Domain:     date-time-picker-field
  * Domain Path:     /lang
- * Version:         1.7.4
+ * Version:         1.7.4.1
  *
  * @package date-time-picker-field
  */
 
 /**
  * Version Log
+ *  * v.1.7.4.1 - 08.04.2019
+ * - fixed get_plugin_data() error
+ *
  *  * v.1.7.4 - 06.04.2019
  * - language files
  * - add version to loaded scrips and styles
@@ -164,8 +167,20 @@ function dtp_add_action_links( $links ) {
 }
 
 function dtp_get_version() {
-	$plugin_data    = get_plugin_data( __FILE__ );
-	$plugin_version = $plugin_data['Version'];
+
+	$plugin_version = '1.7.4';
+
+	if ( function_exists( 'get_file_data' ) ) {
+
+		$plugin_data = get_file_data( __FILE__ , array(
+			'Version' => 'Version'
+		) );
+
+		if( $plugin_data ){
+			$plugin_version = $plugin_data[ 'Version' ];
+		}
+	}
+
 	return $plugin_version;
 }
 

@@ -7,13 +7,16 @@
  * Author URI:      https://cmoreira.net
  * Text Domain:     date-time-picker-field
  * Domain Path:     /lang
- * Version:         1.7.4.1
+ * Version:         1.7.4.2
  *
  * @package date-time-picker-field
  */
 
 /**
  * Version Log
+*  * v.1.7.4.2 - 17.04.2019
+ * - improved default time value
+ *
  *  * v.1.7.4.1 - 08.04.2019
  * - fixed get_plugin_data() error
  *
@@ -97,6 +100,20 @@ function dtpicker_scripts() {
 		$opts = array_merge( $opts, $optsadv );
 	}
 
+	// day of start of week
+	$opts['dayOfWeekStart'] = get_option( 'start_of_week' );
+
+	// sanitize disabled days
+	$opts['disabled_days']   = isset( $opts['disabled_days'] ) && is_array( $opts['disabled_days'] ) ? array_values( array_map( 'intval', $opts['disabled_days'] ) ) : '';
+	$opts['allowed_times']   = isset( $opts['allowed_times'] ) && '' !== $opts['allowed_times'] ? explode( ',', $opts['allowed_times'] ) : '';
+	$opts['sunday_times']    = isset( $opts['sunday_times'] ) && '' !== $opts['sunday_times'] ? explode( ',', $opts['sunday_times'] ) : '';
+	$opts['monday_times']    = isset( $opts['monday_times'] ) && '' !== $opts['monday_times'] ? explode( ',', $opts['monday_times'] ) : '';
+	$opts['tuesday_times']   = isset( $opts['tuesday_times'] ) && '' !== $opts['tuesday_times'] ? explode( ',', $opts['tuesday_times'] ) : '';
+	$opts['wednesday_times'] = isset( $opts['wednesday_times'] ) && '' !== $opts['wednesday_times'] ? explode( ',', $opts['wednesday_times'] ) : '';
+	$opts['thursday_times']  = isset( $opts['thursday_times'] ) && '' !== $opts['thursday_times'] ? explode( ',', $opts['thursday_times'] ) : '';
+	$opts['friday_times']    = isset( $opts['friday_times'] ) && '' !== $opts['friday_times'] ? explode( ',', $opts['friday_times'] ) : '';
+	$opts['saturday_times']  = isset( $opts['saturday_times'] ) && '' !== $opts['saturday_times'] ? explode( ',', $opts['saturday_times'] ) : '';
+
 	$format = '';
 	$value  = '';
 
@@ -112,7 +129,10 @@ function dtpicker_scripts() {
 	if ( isset( $opts['timepicker'] ) && 'on' === $opts['timepicker'] ) {
 		$hformat = $opts['hourformat'];
 		$format .= ' ' . $hformat;
-		$value  .= ' ' . date( $hformat );
+
+		//check next min time
+		$next = is_array( $opts['allowed_times'] ) ? $opts['allowed_times'][0] : ( $opts['minTime'] !== '' ? $opts['minTime'] : '' );
+		$value  .= ' ' . date( 'H:i', strtotime( 'today ' . $next ) );
 	}
 
 	$opts['format'] = $format;
@@ -121,20 +141,6 @@ function dtpicker_scripts() {
 	if ( isset( $opts['placeholder'] ) && 'on' === $opts['placeholder'] ) {
 		$opts['value'] = '';
 	}
-
-	// day of start of week
-	$opts['dayOfWeekStart'] = get_option( 'start_of_week' );
-
-	// sanitize disabled days
-	$opts['disabled_days']   = isset( $opts['disabled_days'] ) && is_array( $opts['disabled_days'] ) ? array_values( array_map( 'intval', $opts['disabled_days'] ) ) : '';
-	$opts['allowed_times']   = isset( $opts['allowed_times'] ) && '' !== $opts['allowed_times'] ? explode( ',', $opts['allowed_times'] ) : '';
-	$opts['sunday_times']    = isset( $opts['sunday_times'] ) && '' !== $opts['sunday_times'] ? explode( ',', $opts['sunday_times'] ) : '';
-	$opts['monday_times']    = isset( $opts['monday_times'] ) && '' !== $opts['monday_times'] ? explode( ',', $opts['monday_times'] ) : '';
-	$opts['tuesday_times']   = isset( $opts['tuesday_times'] ) && '' !== $opts['tuesday_times'] ? explode( ',', $opts['tuesday_times'] ) : '';
-	$opts['wednesday_times'] = isset( $opts['wednesday_times'] ) && '' !== $opts['wednesday_times'] ? explode( ',', $opts['wednesday_times'] ) : '';
-	$opts['thursday_times']  = isset( $opts['thursday_times'] ) && '' !== $opts['thursday_times'] ? explode( ',', $opts['thursday_times'] ) : '';
-	$opts['friday_times']    = isset( $opts['friday_times'] ) && '' !== $opts['friday_times'] ? explode( ',', $opts['friday_times'] ) : '';
-	$opts['saturday_times']  = isset( $opts['saturday_times'] ) && '' !== $opts['saturday_times'] ? explode( ',', $opts['saturday_times'] ) : '';
 
 	wp_localize_script( 'dtpicker-build', 'datepickeropts', $opts );
 }

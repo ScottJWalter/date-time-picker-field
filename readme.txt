@@ -5,7 +5,7 @@ Tags: datetimepicker, datetime, date picker, jquery
 Requires at least: 4.5
 Tested up to: 5.1
 Requires PHP: 5.3
-Stable tag: 1.7.4.1
+Stable tag: 1.7.4.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -43,6 +43,9 @@ In the settings page for the plugin you can find a 'Advanced Settings' tab were 
 3. Advanced Settings.
 
 == Changelog ==
+= v.1.7.4.2 =
+ * improved default time value
+
 = v.1.7.4.1 =
  * fix with get_plugin_data() function
 

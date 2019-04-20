@@ -283,6 +283,15 @@ if ( ! class_exists( 'dtpicker_Settings_API_Test' ) ) :
 					),
 
 					array(
+						'name'              => 'offset',
+						'label'             => __( 'Offset for available times', 'date-time-picker-field' ),
+						'desc'              => __( 'Time interval in minutes to advance next available time. For example, set "45" if you only want time entries 45m from now to be available. Works better when option to disable past dates is also enabled.', 'date-time-picker-field' ),
+						'type'              => 'text',
+						'default'           => '0',
+						'sanitize_callback' => 'sanitize_text_field',
+					),
+
+					array(
 						'name'    => 'dateformat',
 						'label'   => __( 'Date Format', 'date-time-picker-field' ),
 						'desc'    => __( 'Date format', 'date-time-picker-field' ),

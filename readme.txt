@@ -96,6 +96,39 @@ In the settings page for the plugin you can find a 'Advanced Settings' tab were 
 * Initial Release
 
 == Upgrade Notice ==
+= v.1.7.4.2 =
+ * improved default time value
+
+= v.1.7.4.1 =
+ * fix with get_plugin_data() function
+
+= v.1.7.4 =
+ * language files
+ * add version to loaded scripts and styles
+ * remove unused files
+ * AM/PM hour format bug fix
+
+= v.1.7.3 =
+ * fixed data format issue in some languages
+ * Removed moment library in favour of custom formatter
+
+= v.1.7.2 =
+ * Fixed IE11 issue
+
+= v.1.7.1 =
+ * Added advanced options to better control time options for individual days
+
+= v.1.6 =
+ * Start of the week now follows general settings option
+ * Added new Day.Month.Year format
+
+ = v.1.5 =
+ * Option to add minimum and maximum time entries
+ * Option to disable past dates
+
+= v.1.4 =
+ * Option to add datetime field also in admin
+
 = v.1.3 =
  * Solved PHP missing file
 
@@ -114,8 +147,6 @@ In the settings page for the plugin you can find a 'Advanced Settings' tab were 
 
 = 1.0 =
 * Initial Release
-
-== Screenshots ==
 
 == Credits ==
 * [xdsoft.net datetimepicker jQuery plugin](https://xdsoft.net/jqplugins/datetimepicker/)

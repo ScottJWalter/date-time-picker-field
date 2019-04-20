@@ -14,7 +14,7 @@
 
 /**
  * Version Log
-*  * v.1.7.4.2 - 17.04.2019
+ *  * v.1.7.4.2 - 17.04.2019
  * - improved default time value
  *
  *  * v.1.7.4.1 - 08.04.2019
@@ -68,7 +68,7 @@
  */
 
 function dtp_load_plugin_textdomain() {
-	load_plugin_textdomain( 'date-time-picker-field', "", basename( dirname( __FILE__ ) ) . '/lang/' );
+	load_plugin_textdomain( 'date-time-picker-field', '', basename( dirname( __FILE__ ) ) . '/lang/' );
 }
 add_action( 'plugins_loaded', 'dtp_load_plugin_textdomain' );
 
@@ -87,11 +87,10 @@ new DTP_Settings_Page();
 function dtpicker_scripts() {
 
 	$version = dtp_get_version();
-
+	wp_enqueue_script( 'dtp-moment', plugins_url( 'vendor/moment/moment.js', __FILE__ ), array( 'jquery' ), $version, true );
 	wp_enqueue_style( 'dtpicker', plugins_url( 'vendor/datetimepicker/jquery.datetimepicker.min.css', __FILE__ ), array(), $version, 'all' );
-	//wp_enqueue_script( 'dtp-moment', plugins_url( 'vendor/moment/moment.js', __FILE__ ), array( 'jquery' ), $version, true );
-	wp_enqueue_script( 'dtpicker', plugins_url( 'vendor/datetimepicker/jquery.datetimepicker.full.min.js', __FILE__ ), array( 'jquery' ), $version, true );
-	wp_enqueue_script( 'dtpicker-build', plugins_url( 'assets/js/dtpicker.js', __FILE__ ), array( 'dtpicker' ), $version, true );
+	wp_enqueue_script( 'dtpicker', plugins_url( 'vendor/datetimepicker/jquery.datetimepicker.min.js', __FILE__ ), array( 'jquery' ), $version, true );
+	wp_enqueue_script( 'dtpicker-build', plugins_url( 'assets/js/dtpicker.js', __FILE__ ), array( 'dtpicker','dtp-moment' ), $version, true );
 
 	$opts    = get_option( 'dtpicker' );
 	$optsadv = get_option( 'dtpicker_advanced' );
@@ -105,43 +104,50 @@ function dtpicker_scripts() {
 
 	// sanitize disabled days
 	$opts['disabled_days']   = isset( $opts['disabled_days'] ) && is_array( $opts['disabled_days'] ) ? array_values( array_map( 'intval', $opts['disabled_days'] ) ) : '';
-	$opts['allowed_times']   = isset( $opts['allowed_times'] ) && '' !== $opts['allowed_times'] ? explode( ',', $opts['allowed_times'] ) : '';
-	$opts['sunday_times']    = isset( $opts['sunday_times'] ) && '' !== $opts['sunday_times'] ? explode( ',', $opts['sunday_times'] ) : '';
-	$opts['monday_times']    = isset( $opts['monday_times'] ) && '' !== $opts['monday_times'] ? explode( ',', $opts['monday_times'] ) : '';
-	$opts['tuesday_times']   = isset( $opts['tuesday_times'] ) && '' !== $opts['tuesday_times'] ? explode( ',', $opts['tuesday_times'] ) : '';
-	$opts['wednesday_times'] = isset( $opts['wednesday_times'] ) && '' !== $opts['wednesday_times'] ? explode( ',', $opts['wednesday_times'] ) : '';
-	$opts['thursday_times']  = isset( $opts['thursday_times'] ) && '' !== $opts['thursday_times'] ? explode( ',', $opts['thursday_times'] ) : '';
-	$opts['friday_times']    = isset( $opts['friday_times'] ) && '' !== $opts['friday_times'] ? explode( ',', $opts['friday_times'] ) : '';
-	$opts['saturday_times']  = isset( $opts['saturday_times'] ) && '' !== $opts['saturday_times'] ? explode( ',', $opts['saturday_times'] ) : '';
+	$opts['allowed_times']   = isset( $opts['allowed_times'] ) && '' !== $opts['allowed_times'] ? array_map( 'dtp_24_time', explode( ',', $opts['allowed_times'] ) ) : '';
+	$opts['sunday_times']    = isset( $opts['sunday_times'] ) && '' !== $opts['sunday_times'] ? array_map( 'dtp_24_time',explode( ',', $opts['sunday_times'] ) ) : '';
+	$opts['monday_times']    = isset( $opts['monday_times'] ) && '' !== $opts['monday_times'] ? array_map( 'dtp_24_time',explode( ',', $opts['monday_times'] ) ) : '';
+	$opts['tuesday_times']   = isset( $opts['tuesday_times'] ) && '' !== $opts['tuesday_times'] ? array_map( 'dtp_24_time',explode( ',', $opts['tuesday_times'] ) ) : '';
+	$opts['wednesday_times'] = isset( $opts['wednesday_times'] ) && '' !== $opts['wednesday_times'] ? array_map( 'dtp_24_time',explode( ',', $opts['wednesday_times'] ) ) : '';
+	$opts['thursday_times']  = isset( $opts['thursday_times'] ) && '' !== $opts['thursday_times'] ? array_map( 'dtp_24_time',explode( ',', $opts['thursday_times'] ) ) : '';
+	$opts['friday_times']    = isset( $opts['friday_times'] ) && '' !== $opts['friday_times'] ? array_map( 'dtp_24_time',explode( ',', $opts['friday_times'] ) ) : '';
+	$opts['saturday_times']  = isset( $opts['saturday_times'] ) && '' !== $opts['saturday_times'] ? array_map( 'dtp_24_time', explode( ',', $opts['saturday_times'] ) ) : '';
 
-	$format = '';
-	$value  = '';
+	// offset
+	$opts['offset'] = isset( $opts['offset'] ) ? intval( $opts['offset'] ) : 0;
+
+	// other variables
+	$format       = '';
+	$clean_format = '';
+	$value        = '';
 
 	// fix format
-	$opts['hourformat'] = dtp_format( $opts['hourformat'] );
-	$opts['dateformat'] = dtp_format( $opts['dateformat'] );
+	// $opts['hourformat'] = dtp_format( $opts['hourformat'] );
+	// $opts['dateformat'] = dtp_format( $opts['dateformat'] );
+
+	// workaround AM/PM because of offset issues
+	$opts['minTime'] = dtp_24_time( $opts['minTime'] );
+	$opts['maxTime'] = dtp_24_time( $opts['maxTime'] );
 
 	if ( isset( $opts['datepicker'] ) && 'on' === $opts['datepicker'] ) {
-		$format .= $opts['dateformat'];
-		$value  .= date( $format );
+		$format       .= $opts['dateformat'];
+		$clean_format .= dtp_format( $opts['dateformat'] );
 	}
 
 	if ( isset( $opts['timepicker'] ) && 'on' === $opts['timepicker'] ) {
-		$hformat = $opts['hourformat'];
-		$format .= ' ' . $hformat;
-
-		//check next min time
-		$next = is_array( $opts['allowed_times'] ) ? $opts['allowed_times'][0] : ( $opts['minTime'] !== '' ? $opts['minTime'] : '' );
-		$value  .= ' ' . date( 'H:i', strtotime( 'today ' . $next ) );
+		$hformat       = $opts['hourformat'];
+		$format       .= ' ' . $hformat;
+		$clean_format .= ' H:i';
 	}
 
-	$opts['format'] = $format;
-	$opts['value']  = $value;
+	$opts['format']       = $format;
+	$opts['clean_format'] = $clean_format;
 
 	if ( isset( $opts['placeholder'] ) && 'on' === $opts['placeholder'] ) {
 		$opts['value'] = '';
+	} else {
+		$opts['value'] = dtp_get_next_available_time( $opts );
 	}
-
 	wp_localize_script( 'dtpicker-build', 'datepickeropts', $opts );
 }
 
@@ -178,27 +184,36 @@ function dtp_get_version() {
 
 	if ( function_exists( 'get_file_data' ) ) {
 
-		$plugin_data = get_file_data( __FILE__ , array(
-			'Version' => 'Version'
-		) );
+		$plugin_data = get_file_data(
+			__FILE__,
+			array(
+				'Version' => 'Version',
+			)
+		);
 
-		if( $plugin_data ){
-			$plugin_version = $plugin_data[ 'Version' ];
+		if ( $plugin_data ) {
+			$plugin_version = $plugin_data['Version'];
 		}
 	}
 
 	return $plugin_version;
 }
 
+/**
+ * Format javascript date time format to PHP format. Needed for backwards compatibility.
+ *
+ * @param [string] $string
+ * @return string converted datetime format
+ */
 function dtp_format( $string ) {
-	$replace = array(
+	$replace   = array(
 		'hh',
 		'HH',
 		'mm',
 		'A',
 		'YYYY',
 		'MM',
-		'DD'
+		'DD',
 	);
 	$replaceby = array(
 		'h',
@@ -207,8 +222,184 @@ function dtp_format( $string ) {
 		'A',
 		'Y',
 		'm',
-		'd'
+		'd',
 	);
 
 	return str_replace( $replace, $replaceby, $string );
+}
+
+/**
+ * Get next available time based on provided data
+ *
+ * @param array $opts - get_options('dtpicker') and get_options('dtpicker_advanced')
+ * @return string timespamp
+ */
+function dtp_get_next_available_time( $opts ) {
+
+	// setup variables
+	$min_time = $opts['minTime'];
+	$max_time = $opts['maxTime'];
+	$step     = $opts['step'];
+	$allowed  = $opts['allowed_times'];
+	$offset   = isset( $opts['offset'] ) ? intval( $opts['offset'] ) : 0;
+
+	$value = '';
+	$now   = new DateTime();
+	$next  = new DateTime();
+
+	// add offset minutes
+	$now->modify( '+' . $offset . 'minutes' );
+
+	// use allowed dates
+	if ( is_array( $opts['allowed_times'] ) && count( $opts['allowed_times'] ) > 0 ) {
+
+		$found = false;
+
+		while( ! $found ) {
+
+			// if weekday is disabled, skip
+			$wday = intval( $next->format( 'w' ) );
+			if( is_array( $opts['disabled_days'] ) && in_array( $wday, $opts['disabled_days'] ) ){
+				$next->modify( '+1 day' );
+				continue;
+			}
+
+			$week_day = strtolower( $next->format( 'l' ) );
+
+			// if there's a defined number of allowed hours for this day
+			if( is_array( $opts[ $week_day . '_times' ] ) ) {
+
+				foreach ( $opts[ $week_day . '_times' ] as $hour ) {
+
+					$dtime  = DateTime::createFromFormat( 'H:i', trim( $hour ) );
+
+					if( ! $dtime ) {
+						return '';
+					}
+
+					$hour   = intval( $dtime->format('H') );
+					$minute = intval( $dtime->format('i') );
+
+					$next->setTime( $hour, $minute );
+
+					if ( $next > $now ) {
+						$found = true;
+						$value = $next->format( $opts['clean_format'] );
+						break;
+					}
+
+				}
+
+			}
+			// use default allowed times
+			else {
+				foreach ( $opts[ 'allowed_times' ] as $hour ) {
+
+					$dtime  = DateTime::createFromFormat( 'H:i', trim( $hour ) );
+					$hour   = intval( $dtime->format('H') );
+					$minute = intval( $dtime->format('i') );
+
+					$next->setTime( $hour, $minute );
+
+					if ( $next > $now ) {
+						$found = true;
+						$value = $next->format( $opts['clean_format'] );
+						break;
+					}
+
+				}
+
+			}
+
+			$next->modify( '+1 day' );
+
+		}
+
+		return $value;
+
+	}
+
+	// if there's no default allowed times, we calculate them with min/max and step values
+	$min  = isset( $opts['minTime'] ) && $opts['minTime'] !== '' ? $opts['minTime'] : '00:00';
+	$max  = isset( $opts['maxTime'] ) && $opts['maxTime'] !== '' ? $opts['maxTime'] : '23:59';
+
+	$range = dtp_hours_range( $min, $max, $opts['step'], $opts['hourformat'] );
+
+	// if weekday is disabled, skip to next enabled day
+	$included = false;
+
+	while( ! $included ) {
+
+		$wday = intval( $next->format( 'w' ) );
+
+		if( is_array( $opts['disabled_days'] ) && in_array( $wday, $opts['disabled_days'] ) ){
+			$next->modify( '+1 day' );
+			$next->setTime( 0, 0 );
+			continue;
+		}
+
+		$included = true;
+	}
+
+	foreach ( $range as $hour ) {
+
+		$dtime  = DateTime::createFromFormat( 'H:i', trim( $hour ) );
+		$hour   = intval( $dtime->format('H') );
+		$minute = intval( $dtime->format('i') );
+
+		$next->setTime( $hour, $minute );
+
+		if ( $next > $now ) {
+			return $next->format( $opts['clean_format'] );
+		}
+
+	}
+
+	// default - set time to next hour
+	$next->modify( '+1 hour' );
+	$next->setTime( $next->format( 'H' ), 0 );
+	return $next->format( $opts['clean_format'] );
+
+}
+
+
+function dtp_hours_range( $min = '00:00', $max = '23:59', $step = '60', $format = 'H:i' ) {
+
+	$times    = array();
+	$step     = intval( $step ) <= 60 ? intval( $step ) : 60;
+	$date     = DateTime::createFromFormat( 'H:i', $min );
+	$max_hour = DateTime::createFromFormat( 'H:i', $max );
+
+	if( ! $date ){
+		return $times;
+	}
+
+	while ( $date <= $max_hour ) {
+
+		array_push( $times, $date->format( 'H:i' ) );
+		// increment date - only if it doesn't jump to next hour - we do this because that's what the jquery datetime plugin does
+
+		$minutes = intval( $date->format( 'i' ) );
+
+		if ( ( $minutes + $step ) > 60 ) {
+			$date->modify( '+ 1 hour' );
+			$date->setTime( $date->format( 'H' ), 0 );
+		} else {
+			$date->modify( '+' . $step . ' minutes' );
+		}
+	}
+
+	return $times;
+}
+
+/**
+ * Convert hour to 24h format
+ *
+ * @param string $hour
+ * @return string 24h formatted hour
+ */
+function dtp_24_time( $hour = '' ) {
+
+	return date( 'H:i', strtotime( $hour ) );
+
 }

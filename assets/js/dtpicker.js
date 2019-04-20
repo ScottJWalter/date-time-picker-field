@@ -7,9 +7,7 @@ jQuery(document).ready(function(){
 
 function dtp_init() {
 
-	//removed in 1.7.3 in favour of php format
-	//jQuery.datetimepicker.setDateFormatter('moment');
-
+	jQuery.datetimepicker.setDateFormatter('moment');
 	jQuery.datetimepicker.setLocale(datepickeropts.locale);
 
 	if(datepickeropts.preventkeyboard == 'on'){
@@ -18,11 +16,54 @@ function dtp_init() {
 		});
 	}
 
+	// convert to integer
+	datepickeropts.offset = parseInt( datepickeropts.offset );
+
 	// custom times logic
-	var logic = function( currentDateTime) {};
+	var logic = function( currentDateTime, $input ) {
+
+		$input.datetimepicker( { value: $input.val() } );
+
+		if( datepickeropts.minDate === 'on' ) {
+
+			var now = new Date();
+
+			if( currentDateTime.toDateString() === now.toDateString() ){
+				var futureh = new Date( now.getTime() + datepickeropts.offset * 60000 );
+				this.setOptions({
+					minTime: futureh.getHours() + ':' + futureh.getMinutes()
+				});
+			} else {
+				this.setOptions({
+					minTime: datepickeropts.minTime
+				});
+			}
+
+		}
+
+	};
 
 	if( datepickeropts.timepicker === 'on' && datepickeropts.allowed_times !== '' ){
 		logic = function( currentDateTime, $input ){
+
+			$input.datetimepicker( { value: $input.val() } );
+
+			if( datepickeropts.minDate === 'on' ) {
+
+				var now = new Date();
+
+				if( currentDateTime.toDateString() === now.toDateString() ){
+					var futureh = new Date( now.getTime() + datepickeropts.offset * 60000 );
+					this.setOptions({
+						minTime: futureh.getHours() + ':' + futureh.getMinutes()
+					});
+				} else {
+					this.setOptions({
+						minTime: datepickeropts.minTime
+					});
+				}
+
+			}
 
 			if( currentDateTime.getDay()==0 && datepickeropts.sunday_times !== '' ){
 				this.setOptions({

@@ -7,14 +7,14 @@
  * Author URI:      https://cmoreira.net
  * Text Domain:     date-time-picker-field
  * Domain Path:     /lang
- * Version:         1.7.4.2
+ * Version:         1.7.5
  *
  * @package date-time-picker-field
  */
 
 /**
  * Version Log
- *  * v.1.7.4.2 - 17.04.2019
+ *  * v.1.7.5 - 17.04.2019
  * - improved default time value
  *
  *  * v.1.7.4.1 - 08.04.2019

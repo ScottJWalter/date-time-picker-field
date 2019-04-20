@@ -43,8 +43,9 @@ In the settings page for the plugin you can find a 'Advanced Settings' tab were 
 3. Advanced Settings.
 
 == Changelog ==
-= v.1.7.4.2 =
+= v.1.7.5 =
  * improved default time value
+ * new option to set time offset for current day
 
 = v.1.7.4.1 =
  * fix with get_plugin_data() function
@@ -96,8 +97,9 @@ In the settings page for the plugin you can find a 'Advanced Settings' tab were 
 * Initial Release
 
 == Upgrade Notice ==
-= v.1.7.4.2 =
+= v.1.7.5 =
  * improved default time value
+ * new option to set time offset for current day
 
 = v.1.7.4.1 =
  * fix with get_plugin_data() function

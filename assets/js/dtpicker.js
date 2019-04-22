@@ -30,9 +30,20 @@ function dtp_init() {
 
 			if( currentDateTime.toDateString() === now.toDateString() ){
 				var futureh = new Date( now.getTime() + datepickeropts.offset * 60000 );
-				this.setOptions({
-					minTime: futureh.getHours() + ':' + futureh.getMinutes()
-				});
+				var mint =  datepickeropts.minTime.split(':');
+
+				if( parseInt( futureh.getHours() ) > parseInt( mint[0] ) ) {
+
+					this.setOptions({
+						minTime: futureh.getHours() + ':' + futureh.getMinutes()
+					});
+
+				} else {
+					this.setOptions({
+						minTime: datepickeropts.minTime
+					});
+				}
+
 			} else {
 				this.setOptions({
 					minTime: datepickeropts.minTime

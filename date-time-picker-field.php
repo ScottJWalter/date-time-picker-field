@@ -125,6 +125,9 @@ function dtpicker_scripts() {
 	// $opts['hourformat'] = dtp_format( $opts['hourformat'] );
 	// $opts['dateformat'] = dtp_format( $opts['dateformat'] );
 
+	$opts['minTime'] = isset( $opts['minTime'] ) && $opts['minTime'] !== '' ? $opts['minTime'] : '00:00';
+	$opts['maxTime'] = isset( $opts['maxTime'] ) && $opts['maxTime'] !== '' ? $opts['maxTime'] : '23:59';
+
 	// workaround AM/PM because of offset issues
 	$opts['minTime'] = dtp_24_time( $opts['minTime'] );
 	$opts['maxTime'] = dtp_24_time( $opts['maxTime'] );
@@ -180,7 +183,7 @@ function dtp_add_action_links( $links ) {
 
 function dtp_get_version() {
 
-	$plugin_version = '1.7.4';
+	$plugin_version = '1.7.5';
 
 	if ( function_exists( 'get_file_data' ) ) {
 

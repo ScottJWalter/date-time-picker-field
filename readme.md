@@ -24,41 +24,6 @@ If you have this option selected, the plugin will only look for fields to conver
 
 In the settings page for the plugin you can find a 'Advanced Settings' tab were you'll find some options to set available times for each day. You'll need to individually set each time available as default, for example '09:00,09:30,09:50,10:50,11:30' and then override this default values for each day you need. It will not work well if you don't setup a default list of allowed times. The list of times still needs to be inside the minimum and maximum times set in the 'Basic Settings' tab.
 
-## Changelog
-**v.1.7**
-Added advanced options to better control time options for individual days
-
-**v.1.6**
-Start of the week now follows general settings option
-Added new Day.Month.Year format
-
-**v.1.5**
-Option to add minimum and maximum time entries
-Option to disable past dates
-
-**v.1.4**
-Option to add datetime field also in admin
-
-**v.1.3**
-Solved PHP missing file
-
-**v.1.2.2**
-Included option to prevent keyboard edit
-
-**1.2.1**
-Added option to keep original placeholder
-
-**1.2**
-Solved bug with date and hour format
-
-**1.1**
-Added direct link to settings in plugins page
-Improved options handling
-
-**1.0**
-Initial Release
-
-
 ## Credits
 * [xdsoft.net datetimepicker jQuery plugin](https://xdsoft.net/jqplugins/datetimepicker/)
 * [Moment JavaScript date library](https://momentjs.com/)

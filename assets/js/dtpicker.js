@@ -22,31 +22,35 @@ function dtp_init() {
 	// custom times logic
 	var logic = function( currentDateTime, $input ) {
 
+		var mtime = '';
 		$input.datetimepicker( { value: $input.val() } );
 
 		if( datepickeropts.minDate === 'on' ) {
 
-			var now = new Date();
+			var now = moment( datepickeropts.now, datepickeropts.format ).toDate();
 
 			if( currentDateTime.toDateString() === now.toDateString() ){
+
 				var futureh = new Date( now.getTime() + datepickeropts.offset * 60000 );
 				var mint =  datepickeropts.minTime.split(':');
 
 				if( parseInt( futureh.getHours() ) > parseInt( mint[0] ) ) {
-
+					mtime = futureh.getHours() + ':' + futureh.getMinutes();
 					this.setOptions({
-						minTime: futureh.getHours() + ':' + futureh.getMinutes()
+						minTime: mtime
 					});
 
 				} else {
+					mtime = datepickeropts.minTime;
 					this.setOptions({
-						minTime: datepickeropts.minTime
+						minTime: mtime
 					});
 				}
 
 			} else {
+				mtime = datepickeropts.minTime;
 				this.setOptions({
-					minTime: datepickeropts.minTime
+					minTime: mtime
 				});
 			}
 
@@ -54,80 +58,95 @@ function dtp_init() {
 
 	};
 
+	// if there's a predefined set of allowed times
 	if( datepickeropts.timepicker === 'on' && datepickeropts.allowed_times !== '' ){
+
 		logic = function( currentDateTime, $input ){
+
+			var mtime = '';
 
 			$input.datetimepicker( { value: $input.val() } );
 
 			if( datepickeropts.minDate === 'on' ) {
 
-				var now = new Date();
+				var now = moment( datepickeropts.now, datepickeropts.format ).toDate();
 
 				if( currentDateTime.toDateString() === now.toDateString() ){
 					var futureh = new Date( now.getTime() + datepickeropts.offset * 60000 );
+					mtime = futureh.getHours() + ':' + futureh.getMinutes();
 					this.setOptions({
-						minTime: futureh.getHours() + ':' + futureh.getMinutes()
+						minTime: mtime
 					});
 				} else {
+					mtime = datepickeropts.minTime;
 					this.setOptions({
-						minTime: datepickeropts.minTime
+						minTime: mtime
 					});
 				}
-
 			}
 
+			var atimes = '';
 			if( currentDateTime.getDay()==0 && datepickeropts.sunday_times !== '' ){
+				atimes = datepickeropts.sunday_times;
 				this.setOptions({
-					allowTimes:datepickeropts.sunday_times
+					allowTimes: atimes
 				});
 			} else if( currentDateTime.getDay()==1 && datepickeropts.monday_times !== '' ){
+				atimes = datepickeropts.monday_times;
 				this.setOptions({
-					allowTimes:datepickeropts.monday_times
+					allowTimes: atimes
 				});
 			} else if( currentDateTime.getDay()==2 && datepickeropts.tuesday_times !== '' ){
+				atimes = datepickeropts.tuesday_times;
 				this.setOptions({
-					allowTimes:datepickeropts.tuesday_times
+					allowTimes: atimes
 				});
 			} else if( currentDateTime.getDay()==3 && datepickeropts.wednesday_times !== '' ){
+				atimes = datepickeropts.wednesday_times;
 				this.setOptions({
-					allowTimes:datepickeropts.wednesday_times
+					allowTimes: atimes
 				});
 			} else if( currentDateTime.getDay()==4 && datepickeropts.thursday_times !== '' ){
+				atimes = datepickeropts.thursday_times;
 				this.setOptions({
-					allowTimes:datepickeropts.thursday_times
+					allowTimes: atimes
 				});
 			} else if( currentDateTime.getDay()==5 && datepickeropts.friday_times !== '' ){
+				atimes = datepickeropts.friday_times;
 				this.setOptions({
-					allowTimes:datepickeropts.friday_times
+					allowTimes: atimes
 				});
 			} else if( currentDateTime.getDay()==6 && datepickeropts.saturday_times !== '' ){
+				atimes = datepickeropts.saturday_times;
 				this.setOptions({
-					allowTimes:datepickeropts.saturday_times
+					allowTimes: atimes
 				});
 			} else {
-				if( datepickeropts.allowed_times !== ''){
-					this.setOptions({
-						allowTimes:datepickeropts.allowed_times
-					});
-				} else {
+				atimes = datepickeropts.allowed_times;
+				this.setOptions({
+					allowTimes: atimes
+				});
+			}
 
-					this.setOptions({
-						allowTimes:[],
-						step: parseInt(datepickeropts.step),
-					});
+			var minDateTime = new Date( currentDateTime.getTime() );
+			var maxDateTime = new Date( currentDateTime.getTime() );
 
-					if( datepickeropts.minTime !== '' ){
-						this.setOptions({
-							minTime:datepickeropts.minTime
-						});
-					}
+			// minimum time
+			var timeex = atimes[0].split(':');
+			minDateTime.setHours( parseInt( timeex[0] ), parseInt( timeex[1] ) );
 
-					if( datepickeropts.maxTime !== '' ){
-						this.setOptions({
-							maxTime:datepickeropts.maxTime
-						});
-					}
-				}
+			if( currentDateTime < minDateTime ) {
+				formattedDate = moment( minDateTime ).format( datepickeropts.format );
+				$input.datetimepicker( { value: formattedDate } );
+			}
+
+			// maximum time
+			timeex = atimes[ atimes.length - 1 ].split(':');
+			maxDateTime.setHours( parseInt( timeex[0] ), parseInt( timeex[1] ) );
+
+			if( currentDateTime > maxDateTime ) {
+				formattedDate = moment( maxDateTime ).format( datepickeropts.format );
+				$input.datetimepicker( { value: formattedDate } );
 			}
 		};
 	}
@@ -157,12 +176,22 @@ function dtp_init() {
 	}
 
 	if( datepickeropts.minDate === 'on' ){
-		opts.minDate = 0;
+		if ( datepickeropts.value !== '' ) {
+			opts.minDate = datepickeropts.value;
+		} else {
+			opts.minDate = 0;
+		}
 	}
 
 	if( datepickeropts.disabled_days !== ''){
 		opts.disabledWeekDays = datepickeropts.disabled_days;
 	}
+
+	if( datepickeropts.disabled_calendar_days !== ''){
+		opts.disabledDates = datepickeropts.disabled_calendar_days;
+	}
+
+
 
 	if( datepickeropts.allowed_times !== ''){
 		opts.allowTimes = datepickeropts.allowed_times;

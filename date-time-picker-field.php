@@ -86,6 +86,9 @@ new DTP_Settings_Page();
  */
 function dtpicker_scripts() {
 
+	$tzone = get_option('timezone_string');
+	date_default_timezone_set( $tzone );
+
 	$version = dtp_get_version();
 	wp_enqueue_script( 'dtp-moment', plugins_url( 'vendor/moment/moment.js', __FILE__ ), array( 'jquery' ), $version, true );
 	wp_enqueue_style( 'dtpicker', plugins_url( 'vendor/datetimepicker/jquery.datetimepicker.min.css', __FILE__ ), array(), $version, 'all' );
@@ -104,6 +107,7 @@ function dtpicker_scripts() {
 
 	// sanitize disabled days
 	$opts['disabled_days']   = isset( $opts['disabled_days'] ) && is_array( $opts['disabled_days'] ) ? array_values( array_map( 'intval', $opts['disabled_days'] ) ) : '';
+	$opts['disabled_calendar_days']   = isset( $opts['disabled_calendar_days'] ) && '' !== $opts['disabled_calendar_days'] ? explode( ',', $opts['disabled_calendar_days'] ) : '';
 	$opts['allowed_times']   = isset( $opts['allowed_times'] ) && '' !== $opts['allowed_times'] ? array_map( 'dtp_24_time', explode( ',', $opts['allowed_times'] ) ) : '';
 	$opts['sunday_times']    = isset( $opts['sunday_times'] ) && '' !== $opts['sunday_times'] ? array_map( 'dtp_24_time',explode( ',', $opts['sunday_times'] ) ) : '';
 	$opts['monday_times']    = isset( $opts['monday_times'] ) && '' !== $opts['monday_times'] ? array_map( 'dtp_24_time',explode( ',', $opts['monday_times'] ) ) : '';
@@ -151,6 +155,14 @@ function dtpicker_scripts() {
 	} else {
 		$opts['value'] = dtp_get_next_available_time( $opts );
 	}
+
+	$tzone              = get_option('timezone_string');
+	$opts['timezone']   = $tzone;
+	$toffset            = get_option('gmt_offset');
+	$opts['utc_offset'] = $toffset;
+	$now                = new DateTime();
+	$opts['now']        = $now->format( $opts['clean_format'] );
+
 	wp_localize_script( 'dtpicker-build', 'datepickeropts', $opts );
 }
 
@@ -238,6 +250,10 @@ function dtp_format( $string ) {
  * @return string timespamp
  */
 function dtp_get_next_available_time( $opts ) {
+
+	// set timezone
+	$tzone = get_option('timezone_string');
+	date_default_timezone_set( $tzone );
 
 	// setup variables
 	$min_time = $opts['minTime'];
@@ -344,29 +360,40 @@ function dtp_get_next_available_time( $opts ) {
 		$included = true;
 	}
 
-	foreach ( $range as $hour ) {
+	$found = false;
 
-		$dtime  = DateTime::createFromFormat( 'H:i', trim( $hour ) );
-		$hour   = intval( $dtime->format('H') );
-		$minute = intval( $dtime->format('i') );
+	while ( ! $found ) {
 
-		$next->setTime( $hour, $minute );
+		foreach ( $range as $hour ) {
 
-		if ( $next > $now ) {
-			return $next->format( $opts['clean_format'] );
+			$dtime  = DateTime::createFromFormat( 'H:i', trim( $hour ) );
+			$hour   = intval( $dtime->format('H') );
+			$minute = intval( $dtime->format('i') );
+
+			$next->setTime( $hour, $minute );
+
+			if ( $next > $now ) {
+				$found = true;
+				$value= $next->format( $opts['clean_format'] );
+				break;
+			}
+
 		}
+
+		$next->modify( '+1 day' );
 
 	}
 
-	// default - set time to next hour
-	$next->modify( '+1 hour' );
-	$next->setTime( $next->format( 'H' ), 0 );
-	return $next->format( $opts['clean_format'] );
+	return $value;
 
 }
 
 
 function dtp_hours_range( $min = '00:00', $max = '23:59', $step = '60', $format = 'H:i' ) {
+
+	// timezone
+	$tzone = get_option('timezone_string');
+	date_default_timezone_set( $tzone );
 
 	$times    = array();
 	$step     = intval( $step ) <= 60 ? intval( $step ) : 60;

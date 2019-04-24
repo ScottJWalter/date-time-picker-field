@@ -53,11 +53,14 @@ if ( ! class_exists( 'dtpicker_Settings_API_Test' ) ) :
 		 */
 		public function get_settings_fields() {
 
+			$tzone = get_option('timezone_string');
+			date_default_timezone_set( $tzone );
+
 			$settings_fields = array(
 				'dtpicker_advanced' => array(
 					array(
 						'name'    => 'disabled_days',
-						'label'   => __( 'Disable Days', 'date-time-picker-field' ),
+						'label'   => __( 'Disable Week Days', 'date-time-picker-field' ),
 						'desc'    => __( 'Select days you want to <strong>disable</strong>', 'date-time-picker-field' ),
 						'type'    => 'multicheck',
 						'default' => array(),
@@ -70,6 +73,13 @@ if ( ! class_exists( 'dtpicker_Settings_API_Test' ) ) :
 							'5' => __( 'Friday', 'date-time-picker-field' ),
 							'6' => __( 'Saturday', 'date-time-picker-field' ),
 						),
+					),
+
+					array(
+						'name'    => 'disabled_calendar_days',
+						'label'   => __( 'Disable specific dates' ),
+						'desc'    => __( 'Add the dates you want to disable divided by commas, in the format you have selected. Useful to disable holidays for example.', 'date-time-picker-field' ),
+						'default' => '',
 					),
 
 					array(
@@ -249,7 +259,10 @@ if ( ! class_exists( 'dtpicker_Settings_API_Test' ) ) :
 					array(
 						'name'    => 'minDate',
 						'label'   => __( 'Disable Past Dates', 'date-time-picker-field' ),
-						'desc'    => __( 'If enabled, past dates can\'t be selected', 'date-time-picker-field' ),
+						'desc'    => sprintf(
+								__( 'If enabled, past dates (and times) can\'t be selected. Consider the plugin will use the timezone you have in your general settings to perform this calculation. Your current timezone is %s.', 'date-time-picker-field' ),
+								$tzone
+								),
 						'type'    => 'checkbox',
 						'value'   => 'on',
 						'default' => 'off',

@@ -7,13 +7,17 @@
  * Author URI:      https://cmoreira.net
  * Text Domain:     date-time-picker-field
  * Domain Path:     /lang
- * Version:         1.7.5
+ * Version:         1.7.6
  *
  * @package date-time-picker-field
  */
 
 /**
  * Version Log
+ *  * v.1.7.6 - 24.04.2019
+ * - option to disable specific dates
+ * - improved time handling - it will now consider the site timezone
+ *
  *  * v.1.7.5 - 17.04.2019
  * - improved default time value
  *

@@ -199,7 +199,7 @@ function dtp_add_action_links( $links ) {
 
 function dtp_get_version() {
 
-	$plugin_version = '1.7.5';
+	$plugin_version = '1.7.6';
 
 	if ( function_exists( 'get_file_data' ) ) {
 

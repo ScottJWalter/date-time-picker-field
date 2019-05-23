@@ -7,13 +7,18 @@
  * Author URI:      https://cmoreira.net
  * Text Domain:     date-time-picker-field
  * Domain Path:     /lang
- * Version:         1.7.6
+ * Version:         1.7.7
  *
  * @package date-time-picker-field
  */
 
 /**
  * Version Log
+ *
+ *  * v.1.7.7 - 23.05.2019
+ * - Option to set maximum date
+ * - Option to detect language automatically
+ *
  *  * v.1.7.6 - 24.04.2019
  * - option to disable specific dates
  * - improved time handling - it will now consider the site timezone
@@ -124,6 +129,12 @@ function dtpicker_scripts() {
 	// offset
 	$opts['offset'] = isset( $opts['offset'] ) ? intval( $opts['offset'] ) : 0;
 
+	// locale
+	if( $opts['locale'] === 'auto' ){
+		$opts['locale'] = dtp_convert_lang_code( get_locale() );
+	}
+
+
 	// other variables
 	$format       = '';
 	$clean_format = '';
@@ -143,6 +154,16 @@ function dtpicker_scripts() {
 	if ( isset( $opts['datepicker'] ) && 'on' === $opts['datepicker'] ) {
 		$format       .= $opts['dateformat'];
 		$clean_format .= dtp_format( $opts['dateformat'] );
+
+		// max date
+		if( isset( $opts['max_date'] ) && $opts['max_date'] !== '' ){
+			$opts['max_date'] = strtotime( $opts['max_date'] );
+
+			if( $opts['max_date'] ){
+				$opts['max_date'] = date( $clean_format, $opts['max_date'] );
+			}
+
+		}
 	}
 
 	if ( isset( $opts['timepicker'] ) && 'on' === $opts['timepicker'] ) {
@@ -166,6 +187,8 @@ function dtpicker_scripts() {
 	$opts['utc_offset'] = $toffset;
 	$now                = new DateTime();
 	$opts['now']        = $now->format( $opts['clean_format'] );
+
+
 
 	wp_localize_script( 'dtpicker-build', 'datepickeropts', $opts );
 }
@@ -199,7 +222,7 @@ function dtp_add_action_links( $links ) {
 
 function dtp_get_version() {
 
-	$plugin_version = '1.7.6';
+	$plugin_version = '1.7.7';
 
 	if ( function_exists( 'get_file_data' ) ) {
 
@@ -392,7 +415,15 @@ function dtp_get_next_available_time( $opts ) {
 
 }
 
-
+/**
+ * Calculate hours range
+ *
+ * @param string $min
+ * @param string $max
+ * @param string $step
+ * @param string $format
+ * @return array of times
+ */
 function dtp_hours_range( $min = '00:00', $max = '23:59', $step = '60', $format = 'H:i' ) {
 
 	// timezone
@@ -435,5 +466,72 @@ function dtp_hours_range( $min = '00:00', $max = '23:59', $step = '60', $format 
 function dtp_24_time( $hour = '' ) {
 
 	return date( 'H:i', strtotime( $hour ) );
+
+}
+
+
+function dtp_convert_lang_code( $lang = 'en_US' ) {
+
+	$code = 'en';
+
+	$available = array(
+		'ar_AR' => 'ar',
+		'az_AZ' => 'az',
+		'bg_BG' => 'bg',
+		'bs_BS' => 'bs',
+		'ca_CA' => 'ca',
+		'ch_CH' => 'ch',
+		'cz_CZ' => 'cs',
+		'da_DA' => 'da',
+		'de_DE' => 'de',
+		'el_EL' => 'el',
+		'en_US' => 'en',
+		'en_GB' => 'en-GB',
+		'es_ES' => 'es',
+		'et_ET' => 'et',
+		'eu_EU' => 'eu',
+		'fa_FA' => 'fa',
+		'fi_FI' => 'fi',
+		'fr_FR' => 'fr',
+		'gl_ES' => 'gl',
+		'he_HE' => 'he',
+		'hr_HR' => 'hr',
+		'hu_HU' => 'hu',
+		'id_ID' => 'id',
+		'it_IT' => 'it',
+		'ja_JS' => 'ja',
+		'ko_KO' => 'ko',
+		'kr_KR' => 'kr',
+		'lt_LT' => 'lt',
+		'lv_LV' => 'lv',
+		'mk_MK' => 'mk',
+		'mn_MN' => 'mn',
+		'nl_NL' => 'nl',
+		'no_NO' => 'no',
+		'pl_PT' => 'pl',
+		'pt_PT' => 'pt',
+		'pt_BR' => 'pt-BR',
+		'ro_RO' => 'ro',
+		'ru_RU' => 'ru',
+		'se_SE' => 'se',
+		'sk_SK' => 'sk',
+		'sl_SL' => 'sl',
+		'sq_SQ' => 'sq',
+		'sr_SR' => 'sr',
+		'sr_YU' => 'sr-YU',
+		'sv_SV' => 'sv',
+		'th_TH' => 'th',
+		'tr_TR' => 'tr',
+		'uk_UK' => 'uk',
+		'vi_VI' => 'vi',
+		'zh_ZH' => 'zh',
+		'zh_TW' => 'zh-TW',
+	);
+
+	if( array_key_exists( $lang, $available ) ){
+		$code = $available[ $lang ];
+	}
+
+	return $code;
 
 }

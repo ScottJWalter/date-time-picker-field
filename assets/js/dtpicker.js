@@ -183,6 +183,10 @@ function dtp_init() {
 		}
 	}
 
+	if( datepickeropts.max_date !== '' ){
+		opts.maxDate = datepickeropts.max_date;
+	}
+
 	if( datepickeropts.disabled_days !== ''){
 		opts.disabledWeekDays = datepickeropts.disabled_days;
 	}

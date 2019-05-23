@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Date Time Picker Field\n"
-"POT-Creation-Date: 2019-04-04 01:12+0100\n"
-"PO-Revision-Date: 2019-04-04 01:12+0100\n"
+"POT-Creation-Date: 2019-05-23 14:47+0100\n"
+"PO-Revision-Date: 2019-05-23 14:40+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -19,123 +19,71 @@ msgstr ""
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SearchPathExcluded-1: svn\n"
 
-#: admin/class-dtp-settings-page.php:31 svn/tags/1.1/admin/settings.php:31
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:31
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:31
-#: svn/tags/1.2/admin/settings.php:31
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:31
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:31
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:31
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:31
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:31
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:31
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:31
-#: svn/trunk/admin/class-dtp-settings-page.php:31
+#: admin/class-dtp-settings-page.php:31
 msgid "DateTime Picker"
 msgstr ""
 
 #: admin/class-dtp-settings-page.php:38
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:38
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:38
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:38
-#: svn/trunk/admin/class-dtp-settings-page.php:38
 msgid "Basic Settings"
 msgstr ""
 
 #: admin/class-dtp-settings-page.php:43
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:43
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:43
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:43
-#: svn/trunk/admin/class-dtp-settings-page.php:43
 msgid "Advanced Settings"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:60
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:60
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:60
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:60
-#: svn/trunk/admin/class-dtp-settings-page.php:60
-msgid "Disable Days"
+#: admin/class-dtp-settings-page.php:63
+msgid "Disable Week Days"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:61
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:61
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:61
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:61
-#: svn/trunk/admin/class-dtp-settings-page.php:61
+#: admin/class-dtp-settings-page.php:64
 msgid "Select days you want to <strong>disable</strong>"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:65
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:65
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:65
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:65
-#: svn/trunk/admin/class-dtp-settings-page.php:65
+#: admin/class-dtp-settings-page.php:68
 msgid "Sunday"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:66
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:66
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:66
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:66
-#: svn/trunk/admin/class-dtp-settings-page.php:66
+#: admin/class-dtp-settings-page.php:69
 msgid "Monday"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:67
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:67
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:67
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:67
-#: svn/trunk/admin/class-dtp-settings-page.php:67
+#: admin/class-dtp-settings-page.php:70
 msgid "Tuesday"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:68
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:68
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:68
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:68
-#: svn/trunk/admin/class-dtp-settings-page.php:68
+#: admin/class-dtp-settings-page.php:71
 msgid "Wednesday"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:69
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:69
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:69
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:69
-#: svn/trunk/admin/class-dtp-settings-page.php:69
+#: admin/class-dtp-settings-page.php:72
 msgid "Thursday"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:70
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:70
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:70
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:70
-#: svn/trunk/admin/class-dtp-settings-page.php:70
+#: admin/class-dtp-settings-page.php:73
 msgid "Friday"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:71
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:71
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:71
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:71
-#: svn/trunk/admin/class-dtp-settings-page.php:71
+#: admin/class-dtp-settings-page.php:74
 msgid "Saturday"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:77
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:77
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:77
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:77
-#: svn/trunk/admin/class-dtp-settings-page.php:77
+#: admin/class-dtp-settings-page.php:80
+msgid "Disable specific dates"
+msgstr ""
+
+#: admin/class-dtp-settings-page.php:81
+msgid ""
+"Add the dates you want to disable divided by commas, in the format you have "
+"selected. Useful to disable holidays for example."
+msgstr ""
+
+#: admin/class-dtp-settings-page.php:87
 msgid "Default List of allowed times"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:78
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:78
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:78
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:78
-#: svn/trunk/admin/class-dtp-settings-page.php:78
+#: admin/class-dtp-settings-page.php:88
 msgid ""
 "Write the allowed times to <strong>override</strong> the time step and serve "
 "as default if you use the options below.<br> Values still need to be within "
@@ -144,1468 +92,431 @@ msgid ""
 "list all the options"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:84
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:84
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:84
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:84
-#: svn/trunk/admin/class-dtp-settings-page.php:84
+#: admin/class-dtp-settings-page.php:94
 msgid "Allowed times for Sunday"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:91
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:91
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:91
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:91
-#: svn/trunk/admin/class-dtp-settings-page.php:91
+#: admin/class-dtp-settings-page.php:101
 msgid "Allowed times for Monday"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:98
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:98
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:98
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:98
-#: svn/trunk/admin/class-dtp-settings-page.php:98
+#: admin/class-dtp-settings-page.php:108
 msgid "Allowed times for Tuesday"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:105
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:105
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:105
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:105
-#: svn/trunk/admin/class-dtp-settings-page.php:105
+#: admin/class-dtp-settings-page.php:115
 msgid "Allowed times for Wednesday"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:111
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:111
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:111
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:111
-#: svn/trunk/admin/class-dtp-settings-page.php:111
+#: admin/class-dtp-settings-page.php:121
 msgid "Allowed times for Thursday"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:117
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:117
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:117
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:117
-#: svn/trunk/admin/class-dtp-settings-page.php:117
+#: admin/class-dtp-settings-page.php:127
 msgid "Allowed times for Friday"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:123
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:123
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:123
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:123
-#: svn/trunk/admin/class-dtp-settings-page.php:123
+#: admin/class-dtp-settings-page.php:133
 msgid "Allowed times for Saturday"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:133 svn/tags/1.1/admin/settings.php:58
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:59
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:59
-#: svn/tags/1.2/admin/settings.php:58
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:59
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:59
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:59
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:59
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:133
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:133
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:133
-#: svn/trunk/admin/class-dtp-settings-page.php:133
+#: admin/class-dtp-settings-page.php:143
 msgid "CSS Selector"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:134 svn/tags/1.1/admin/settings.php:59
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:60
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:60
-#: svn/tags/1.2/admin/settings.php:59
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:60
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:60
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:60
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:60
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:134
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:134
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:134
-#: svn/trunk/admin/class-dtp-settings-page.php:134
+#: admin/class-dtp-settings-page.php:144
 msgid ""
 "Selector of the input field you want to target and transform into a picker. "
 "You can enter multiple selectors separated by commas."
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:135 svn/tags/1.1/admin/settings.php:60
-#: svn/tags/1.1/admin/settings.php:162
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:61
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:170
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:61
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:179
-#: svn/tags/1.2/admin/settings.php:60 svn/tags/1.2/admin/settings.php:162
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:61
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:179
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:61
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:179
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:61
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:61
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:135
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:135
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:135
-#: svn/trunk/admin/class-dtp-settings-page.php:135
+#: admin/class-dtp-settings-page.php:145
 msgid ".class_name or #field_id"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:142 svn/tags/1.1/admin/settings.php:67
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:68
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:68
-#: svn/tags/1.2/admin/settings.php:67
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:68
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:68
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:68
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:68
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:142
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:142
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:142
-#: svn/trunk/admin/class-dtp-settings-page.php:142
+#: admin/class-dtp-settings-page.php:152
 msgid "Language"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:143 svn/tags/1.1/admin/settings.php:68
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:69
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:69
-#: svn/tags/1.2/admin/settings.php:68
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:69
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:69
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:69
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:69
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:143
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:143
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:143
-#: svn/trunk/admin/class-dtp-settings-page.php:143
+#: admin/class-dtp-settings-page.php:153
 msgid "Language to display the month and day labels"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:147 svn/tags/1.1/admin/settings.php:72
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:73
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:73
-#: svn/tags/1.2/admin/settings.php:72
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:73
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:73
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:73
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:73
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:147
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:147
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:147
-#: svn/trunk/admin/class-dtp-settings-page.php:147
+#: admin/class-dtp-settings-page.php:157
+msgid "Automatic - Detect Current Language"
+msgstr ""
+
+#: admin/class-dtp-settings-page.php:158
 msgid "Arabic"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:148 svn/tags/1.1/admin/settings.php:73
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:74
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:74
-#: svn/tags/1.2/admin/settings.php:73
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:74
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:74
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:74
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:74
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:148
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:148
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:148
-#: svn/trunk/admin/class-dtp-settings-page.php:148
-msgid "Azerbaijanian (Azeri)"
-msgstr ""
-
-#: admin/class-dtp-settings-page.php:149 svn/tags/1.1/admin/settings.php:74
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:75
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:75
-#: svn/tags/1.2/admin/settings.php:74
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:75
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:75
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:75
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:75
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:149
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:149
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:149
-#: svn/trunk/admin/class-dtp-settings-page.php:149
+#: admin/class-dtp-settings-page.php:159
 msgid "Bulgarian"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:150 svn/tags/1.1/admin/settings.php:75
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:76
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:76
-#: svn/tags/1.2/admin/settings.php:75
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:76
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:76
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:76
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:76
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:150
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:150
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:150
-#: svn/trunk/admin/class-dtp-settings-page.php:150
-msgid "Bosanski"
+#: admin/class-dtp-settings-page.php:160
+msgid "Catalan"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:151 svn/tags/1.1/admin/settings.php:76
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:77
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:77
-#: svn/tags/1.2/admin/settings.php:76
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:77
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:77
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:77
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:77
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:151
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:151
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:151
-#: svn/trunk/admin/class-dtp-settings-page.php:151
-msgid "Català"
+#: admin/class-dtp-settings-page.php:161
+msgid "Chinese (Simplified)"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:152 svn/tags/1.1/admin/settings.php:77
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:78
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:78
-#: svn/tags/1.2/admin/settings.php:77
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:78
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:78
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:78
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:78
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:152
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:152
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:152
-#: svn/trunk/admin/class-dtp-settings-page.php:152
-msgid "Simplified Chinese"
+#: admin/class-dtp-settings-page.php:162
+msgid "Chinese (Traditional)"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:153 svn/tags/1.1/admin/settings.php:78
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:79
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:79
-#: svn/tags/1.2/admin/settings.php:78
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:79
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:79
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:79
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:79
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:153
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:153
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:153
-#: svn/trunk/admin/class-dtp-settings-page.php:153
-msgid "Čeština"
+#: admin/class-dtp-settings-page.php:163
+msgid "Chinese"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:154 svn/tags/1.1/admin/settings.php:79
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:80
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:80
-#: svn/tags/1.2/admin/settings.php:79
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:80
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:80
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:80
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:80
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:154
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:154
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:154
-#: svn/trunk/admin/class-dtp-settings-page.php:154
-msgid "Dansk"
+#: admin/class-dtp-settings-page.php:164
+msgid "Czech"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:155 svn/tags/1.1/admin/settings.php:80
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:81
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:81
-#: svn/tags/1.2/admin/settings.php:80
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:81
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:81
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:81
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:81
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:155
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:155
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:155
-#: svn/trunk/admin/class-dtp-settings-page.php:155
+#: admin/class-dtp-settings-page.php:165
+msgid "Danish"
+msgstr ""
+
+#: admin/class-dtp-settings-page.php:166
 msgid "German"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:156 svn/tags/1.1/admin/settings.php:81
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:82
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:82
-#: svn/tags/1.2/admin/settings.php:81
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:82
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:82
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:82
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:82
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:156
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:156
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:156
-#: svn/trunk/admin/class-dtp-settings-page.php:156
-msgid "Ελληνικά"
+#: admin/class-dtp-settings-page.php:167
+msgid "Greek"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:157 svn/tags/1.1/admin/settings.php:82
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:83
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:83
-#: svn/tags/1.2/admin/settings.php:82
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:83
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:83
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:83
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:83
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:157
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:157
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:157
-#: svn/trunk/admin/class-dtp-settings-page.php:157
-msgid "English"
+#: admin/class-dtp-settings-page.php:168
+msgid "American English"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:158 svn/tags/1.1/admin/settings.php:83
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:84
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:84
-#: svn/tags/1.2/admin/settings.php:83
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:84
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:84
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:84
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:84
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:158
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:158
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:158
-#: svn/trunk/admin/class-dtp-settings-page.php:158
-msgid "English (British)"
+#: admin/class-dtp-settings-page.php:169
+msgid "British English"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:159 svn/tags/1.1/admin/settings.php:84
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:85
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:85
-#: svn/tags/1.2/admin/settings.php:84
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:85
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:85
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:85
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:85
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:159
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:159
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:159
-#: svn/trunk/admin/class-dtp-settings-page.php:159
+#: admin/class-dtp-settings-page.php:170
 msgid "Spanish"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:160 svn/tags/1.1/admin/settings.php:85
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:86
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:86
-#: svn/tags/1.2/admin/settings.php:85
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:86
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:86
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:86
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:86
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:160
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:160
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:160
-#: svn/trunk/admin/class-dtp-settings-page.php:160
-msgid "Eesti"
+#: admin/class-dtp-settings-page.php:171
+msgid "Estonian"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:161 svn/tags/1.1/admin/settings.php:86
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:87
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:87
-#: svn/tags/1.2/admin/settings.php:86
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:87
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:87
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:87
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:87
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:161
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:161
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:161
-#: svn/trunk/admin/class-dtp-settings-page.php:161
-msgid "Euskara"
+#: admin/class-dtp-settings-page.php:172
+msgid "Basque"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:162 svn/tags/1.1/admin/settings.php:87
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:88
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:88
-#: svn/tags/1.2/admin/settings.php:87
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:88
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:88
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:88
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:88
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:162
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:162
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:162
-#: svn/trunk/admin/class-dtp-settings-page.php:162
+#: admin/class-dtp-settings-page.php:173
 msgid "Persian"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:163 svn/tags/1.1/admin/settings.php:88
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:89
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:89
-#: svn/tags/1.2/admin/settings.php:88
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:89
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:89
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:89
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:89
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:163
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:163
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:163
-#: svn/trunk/admin/class-dtp-settings-page.php:163
-msgid "Finnish (Suomi)"
+#: admin/class-dtp-settings-page.php:174
+msgid "Finnish"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:164 svn/tags/1.1/admin/settings.php:89
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:90
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:90
-#: svn/tags/1.2/admin/settings.php:89
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:90
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:90
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:90
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:90
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:164
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:164
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:164
-#: svn/trunk/admin/class-dtp-settings-page.php:164
+#: admin/class-dtp-settings-page.php:175
 msgid "French"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:165 svn/tags/1.1/admin/settings.php:90
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:91
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:91
-#: svn/tags/1.2/admin/settings.php:90
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:91
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:91
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:91
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:91
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:165
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:165
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:165
-#: svn/trunk/admin/class-dtp-settings-page.php:165
-msgid "Galego"
+#: admin/class-dtp-settings-page.php:176
+msgid "Galician"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:166 svn/tags/1.1/admin/settings.php:91
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:92
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:92
-#: svn/tags/1.2/admin/settings.php:91
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:92
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:92
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:92
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:92
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:166
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:166
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:166
-#: svn/trunk/admin/class-dtp-settings-page.php:166
-msgid "Hebrew (עברית)"
+#: admin/class-dtp-settings-page.php:177
+msgid "Hebrew"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:167 svn/tags/1.1/admin/settings.php:92
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:93
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:93
-#: svn/tags/1.2/admin/settings.php:92
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:93
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:93
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:93
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:93
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:167
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:167
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:167
-#: svn/trunk/admin/class-dtp-settings-page.php:167
-msgid "Hrvatski"
+#: admin/class-dtp-settings-page.php:178
+msgid "Croatian"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:168 svn/tags/1.1/admin/settings.php:93
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:94
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:94
-#: svn/tags/1.2/admin/settings.php:93
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:94
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:94
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:94
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:94
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:168
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:168
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:168
-#: svn/trunk/admin/class-dtp-settings-page.php:168
+#: admin/class-dtp-settings-page.php:179
 msgid "Hungarian"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:169 svn/tags/1.1/admin/settings.php:94
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:95
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:95
-#: svn/tags/1.2/admin/settings.php:94
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:95
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:95
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:95
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:95
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:169
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:169
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:169
-#: svn/trunk/admin/class-dtp-settings-page.php:169
+#: admin/class-dtp-settings-page.php:180
 msgid "Indonesian"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:170 svn/tags/1.1/admin/settings.php:95
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:96
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:96
-#: svn/tags/1.2/admin/settings.php:95
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:96
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:96
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:96
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:96
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:170
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:170
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:170
-#: svn/trunk/admin/class-dtp-settings-page.php:170
+#: admin/class-dtp-settings-page.php:181
 msgid "Italian"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:171 svn/tags/1.1/admin/settings.php:96
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:97
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:97
-#: svn/tags/1.2/admin/settings.php:96
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:97
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:97
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:97
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:97
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:171
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:171
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:171
-#: svn/trunk/admin/class-dtp-settings-page.php:171
+#: admin/class-dtp-settings-page.php:182
 msgid "Japanese"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:172 svn/tags/1.1/admin/settings.php:97
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:98
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:98
-#: svn/tags/1.2/admin/settings.php:97
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:98
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:98
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:98
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:98
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:172
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:172
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:172
-#: svn/trunk/admin/class-dtp-settings-page.php:172
-msgid "Korean (한국어)"
-msgstr ""
-
-#: admin/class-dtp-settings-page.php:173 svn/tags/1.1/admin/settings.php:98
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:99
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:99
-#: svn/tags/1.2/admin/settings.php:98
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:99
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:99
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:99
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:99
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:173
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:173
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:173
-#: svn/trunk/admin/class-dtp-settings-page.php:173
+#: admin/class-dtp-settings-page.php:183
 msgid "Korean"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:174 svn/tags/1.1/admin/settings.php:99
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:100
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:100
-#: svn/tags/1.2/admin/settings.php:99
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:100
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:100
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:100
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:100
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:174
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:174
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:174
-#: svn/trunk/admin/class-dtp-settings-page.php:174
-msgid "Lithuanian (lietuvių)"
+#: admin/class-dtp-settings-page.php:184
+msgid "Lithuanian"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:175 svn/tags/1.1/admin/settings.php:100
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:101
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:101
-#: svn/tags/1.2/admin/settings.php:100
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:101
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:101
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:101
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:101
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:175
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:175
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:175
-#: svn/trunk/admin/class-dtp-settings-page.php:175
-msgid "Latvian (Latviešu)"
+#: admin/class-dtp-settings-page.php:185
+msgid "Latvian"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:176 svn/tags/1.1/admin/settings.php:101
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:102
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:102
-#: svn/tags/1.2/admin/settings.php:101
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:102
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:102
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:102
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:102
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:176
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:176
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:176
-#: svn/trunk/admin/class-dtp-settings-page.php:176
-msgid "Macedonian (Македонски)"
+#: admin/class-dtp-settings-page.php:186
+msgid "Macedonian"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:177 svn/tags/1.1/admin/settings.php:102
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:103
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:103
-#: svn/tags/1.2/admin/settings.php:102
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:103
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:103
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:103
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:103
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:177
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:177
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:177
-#: svn/trunk/admin/class-dtp-settings-page.php:177
-msgid "Mongolian (Монгол)"
-msgstr ""
-
-#: admin/class-dtp-settings-page.php:178 svn/tags/1.1/admin/settings.php:103
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:104
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:104
-#: svn/tags/1.2/admin/settings.php:103
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:104
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:104
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:104
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:104
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:178
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:178
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:178
-#: svn/trunk/admin/class-dtp-settings-page.php:178
+#: admin/class-dtp-settings-page.php:187
 msgid "Dutch"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:179 svn/tags/1.1/admin/settings.php:104
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:105
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:105
-#: svn/tags/1.2/admin/settings.php:104
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:105
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:105
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:105
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:105
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:179
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:179
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:179
-#: svn/trunk/admin/class-dtp-settings-page.php:179
+#: admin/class-dtp-settings-page.php:188
 msgid "Norwegian"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:180 svn/tags/1.1/admin/settings.php:105
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:106
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:106
-#: svn/tags/1.2/admin/settings.php:105
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:106
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:106
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:106
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:106
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:180
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:180
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:180
-#: svn/trunk/admin/class-dtp-settings-page.php:180
+#: admin/class-dtp-settings-page.php:189
 msgid "Polish"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:181 svn/tags/1.1/admin/settings.php:106
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:107
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:107
-#: svn/tags/1.2/admin/settings.php:106
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:107
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:107
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:107
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:107
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:181
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:181
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:181
-#: svn/trunk/admin/class-dtp-settings-page.php:181
+#: admin/class-dtp-settings-page.php:190
 msgid "Portuguese"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:182 svn/tags/1.1/admin/settings.php:107
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:108
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:108
-#: svn/tags/1.2/admin/settings.php:107
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:108
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:108
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:108
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:108
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:182
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:182
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:182
-#: svn/trunk/admin/class-dtp-settings-page.php:182
-msgid "Português(Brasil)"
+#: admin/class-dtp-settings-page.php:191
+msgid "Portuguese (Brasil)"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:183 svn/tags/1.1/admin/settings.php:108
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:109
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:109
-#: svn/tags/1.2/admin/settings.php:108
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:109
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:109
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:109
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:109
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:183
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:183
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:183
-#: svn/trunk/admin/class-dtp-settings-page.php:183
+#: admin/class-dtp-settings-page.php:192
 msgid "Romanian"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:184 svn/tags/1.1/admin/settings.php:109
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:110
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:110
-#: svn/tags/1.2/admin/settings.php:109
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:110
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:110
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:110
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:110
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:184
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:184
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:184
-#: svn/trunk/admin/class-dtp-settings-page.php:184
+#: admin/class-dtp-settings-page.php:193
 msgid "Russian"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:185 svn/tags/1.1/admin/settings.php:110
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:111
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:111
-#: svn/tags/1.2/admin/settings.php:110
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:111
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:111
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:111
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:111
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:185
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:185
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:185
-#: svn/trunk/admin/class-dtp-settings-page.php:185
+#: admin/class-dtp-settings-page.php:194 admin/class-dtp-settings-page.php:198
 msgid "Swedish"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:186 svn/tags/1.1/admin/settings.php:111
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:112
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:112
-#: svn/tags/1.2/admin/settings.php:111
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:112
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:112
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:112
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:112
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:186
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:186
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:186
-#: svn/trunk/admin/class-dtp-settings-page.php:186
-msgid "Slovenčina"
+#: admin/class-dtp-settings-page.php:195
+msgid "Slovak"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:187 svn/tags/1.1/admin/settings.php:112
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:113
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:113
-#: svn/tags/1.2/admin/settings.php:112
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:113
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:113
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:113
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:113
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:187
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:187
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:187
-#: svn/trunk/admin/class-dtp-settings-page.php:187
-msgid "Slovenščina"
+#: admin/class-dtp-settings-page.php:196
+msgid "Albanian"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:188 svn/tags/1.1/admin/settings.php:113
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:114
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:114
-#: svn/tags/1.2/admin/settings.php:113
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:114
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:114
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:114
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:114
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:188
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:188
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:188
-#: svn/trunk/admin/class-dtp-settings-page.php:188
-msgid "Albanian (Shqip)"
+#: admin/class-dtp-settings-page.php:197
+msgid "Serbian"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:189 svn/tags/1.1/admin/settings.php:114
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:115
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:115
-#: svn/tags/1.2/admin/settings.php:114
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:115
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:115
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:115
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:115
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:189
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:189
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:189
-#: svn/trunk/admin/class-dtp-settings-page.php:189
-msgid "Serbian Cyrillic (Српски)"
-msgstr ""
-
-#: admin/class-dtp-settings-page.php:190 svn/tags/1.1/admin/settings.php:115
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:116
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:116
-#: svn/tags/1.2/admin/settings.php:115
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:116
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:116
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:116
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:116
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:190
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:190
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:190
-#: svn/trunk/admin/class-dtp-settings-page.php:190
-msgid "Serbian (Srpski)"
-msgstr ""
-
-#: admin/class-dtp-settings-page.php:191 svn/tags/1.1/admin/settings.php:116
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:117
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:117
-#: svn/tags/1.2/admin/settings.php:116
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:117
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:117
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:117
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:117
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:191
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:191
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:191
-#: svn/trunk/admin/class-dtp-settings-page.php:191
-msgid "Svenska"
-msgstr ""
-
-#: admin/class-dtp-settings-page.php:192 svn/tags/1.1/admin/settings.php:117
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:118
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:118
-#: svn/tags/1.2/admin/settings.php:117
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:118
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:118
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:118
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:118
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:192
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:192
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:192
-#: svn/trunk/admin/class-dtp-settings-page.php:192
+#: admin/class-dtp-settings-page.php:199
 msgid "Thai"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:193 svn/tags/1.1/admin/settings.php:118
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:119
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:119
-#: svn/tags/1.2/admin/settings.php:118
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:119
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:119
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:119
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:119
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:193
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:193
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:193
-#: svn/trunk/admin/class-dtp-settings-page.php:193
+#: admin/class-dtp-settings-page.php:200
 msgid "Turkish"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:194 svn/tags/1.1/admin/settings.php:119
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:120
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:120
-#: svn/tags/1.2/admin/settings.php:119
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:120
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:120
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:120
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:120
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:194
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:194
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:194
-#: svn/trunk/admin/class-dtp-settings-page.php:194
+#: admin/class-dtp-settings-page.php:201
 msgid "Ukrainian"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:195 svn/tags/1.1/admin/settings.php:120
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:121
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:121
-#: svn/tags/1.2/admin/settings.php:120
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:121
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:121
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:121
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:121
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:195
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:195
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:195
-#: svn/trunk/admin/class-dtp-settings-page.php:195
+#: admin/class-dtp-settings-page.php:202
 msgid "Vietnamese"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:196 svn/tags/1.1/admin/settings.php:121
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:122
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:122
-#: svn/tags/1.2/admin/settings.php:121
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:122
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:122
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:122
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:122
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:196
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:196
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:196
-#: svn/trunk/admin/class-dtp-settings-page.php:196
-msgid "Simplified Chinese (简体中文)"
-msgstr ""
-
-#: admin/class-dtp-settings-page.php:197 svn/tags/1.1/admin/settings.php:122
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:123
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:123
-#: svn/tags/1.2/admin/settings.php:122
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:123
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:123
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:123
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:123
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:197
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:197
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:197
-#: svn/trunk/admin/class-dtp-settings-page.php:197
-msgid "Traditional Chinese (繁體中文)"
-msgstr ""
-
-#: admin/class-dtp-settings-page.php:203 svn/tags/1.1/admin/settings.php:128
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:129
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:129
-#: svn/tags/1.2/admin/settings.php:128
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:129
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:129
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:129
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:129
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:203
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:203
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:203
-#: svn/trunk/admin/class-dtp-settings-page.php:203
+#: admin/class-dtp-settings-page.php:209
 msgid "Theme"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:204 svn/tags/1.1/admin/settings.php:129
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:130
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:130
-#: svn/tags/1.2/admin/settings.php:129
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:130
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:130
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:130
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:130
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:204
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:204
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:204
-#: svn/trunk/admin/class-dtp-settings-page.php:204
+#: admin/class-dtp-settings-page.php:210
 msgid "calendar visual style"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:208 svn/tags/1.1/admin/settings.php:133
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:134
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:134
-#: svn/tags/1.2/admin/settings.php:133
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:134
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:134
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:134
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:134
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:208
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:208
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:208
-#: svn/trunk/admin/class-dtp-settings-page.php:208
+#: admin/class-dtp-settings-page.php:214
 msgid "Default"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:209 svn/tags/1.1/admin/settings.php:134
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:135
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:135
-#: svn/tags/1.2/admin/settings.php:134
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:135
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:135
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:135
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:135
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:209
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:209
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:209
-#: svn/trunk/admin/class-dtp-settings-page.php:209
+#: admin/class-dtp-settings-page.php:215
 msgid "Dark"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:215 svn/tags/1.1/admin/settings.php:142
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:141
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:141
-#: svn/tags/1.2/admin/settings.php:142
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:141
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:141
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:141
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:141
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:215
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:215
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:215
-#: svn/trunk/admin/class-dtp-settings-page.php:215
+#: admin/class-dtp-settings-page.php:221
 msgid "Display Calendar"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:216 svn/tags/1.1/admin/settings.php:143
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:142
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:142
-#: svn/tags/1.2/admin/settings.php:143
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:142
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:142
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:142
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:142
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:216
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:216
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:216
-#: svn/trunk/admin/class-dtp-settings-page.php:216
+#: admin/class-dtp-settings-page.php:222
 msgid "Display date picker"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:224 svn/tags/1.1/admin/settings.php:151
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:150
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:150
-#: svn/tags/1.2/admin/settings.php:151
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:150
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:150
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:150
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:150
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:224
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:224
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:224
-#: svn/trunk/admin/class-dtp-settings-page.php:224
+#: admin/class-dtp-settings-page.php:230
 msgid "Display Time"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:225 svn/tags/1.1/admin/settings.php:152
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:151
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:151
-#: svn/tags/1.2/admin/settings.php:152
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:151
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:151
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:151
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:151
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:225
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:225
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:225
-#: svn/trunk/admin/class-dtp-settings-page.php:225
+#: admin/class-dtp-settings-page.php:231
 msgid "Display time picker"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:233
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:159
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:159
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:159
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:159
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:159
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:159
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:233
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:233
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:233
-#: svn/trunk/admin/class-dtp-settings-page.php:233
+#: admin/class-dtp-settings-page.php:239
 msgid "Keep Placeholder"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:234
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:160
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:160
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:160
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:160
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:160
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:160
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:234
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:234
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:234
-#: svn/trunk/admin/class-dtp-settings-page.php:234
+#: admin/class-dtp-settings-page.php:240
 msgid ""
 "If enabled, original placeholder will be kept. If disabled it will be "
 "replaced with current date."
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:242
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:168
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:168
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:168
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:168
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:168
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:242
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:242
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:242
-#: svn/trunk/admin/class-dtp-settings-page.php:242
+#: admin/class-dtp-settings-page.php:248
 msgid "Prevent Keyboard Edit"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:243
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:169
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:169
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:169
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:169
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:169
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:243
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:243
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:243
-#: svn/trunk/admin/class-dtp-settings-page.php:243
+#: admin/class-dtp-settings-page.php:249
 msgid ""
 "If enabled, it wont be possible to edit the text. This will also prevent the "
 "keyboard on mobile devices to display when selecting the date."
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:251
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:177
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:177
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:251
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:251
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:251
-#: svn/trunk/admin/class-dtp-settings-page.php:251
+#: admin/class-dtp-settings-page.php:257
 msgid "Disable Past Dates"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:252
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:178
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:178
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:252
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:252
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:252
-#: svn/trunk/admin/class-dtp-settings-page.php:252
-msgid "If enabled, past dates can't be selected"
-msgstr ""
-
-#: admin/class-dtp-settings-page.php:260 svn/tags/1.1/admin/settings.php:160
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:168
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:177
-#: svn/tags/1.2/admin/settings.php:160
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:177
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:177
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:186
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:186
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:260
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:260
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:260
-#: svn/trunk/admin/class-dtp-settings-page.php:260
-msgid "Time Step"
-msgstr ""
-
-#: admin/class-dtp-settings-page.php:261 svn/tags/1.1/admin/settings.php:161
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:169
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:178
-#: svn/tags/1.2/admin/settings.php:161
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:178
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:178
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:187
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:187
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:261
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:261
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:261
-#: svn/trunk/admin/class-dtp-settings-page.php:261
-msgid "Time interval in minutes for time picker options"
+#: admin/class-dtp-settings-page.php:259
+#, php-format
+msgid ""
+"If enabled, past dates (and times) can't be selected. Consider the plugin "
+"will use the timezone you have in your general settings to perform this "
+"calculation. Your current timezone is %s."
 msgstr ""
 
 #: admin/class-dtp-settings-page.php:269
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:195
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:195
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:269
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:269
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:269
-#: svn/trunk/admin/class-dtp-settings-page.php:269
-msgid "Minimum Time"
+msgid "Time Step"
 msgstr ""
 
 #: admin/class-dtp-settings-page.php:270
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:196
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:196
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:270
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:270
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:270
-#: svn/trunk/admin/class-dtp-settings-page.php:270
+msgid "Time interval in minutes for time picker options"
+msgstr ""
+
+#: admin/class-dtp-settings-page.php:278
+msgid "Minimum Time"
+msgstr ""
+
+#: admin/class-dtp-settings-page.php:279
 msgid ""
 "Time options will start from this. Leave empty for none. Use the format you "
 "selected for the time. For example: 08:00 AM"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:278
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:204
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:204
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:278
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:278
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:278
-#: svn/trunk/admin/class-dtp-settings-page.php:278
+#: admin/class-dtp-settings-page.php:287
 msgid "Maximum Time"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:279
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:205
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:205
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:279
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:279
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:279
-#: svn/trunk/admin/class-dtp-settings-page.php:279
+#: admin/class-dtp-settings-page.php:288
 msgid ""
 "Time options will not be later than this specified time. Leave empty for "
 "none. Use the format you selected for the time. For example: 08:00 PM"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:287 svn/tags/1.1/admin/settings.php:170
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:178
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:187
-#: svn/tags/1.2/admin/settings.php:170
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:187
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:187
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:213
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:213
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:287
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:287
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:287
-#: svn/trunk/admin/class-dtp-settings-page.php:287
-msgid "Date Format"
-msgstr ""
-
-#: admin/class-dtp-settings-page.php:288 svn/tags/1.1/admin/settings.php:171
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:179
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:188
-#: svn/tags/1.2/admin/settings.php:171
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:188
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:188
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:214
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:214
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:288
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:288
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:288
-#: svn/trunk/admin/class-dtp-settings-page.php:288
-msgid "Date format"
-msgstr ""
-
-#: admin/class-dtp-settings-page.php:291 svn/tags/1.1/admin/settings.php:174
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:182
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:191
-#: svn/tags/1.2/admin/settings.php:174
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:191
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:191
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:217
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:217
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:291
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:291
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:291
-#: svn/trunk/admin/class-dtp-settings-page.php:291
-msgid "Year-Month-Day"
-msgstr ""
-
-#: admin/class-dtp-settings-page.php:292 svn/tags/1.1/admin/settings.php:175
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:183
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:192
-#: svn/tags/1.2/admin/settings.php:175
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:192
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:192
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:218
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:218
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:292
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:292
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:292
-#: svn/trunk/admin/class-dtp-settings-page.php:292
-msgid "Year/Month/Day"
-msgstr ""
-
-#: admin/class-dtp-settings-page.php:293 svn/tags/1.1/admin/settings.php:176
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:184
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:193
-#: svn/tags/1.2/admin/settings.php:176
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:193
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:193
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:219
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:219
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:293
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:293
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:293
-#: svn/trunk/admin/class-dtp-settings-page.php:293
-msgid "Day-Month-Year"
-msgstr ""
-
-#: admin/class-dtp-settings-page.php:294 svn/tags/1.1/admin/settings.php:177
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:185
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:194
-#: svn/tags/1.2/admin/settings.php:177
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:194
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:194
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:220
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:220
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:294
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:294
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:294
-#: svn/trunk/admin/class-dtp-settings-page.php:294
-msgid "Day/Month/Year"
-msgstr ""
-
-#: admin/class-dtp-settings-page.php:295 svn/tags/1.1/admin/settings.php:178
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:186
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:195
-#: svn/tags/1.2/admin/settings.php:178
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:195
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:195
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:221
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:221
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:295
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:295
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:295
-#: svn/trunk/admin/class-dtp-settings-page.php:295
-msgid "Month-Day-Year"
-msgstr ""
-
-#: admin/class-dtp-settings-page.php:296 svn/tags/1.1/admin/settings.php:179
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:187
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:196
-#: svn/tags/1.2/admin/settings.php:179
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:196
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:196
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:222
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:222
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:296
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:296
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:296
-#: svn/trunk/admin/class-dtp-settings-page.php:296
-msgid "Month/Day/Year"
+#: admin/class-dtp-settings-page.php:296
+msgid "Offset for available times"
 msgstr ""
 
 #: admin/class-dtp-settings-page.php:297
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:223
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:297
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:297
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:297
-#: svn/trunk/admin/class-dtp-settings-page.php:297
+msgid ""
+"Time interval in minutes to advance next available time. For example, set "
+"\"45\" if you only want time entries 45m from now to be available. Works "
+"better when option to disable past dates is also enabled."
+msgstr ""
+
+#: admin/class-dtp-settings-page.php:305
+msgid "Maximum date"
+msgstr ""
+
+#: admin/class-dtp-settings-page.php:306
+msgid ""
+"Use the European day-month-year format or an english string that is accepted "
+"by the <a target=\"_blank\" href=\"https://php.net/manual/en/function."
+"strtotime.php\">strtotime PHP function</a>. (Ex: \"+5 days\")<br> Leave "
+"empty to set no limit."
+msgstr ""
+
+#: admin/class-dtp-settings-page.php:314
+msgid "Date Format"
+msgstr ""
+
+#: admin/class-dtp-settings-page.php:315
+msgid "Date format"
+msgstr ""
+
+#: admin/class-dtp-settings-page.php:318
+msgid "Year-Month-Day"
+msgstr ""
+
+#: admin/class-dtp-settings-page.php:319
+msgid "Year/Month/Day"
+msgstr ""
+
+#: admin/class-dtp-settings-page.php:320
+msgid "Day-Month-Year"
+msgstr ""
+
+#: admin/class-dtp-settings-page.php:321
+msgid "Day/Month/Year"
+msgstr ""
+
+#: admin/class-dtp-settings-page.php:322
+msgid "Month-Day-Year"
+msgstr ""
+
+#: admin/class-dtp-settings-page.php:323
+msgid "Month/Day/Year"
+msgstr ""
+
+#: admin/class-dtp-settings-page.php:324
 msgid "Day.Month.Year"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:304 svn/tags/1.1/admin/settings.php:186
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:194
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:203
-#: svn/tags/1.2/admin/settings.php:186
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:203
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:203
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:229
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:230
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:304
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:304
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:304
-#: svn/trunk/admin/class-dtp-settings-page.php:304
+#: admin/class-dtp-settings-page.php:331
 msgid "Hour Format"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:305 svn/tags/1.1/admin/settings.php:187
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:195
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:204
-#: svn/tags/1.2/admin/settings.php:187
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:204
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:204
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:230
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:231
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:305
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:305
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:305
-#: svn/trunk/admin/class-dtp-settings-page.php:305
+#: admin/class-dtp-settings-page.php:332
 msgid "Hour format"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:315 svn/tags/1.1/admin/settings.php:198
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:206
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:215
-#: svn/tags/1.2/admin/settings.php:198
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:215
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:215
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:241
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:242
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:315
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:315
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:315
-#: svn/trunk/admin/class-dtp-settings-page.php:315
+#: admin/class-dtp-settings-page.php:342
 msgid "When to Load"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:316 svn/tags/1.1/admin/settings.php:199
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:207
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:216
-#: svn/tags/1.2/admin/settings.php:199
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:216
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:216
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:242
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:243
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:316
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:316
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:316
-#: svn/trunk/admin/class-dtp-settings-page.php:316
+#: admin/class-dtp-settings-page.php:343
 msgid ""
 "Choose to search for the selector across the website or only when the "
 "shortcode [datetimepicker] exists on a page.<br> Use the shortcode to "
 "prevent the script from loading across all pages"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:319 svn/tags/1.1/admin/settings.php:202
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:210
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:219
-#: svn/tags/1.2/admin/settings.php:202
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:219
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:219
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:245
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:246
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:319
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:319
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:319
-#: svn/trunk/admin/class-dtp-settings-page.php:319
+#: admin/class-dtp-settings-page.php:346
 msgid "Across the full website"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:320
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:220
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:246
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:247
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:320
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:320
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:320
-#: svn/trunk/admin/class-dtp-settings-page.php:320
+#: admin/class-dtp-settings-page.php:347
 msgid "Admin panel only"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:321
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:221
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:247
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:248
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:321
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:321
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:321
-#: svn/trunk/admin/class-dtp-settings-page.php:321
+#: admin/class-dtp-settings-page.php:348
 msgid "Full website including admin panel"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:322 svn/tags/1.1/admin/settings.php:203
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:211
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:220
-#: svn/tags/1.2/admin/settings.php:203
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:220
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:222
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:248
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:249
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:322
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:322
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:322
-#: svn/trunk/admin/class-dtp-settings-page.php:322
+#: admin/class-dtp-settings-page.php:349
 msgid "Only when shortcode [datetimepicker] exists on a page."
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:335 svn/tags/1.1/admin/settings.php:38
-#: svn/tags/1.2.1/admin/class-dtp-settings-page.php:38
-#: svn/tags/1.2.2/admin/class-dtp-settings-page.php:38
-#: svn/tags/1.2/admin/settings.php:38
-#: svn/tags/1.3/admin/class-dtp-settings-page.php:38
-#: svn/tags/1.4/admin/class-dtp-settings-page.php:38
-#: svn/tags/1.5/admin/class-dtp-settings-page.php:38
-#: svn/tags/1.6/admin/class-dtp-settings-page.php:38
-#: svn/tags/1.7.2/admin/class-dtp-settings-page.php:335
-#: svn/tags/1.7.3/admin/class-dtp-settings-page.php:335
-#: svn/tags/1.7/admin/class-dtp-settings-page.php:335
-#: svn/trunk/admin/class-dtp-settings-page.php:335
+#: admin/class-dtp-settings-page.php:362
 msgid "Date & Time Picker Settings"
 msgstr ""
 
-#: date-time-picker-field.php:143 svn/tags/1.1/date-time-picker-field.php:63
-#: svn/tags/1.2.1/date-time-picker-field.php:88
-#: svn/tags/1.2.2/date-time-picker-field.php:91
-#: svn/tags/1.2/date-time-picker-field.php:78
-#: svn/tags/1.3/date-time-picker-field.php:94
-#: svn/tags/1.4/date-time-picker-field.php:102
-#: svn/tags/1.5/date-time-picker-field.php:107
-#: svn/tags/1.6/date-time-picker-field.php:114
-#: svn/tags/1.7.2/date-time-picker-field.php:137
-#: svn/tags/1.7.3/date-time-picker-field.php:141
-#: svn/tags/1.7/date-time-picker-field.php:134
-#: svn/trunk/date-time-picker-field.php:141
+#: date-time-picker-field.php:217
 msgid "Settings"
 msgstr ""
 
 #: includes/class.settings-api.php:369
-#: svn/tags/1.1/includes/class.settings-api.php:370
-#: svn/tags/1.2.1/includes/class.settings-api.php:369
-#: svn/tags/1.2.2/includes/class.settings-api.php:369
-#: svn/tags/1.2/includes/class.settings-api.php:370
-#: svn/tags/1.3/includes/class.settings-api.php:369
-#: svn/tags/1.4/includes/class.settings-api.php:369
-#: svn/tags/1.5/includes/class.settings-api.php:369
-#: svn/tags/1.6/includes/class.settings-api.php:369
-#: svn/tags/1.7.2/includes/class.settings-api.php:369
-#: svn/tags/1.7.3/includes/class.settings-api.php:369
-#: svn/tags/1.7/includes/class.settings-api.php:369
-#: svn/trunk/includes/class.settings-api.php:369
 msgid "Choose File"
 msgstr ""
 

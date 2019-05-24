@@ -8,7 +8,6 @@ jQuery(document).ready(function(){
 function dtp_init() {
 
 	jQuery.datetimepicker.setDateFormatter('moment');
-	jQuery.datetimepicker.setLocale(datepickeropts.locale);
 
 	if(datepickeropts.preventkeyboard == 'on'){
 		jQuery(datepickeropts.selector).focus(function() {
@@ -152,6 +151,7 @@ function dtp_init() {
 	}
 
 	var opts = {
+		i18n: datepickeropts.i18n,
 		value: datepickeropts.value,
 		format:datepickeropts.format,
 		formatDate: datepickeropts.dateformat,
@@ -195,12 +195,11 @@ function dtp_init() {
 		opts.disabledDates = datepickeropts.disabled_calendar_days;
 	}
 
-
-
 	if( datepickeropts.allowed_times !== ''){
 		opts.allowTimes = datepickeropts.allowed_times;
 	}
 
 	jQuery(datepickeropts.selector).datetimepicker( opts );
+	jQuery.datetimepicker.setLocale(datepickeropts.locale);
 
 }

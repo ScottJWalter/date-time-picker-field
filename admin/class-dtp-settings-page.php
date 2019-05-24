@@ -53,8 +53,23 @@ if ( ! class_exists( 'dtpicker_Settings_API_Test' ) ) :
 		 */
 		public function get_settings_fields() {
 
+			global $wp_locale;
+
 			$tzone = get_option('timezone_string');
 			date_default_timezone_set( $tzone );
+
+			$langs = get_available_languages(); // improve this to reflect available options in date picker
+			$languages = array();
+			$languages['auto'] = __( 'Automatic - Detect Current Language', 'date-time-picker-field' );
+
+			require_once( ABSPATH . 'wp-admin/includes/translation-install.php' );
+			$translations = wp_get_available_translations();
+			foreach ( $langs as $locale ) {
+				if ( isset( $translations[ $locale ] ) ) {
+					$translation = $translations[ $locale ];
+					$languages[ current( $translation['iso'] ) ] = $translation['native_name'];
+				}
+			}
 
 			$settings_fields = array(
 				'dtpicker_advanced' => array(
@@ -65,13 +80,13 @@ if ( ! class_exists( 'dtpicker_Settings_API_Test' ) ) :
 						'type'    => 'multicheck',
 						'default' => array(),
 						'options' => array(
-							'0' => __( 'Sunday', 'date-time-picker-field' ),
-							'1' => __( 'Monday', 'date-time-picker-field' ),
-							'2' => __( 'Tuesday', 'date-time-picker-field' ),
-							'3' => __( 'Wednesday', 'date-time-picker-field' ),
-							'4' => __( 'Thursday', 'date-time-picker-field' ),
-							'5' => __( 'Friday', 'date-time-picker-field' ),
-							'6' => __( 'Saturday', 'date-time-picker-field' ),
+							'0' => $wp_locale->get_weekday( 0 ),
+							'1' => $wp_locale->get_weekday( 1 ),
+							'2' => $wp_locale->get_weekday( 2 ),
+							'3' => $wp_locale->get_weekday( 3 ),
+							'4' => $wp_locale->get_weekday( 4 ),
+							'5' => $wp_locale->get_weekday( 5 ),
+							'6' => $wp_locale->get_weekday( 6 ),
 						),
 					),
 
@@ -91,47 +106,40 @@ if ( ! class_exists( 'dtpicker_Settings_API_Test' ) ) :
 
 					array(
 						'name'    => 'sunday_times',
-						'label'   => __( 'Allowed times for Sunday', 'date-time-picker-field' ),
-
+						'label'   => sprintf( __( 'Allowed times for %s', 'date-time-picker-field' ), $wp_locale->get_weekday( 0 ) ),
 						'default' => '',
 					),
 
 					array(
 						'name'    => 'monday_times',
-						'label'   => __( 'Allowed times for Monday', 'date-time-picker-field' ),
-
+						'label'   => sprintf( __( 'Allowed times for %s', 'date-time-picker-field' ), $wp_locale->get_weekday( 1 ) ),
 						'default' => '',
 					),
 
 					array(
 						'name'    => 'tuesday_times',
-						'label'   => __( 'Allowed times for Tuesday', 'date-time-picker-field' ),
-
+						'label'   => sprintf( __( 'Allowed times for %s', 'date-time-picker-field' ), $wp_locale->get_weekday( 2 ) ),
 						'default' => '',
 					),
 
 					array(
 						'name'    => 'wednesday_times',
-						'label'   => __( 'Allowed times for Wednesday', 'date-time-picker-field' ),
-
+						'label'   => sprintf( __( 'Allowed times for %s', 'date-time-picker-field' ), $wp_locale->get_weekday( 3 ) ),
 						'default' => '',
 					),
 					array(
 						'name'    => 'thursday_times',
-						'label'   => __( 'Allowed times for Thursday', 'date-time-picker-field' ),
-
+						'label'   => sprintf( __( 'Allowed times for %s', 'date-time-picker-field' ), $wp_locale->get_weekday( 4 ) ),
 						'default' => '',
 					),
 					array(
 						'name'    => 'friday_times',
-						'label'   => __( 'Allowed times for Friday', 'date-time-picker-field' ),
-
+						'label'   => sprintf( __( 'Allowed times for %s', 'date-time-picker-field' ), $wp_locale->get_weekday( 5 ) ),
 						'default' => '',
 					),
 					array(
 						'name'    => 'saturday_times',
-						'label'   => __( 'Allowed times for Saturday', 'date-time-picker-field' ),
-
+						'label'   => sprintf( __( 'Allowed times for %s', 'date-time-picker-field' ), $wp_locale->get_weekday( 6 ) ),
 						'default' => '',
 					),
 
@@ -152,56 +160,8 @@ if ( ! class_exists( 'dtpicker_Settings_API_Test' ) ) :
 						'label'   => __( 'Language', 'date-time-picker-field' ),
 						'desc'    => __( 'Language to display the month and day labels', 'date-time-picker-field' ),
 						'type'    => 'select',
-						'default' => 'en',
-						'options' => array(
-							'auto'  => __( 'Automatic - Detect Current Language', 'date-time-picker-field' ),
-							'ar'    => __( 'Arabic', 'date-time-picker-field' ),
-							'bg'    => __( 'Bulgarian', 'date-time-picker-field' ),
-							'ca'    => __( 'Catalan', 'date-time-picker-field' ),
-							'zh'    => __( 'Chinese (Simplified)', 'date-time-picker-field' ),
-							'zh-TW' => __( 'Chinese (Traditional)', 'date-time-picker-field' ),
-							'ch'    => __( 'Chinese', 'date-time-picker-field' ),
-							'cs'    => __( 'Czech', 'date-time-picker-field' ),
-							'da'    => __( 'Danish', 'date-time-picker-field' ),
-							'de'    => __( 'German', 'date-time-picker-field' ),
-							'el'    => __( 'Greek', 'date-time-picker-field' ),
-							'en'    => __( 'American English', 'date-time-picker-field' ),
-							'en-GB' => __( 'British English', 'date-time-picker-field' ),
-							'es'    => __( 'Spanish', 'date-time-picker-field' ),
-							'et'    => __( 'Estonian', 'date-time-picker-field' ),
-							'eu'    => __( 'Basque', 'date-time-picker-field' ),
-							'fa'    => __( 'Persian', 'date-time-picker-field' ),
-							'fi'    => __( 'Finnish', 'date-time-picker-field' ),
-							'fr'    => __( 'French', 'date-time-picker-field' ),
-							'gl'    => __( 'Galician', 'date-time-picker-field' ),
-							'he'    => __( 'Hebrew', 'date-time-picker-field' ),
-							'hr'    => __( 'Croatian', 'date-time-picker-field' ),
-							'hu'    => __( 'Hungarian', 'date-time-picker-field' ),
-							'id'    => __( 'Indonesian', 'date-time-picker-field' ),
-							'it'    => __( 'Italian', 'date-time-picker-field' ),
-							'ja'    => __( 'Japanese', 'date-time-picker-field' ),
-							'ko'    => __( 'Korean', 'date-time-picker-field' ),
-							'lt'    => __( 'Lithuanian', 'date-time-picker-field' ),
-							'lv'    => __( 'Latvian', 'date-time-picker-field' ),
-							'mk'    => __( 'Macedonian', 'date-time-picker-field' ),
-							'nl'    => __( 'Dutch', 'date-time-picker-field' ),
-							'no'    => __( 'Norwegian', 'date-time-picker-field' ),
-							'pl'    => __( 'Polish', 'date-time-picker-field' ),
-							'pt'    => __( 'Portuguese', 'date-time-picker-field' ),
-							'pt-BR' => __( 'Portuguese (Brasil)', 'date-time-picker-field' ),
-							'ro'    => __( 'Romanian', 'date-time-picker-field' ),
-							'ru'    => __( 'Russian', 'date-time-picker-field' ),
-							'se'    => __( 'Swedish', 'date-time-picker-field' ),
-							'sk'    => __( 'Slovak', 'date-time-picker-field' ),
-							'sq'    => __( 'Albanian', 'date-time-picker-field' ),
-							'sr'    => __( 'Serbian', 'date-time-picker-field' ),
-							'sv'    => __( 'Swedish', 'date-time-picker-field' ),
-							'th'    => __( 'Thai', 'date-time-picker-field' ),
-							'tr'    => __( 'Turkish', 'date-time-picker-field' ),
-							'uk'    => __( 'Ukrainian', 'date-time-picker-field' ),
-							'vi'    => __( 'Vietnamese', 'date-time-picker-field' ),
-
-						),
+						'default' => 'auto',
+						'options' => $languages,
 					),
 
 					array(
@@ -219,7 +179,7 @@ if ( ! class_exists( 'dtpicker_Settings_API_Test' ) ) :
 					array(
 						'name'    => 'datepicker',
 						'label'   => __( 'Display Calendar', 'date-time-picker-field' ),
-						'desc'    => __( 'Display date picker', 'date-time-picker-field' ),
+						'desc'    => __( 'Display date picker calendar', 'date-time-picker-field' ),
 						'type'    => 'checkbox',
 						'value'   => '1',
 						'default' => 'on',
@@ -312,7 +272,7 @@ if ( ! class_exists( 'dtpicker_Settings_API_Test' ) ) :
 					array(
 						'name'    => 'dateformat',
 						'label'   => __( 'Date Format', 'date-time-picker-field' ),
-						'desc'    => __( 'Date format', 'date-time-picker-field' ),
+						'desc'    => '',
 						'type'    => 'radio',
 						'options' => array(
 							'YYYY-MM-DD' => __( 'Year-Month-Day', 'date-time-picker-field' ) . ' ' . date( 'Y-m-d' ),
@@ -329,7 +289,7 @@ if ( ! class_exists( 'dtpicker_Settings_API_Test' ) ) :
 					array(
 						'name'    => 'hourformat',
 						'label'   => __( 'Hour Format', 'date-time-picker-field' ),
-						'desc'    => __( 'Hour format', 'date-time-picker-field' ),
+						'desc'    => '',
 						'type'    => 'radio',
 						'options' => array(
 							'HH:mm'   => 'H:M ' . date( 'H:i' ),
@@ -340,7 +300,7 @@ if ( ! class_exists( 'dtpicker_Settings_API_Test' ) ) :
 					array(
 						'name'    => 'load',
 						'label'   => __( 'When to Load', 'date-time-picker-field' ),
-						'desc'    => __( 'Choose to search for the selector across the website or only when the shortcode [datetimepicker] exists on a page.<br> Use the shortcode to prevent the script from loading across all pages', 'date-time-picker-field' ),
+						'desc'    => __( 'Choose to search for the css selector across the website or only when the shortcode [datetimepicker] exists on a page.<br> Use the shortcode to prevent the script from loading across all pages', 'date-time-picker-field' ),
 						'type'    => 'radio',
 						'options' => array(
 							'full'      => __( 'Across the full website', 'date-time-picker-field' ),

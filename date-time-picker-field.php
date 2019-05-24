@@ -130,10 +130,48 @@ function dtpicker_scripts() {
 	$opts['offset'] = isset( $opts['offset'] ) ? intval( $opts['offset'] ) : 0;
 
 	// locale
-	if( $opts['locale'] === 'auto' ){
-		$opts['locale'] = dtp_convert_lang_code( get_locale() );
-	}
+	if( $opts['locale'] === 'auto' ) {
 
+		global $wp_locale;
+		$opts['locale'] = 'en';
+
+		// i18n - the datetime script needs the locale code to exist,
+		// we can't create new ones, so we just overwrite the english one
+		$opts['i18n'][ 'en' ] = array(
+			'months' => array(
+				$wp_locale->month['01'],
+				$wp_locale->month['02'],
+				$wp_locale->month['03'],
+				$wp_locale->month['04'],
+				$wp_locale->month['05'],
+				$wp_locale->month['06'],
+				$wp_locale->month['07'],
+				$wp_locale->month['08'],
+				$wp_locale->month['09'],
+				$wp_locale->month['10'],
+				$wp_locale->month['11'],
+				$wp_locale->month['12'],
+			),
+			'dayOfWeekShort' => array(
+				$wp_locale->weekday_abbrev[ $wp_locale->weekday[0] ],
+				$wp_locale->weekday_abbrev[ $wp_locale->weekday[1] ],
+				$wp_locale->weekday_abbrev[ $wp_locale->weekday[2] ],
+				$wp_locale->weekday_abbrev[ $wp_locale->weekday[3] ],
+				$wp_locale->weekday_abbrev[ $wp_locale->weekday[4] ],
+				$wp_locale->weekday_abbrev[ $wp_locale->weekday[5] ],
+				$wp_locale->weekday_abbrev[ $wp_locale->weekday[6] ],
+			),
+			'dayOfWeek' => array(
+				$wp_locale->weekday[0],
+				$wp_locale->weekday[1],
+				$wp_locale->weekday[2],
+				$wp_locale->weekday[3],
+				$wp_locale->weekday[4],
+				$wp_locale->weekday[5],
+				$wp_locale->weekday[6],
+			)
+		);
+	}
 
 	// other variables
 	$format       = '';
@@ -187,8 +225,6 @@ function dtpicker_scripts() {
 	$opts['utc_offset'] = $toffset;
 	$now                = new DateTime();
 	$opts['now']        = $now->format( $opts['clean_format'] );
-
-
 
 	wp_localize_script( 'dtpicker-build', 'datepickeropts', $opts );
 }
@@ -464,9 +500,7 @@ function dtp_hours_range( $min = '00:00', $max = '23:59', $step = '60', $format 
  * @return string 24h formatted hour
  */
 function dtp_24_time( $hour = '' ) {
-
 	return date( 'H:i', strtotime( $hour ) );
-
 }
 
 

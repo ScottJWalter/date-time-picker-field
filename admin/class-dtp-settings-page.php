@@ -28,7 +28,8 @@ if ( ! class_exists( 'dtpicker_Settings_API_Test' ) ) :
 		}
 
 		public function admin_menu() {
-			add_options_page( __( 'DateTime Picker', 'date-time-picker-field' ), __( 'DateTime Picker', 'date-time-picker-field' ), 'manage_options', 'dtp_settings', array( $this, 'plugin_page' ) );
+			$title = __( 'Date & Time Picker', 'date-time-picker-field' );
+			add_options_page( $title, $title, 'manage_options', 'dtp_settings', array( $this, 'plugin_page' ) );
 		}
 
 		public function get_settings_sections() {
@@ -58,25 +59,36 @@ if ( ! class_exists( 'dtpicker_Settings_API_Test' ) ) :
 			$tzone = get_option('timezone_string');
 			date_default_timezone_set( $tzone );
 
-			$langs = get_available_languages(); // improve this to reflect available options in date picker
+			// existing languages in datetime jquery script
+			$available = dtp_available_lang_codes();
+			$langs     = array_keys( $available );
+
 			$languages = array();
-			$languages['auto'] = __( 'Automatic - Detect Current Language', 'date-time-picker-field' );
+			$languages['auto'] = __( 'Default - Detect page language', 'date-time-picker-field' );
 
 			require_once( ABSPATH . 'wp-admin/includes/translation-install.php' );
 			$translations = wp_get_available_translations();
 			foreach ( $langs as $locale ) {
 				if ( isset( $translations[ $locale ] ) ) {
 					$translation = $translations[ $locale ];
-					$languages[ current( $translation['iso'] ) ] = $translation['native_name'];
+					$languages[ $available[ $locale ] ] = $translation[ 'native_name' ];
+				} else {
+					if( $locale === 'en_US' ) {
+						// we don't translate this string, since we are displaying in native name
+						$languages[ 'en' ] = 'English (US)';
+					}
 				}
 			}
+
+			/* translators: %s is a day of the week */
+			$allowed_string = __( 'Allowed times for %s', 'date-time-picker-field' );
 
 			$settings_fields = array(
 				'dtpicker_advanced' => array(
 					array(
 						'name'    => 'disabled_days',
 						'label'   => __( 'Disable Week Days', 'date-time-picker-field' ),
-						'desc'    => __( 'Select days you want to <strong>disable</strong>', 'date-time-picker-field' ),
+						'desc'    => __( 'Select days you want to <strong>disable</strong>.', 'date-time-picker-field' ),
 						'type'    => 'multicheck',
 						'default' => array(),
 						'options' => array(
@@ -99,47 +111,47 @@ if ( ! class_exists( 'dtpicker_Settings_API_Test' ) ) :
 
 					array(
 						'name'    => 'allowed_times',
-						'label'   => __( 'Default List of allowed times', 'date-time-picker-field' ),
-						'desc'    => __( 'Write the allowed times to <strong>override</strong> the time step and serve as default if you use the options below.<br> Values still need to be within minimum and maximum times defined in the basic settings.<br> Use the time format separated by commas. Example: 09:00,11:00,12:00,21:00<br>You need to list all the options', 'date-time-picker-field' ),
+						'label'   => __( 'Default list of allowed times', 'date-time-picker-field' ),
+						'desc'    => __( 'Write the allowed times to <strong>override</strong> the time step and serve as default if you use the options below.<br> Values still need to be within minimum and maximum times defined in the basic settings.<br> Use the time format separated by commas. Example: 09:00,11:00,12:00,21:00<br>You need to list all the options.', 'date-time-picker-field' ),
 						'default' => '',
 					),
 
 					array(
 						'name'    => 'sunday_times',
-						'label'   => sprintf( __( 'Allowed times for %s', 'date-time-picker-field' ), $wp_locale->get_weekday( 0 ) ),
+						'label'   => sprintf( $allowed_string, $wp_locale->get_weekday( 0 ) ),
 						'default' => '',
 					),
 
 					array(
 						'name'    => 'monday_times',
-						'label'   => sprintf( __( 'Allowed times for %s', 'date-time-picker-field' ), $wp_locale->get_weekday( 1 ) ),
+						'label'   => sprintf( $allowed_string, $wp_locale->get_weekday( 1 ) ),
 						'default' => '',
 					),
 
 					array(
 						'name'    => 'tuesday_times',
-						'label'   => sprintf( __( 'Allowed times for %s', 'date-time-picker-field' ), $wp_locale->get_weekday( 2 ) ),
+						'label'   => sprintf( $allowed_string, $wp_locale->get_weekday( 2 ) ),
 						'default' => '',
 					),
 
 					array(
 						'name'    => 'wednesday_times',
-						'label'   => sprintf( __( 'Allowed times for %s', 'date-time-picker-field' ), $wp_locale->get_weekday( 3 ) ),
+						'label'   => sprintf( $allowed_string, $wp_locale->get_weekday( 3 ) ),
 						'default' => '',
 					),
 					array(
 						'name'    => 'thursday_times',
-						'label'   => sprintf( __( 'Allowed times for %s', 'date-time-picker-field' ), $wp_locale->get_weekday( 4 ) ),
+						'label'   => sprintf( $allowed_string, $wp_locale->get_weekday( 4 ) ),
 						'default' => '',
 					),
 					array(
 						'name'    => 'friday_times',
-						'label'   => sprintf( __( 'Allowed times for %s', 'date-time-picker-field' ), $wp_locale->get_weekday( 5 ) ),
+						'label'   => sprintf( $allowed_string, $wp_locale->get_weekday( 5 ) ),
 						'default' => '',
 					),
 					array(
 						'name'    => 'saturday_times',
-						'label'   => sprintf( __( 'Allowed times for %s', 'date-time-picker-field' ), $wp_locale->get_weekday( 6 ) ),
+						'label'   => sprintf( $allowed_string, $wp_locale->get_weekday( 6 ) ),
 						'default' => '',
 					),
 
@@ -158,7 +170,7 @@ if ( ! class_exists( 'dtpicker_Settings_API_Test' ) ) :
 					array(
 						'name'    => 'locale',
 						'label'   => __( 'Language', 'date-time-picker-field' ),
-						'desc'    => __( 'Language to display the month and day labels', 'date-time-picker-field' ),
+						'desc'    => __( 'Language to display the month and day labels.', 'date-time-picker-field' ),
 						'type'    => 'select',
 						'default' => 'auto',
 						'options' => $languages,
@@ -167,7 +179,7 @@ if ( ! class_exists( 'dtpicker_Settings_API_Test' ) ) :
 					array(
 						'name'    => 'theme',
 						'label'   => __( 'Theme', 'date-time-picker-field' ),
-						'desc'    => __( 'calendar visual style', 'date-time-picker-field' ),
+						'desc'    => __( 'Calendar visual style.', 'date-time-picker-field' ),
 						'type'    => 'select',
 						'default' => 'default',
 						'options' => array(
@@ -179,7 +191,7 @@ if ( ! class_exists( 'dtpicker_Settings_API_Test' ) ) :
 					array(
 						'name'    => 'datepicker',
 						'label'   => __( 'Display Calendar', 'date-time-picker-field' ),
-						'desc'    => __( 'Display date picker calendar', 'date-time-picker-field' ),
+						'desc'    => __( 'Display date picker calendar.', 'date-time-picker-field' ),
 						'type'    => 'checkbox',
 						'value'   => '1',
 						'default' => 'on',
@@ -188,7 +200,7 @@ if ( ! class_exists( 'dtpicker_Settings_API_Test' ) ) :
 					array(
 						'name'    => 'timepicker',
 						'label'   => __( 'Display Time', 'date-time-picker-field' ),
-						'desc'    => __( 'Display time picker', 'date-time-picker-field' ),
+						'desc'    => __( 'Display time picker.', 'date-time-picker-field' ),
 						'type'    => 'checkbox',
 						'value'   => '1',
 						'default' => 'on',
@@ -197,7 +209,7 @@ if ( ! class_exists( 'dtpicker_Settings_API_Test' ) ) :
 					array(
 						'name'    => 'placeholder',
 						'label'   => __( 'Keep Placeholder', 'date-time-picker-field' ),
-						'desc'    => __( 'If enabled, original placeholder will be kept. If disabled it will be replaced with current date.', 'date-time-picker-field' ),
+						'desc'    => __( 'If enabled, original placeholder will be kept. If disabled it will be replaced with current date or next available time depending on your settings.', 'date-time-picker-field' ),
 						'type'    => 'checkbox',
 						'value'   => '1',
 						'default' => 'off',
@@ -227,7 +239,7 @@ if ( ! class_exists( 'dtpicker_Settings_API_Test' ) ) :
 					array(
 						'name'              => 'step',
 						'label'             => __( 'Time Step', 'date-time-picker-field' ),
-						'desc'              => __( 'Time interval in minutes for time picker options', 'date-time-picker-field' ),
+						'desc'              => __( 'Time interval in minutes for time picker options.', 'date-time-picker-field' ),
 						'type'              => 'text',
 						'default'           => '60',
 						'sanitize_callback' => 'sanitize_text_field',
@@ -236,7 +248,7 @@ if ( ! class_exists( 'dtpicker_Settings_API_Test' ) ) :
 					array(
 						'name'              => 'minTime',
 						'label'             => __( 'Minimum Time', 'date-time-picker-field' ),
-						'desc'              => __( 'Time options will start from this. Leave empty for none. Use the format you selected for the time. For example: 08:00 AM', 'date-time-picker-field' ),
+						'desc'              => __( 'Time options will start from this. Leave empty for none. Use the format you selected for the time. For example: 08:00 AM.', 'date-time-picker-field' ),
 						'type'              => 'text',
 						'default'           => '',
 						'sanitize_callback' => 'sanitize_text_field',
@@ -245,7 +257,7 @@ if ( ! class_exists( 'dtpicker_Settings_API_Test' ) ) :
 					array(
 						'name'              => 'maxTime',
 						'label'             => __( 'Maximum Time', 'date-time-picker-field' ),
-						'desc'              => __( 'Time options will not be later than this specified time. Leave empty for none. Use the format you selected for the time. For example: 08:00 PM', 'date-time-picker-field' ),
+						'desc'              => __( 'Time options will not be later than this specified time. Leave empty for none. Use the format you selected for the time. For example: 08:00 PM.', 'date-time-picker-field' ),
 						'type'              => 'text',
 						'default'           => '',
 						'sanitize_callback' => 'sanitize_text_field',
@@ -262,7 +274,7 @@ if ( ! class_exists( 'dtpicker_Settings_API_Test' ) ) :
 
 					array(
 						'name'              => 'max_date',
-						'label'             => __( 'Maximum date', 'date-time-picker-field' ),
+						'label'             => __( 'Maximum Date', 'date-time-picker-field' ),
 						'desc'              => __( 'Use the European day-month-year format or an english string that is accepted by the <a target="_blank" href="https://php.net/manual/en/function.strtotime.php">strtotime PHP function</a>. (Ex: "+5 days")<br> Leave empty to set no limit.', 'date-time-picker-field' ),
 						'type'              => 'text',
 						'default'           => '',
@@ -300,7 +312,7 @@ if ( ! class_exists( 'dtpicker_Settings_API_Test' ) ) :
 					array(
 						'name'    => 'load',
 						'label'   => __( 'When to Load', 'date-time-picker-field' ),
-						'desc'    => __( 'Choose to search for the css selector across the website or only when the shortcode [datetimepicker] exists on a page.<br> Use the shortcode to prevent the script from loading across all pages', 'date-time-picker-field' ),
+						'desc'    => __( 'Choose to search for the css selector across the website or only when the shortcode [datetimepicker] exists on a page.<br> Use the shortcode to prevent the script from loading across all pages.', 'date-time-picker-field' ),
 						'type'    => 'radio',
 						'options' => array(
 							'full'      => __( 'Across the full website', 'date-time-picker-field' ),

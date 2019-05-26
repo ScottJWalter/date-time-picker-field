@@ -503,69 +503,67 @@ function dtp_24_time( $hour = '' ) {
 	return date( 'H:i', strtotime( $hour ) );
 }
 
-
-function dtp_convert_lang_code( $lang = 'en_US' ) {
-
-	$code = 'en';
+/**
+ * Get array with available languages where key is the WordPress lang code and value is the jquery script lang code.
+ *
+ * @return array of language codes
+ */
+function dtp_available_lang_codes() {
 
 	$available = array(
-		'ar_AR' => 'ar',
-		'az_AZ' => 'az',
+		'ar'    => 'ar',
+		'az'    => 'az',
 		'bg_BG' => 'bg',
-		'bs_BS' => 'bs',
-		'ca_CA' => 'ca',
-		'ch_CH' => 'ch',
+		'bs_BG' => 'bs',
+		'ca'    => 'ca',
+		'zh_CN' => 'ch',
 		'cz_CZ' => 'cs',
-		'da_DA' => 'da',
+		'da_DK' => 'da',
 		'de_DE' => 'de',
-		'el_EL' => 'el',
+		'el'    => 'el',
 		'en_US' => 'en',
 		'en_GB' => 'en-GB',
 		'es_ES' => 'es',
-		'et_ET' => 'et',
-		'eu_EU' => 'eu',
-		'fa_FA' => 'fa',
-		'fi_FI' => 'fi',
+		'et'    => 'et',
+		'eu'    => 'eu',
+		'fa_IR' => 'fa',
+		'fi'    => 'fi',
 		'fr_FR' => 'fr',
 		'gl_ES' => 'gl',
-		'he_HE' => 'he',
-		'hr_HR' => 'hr',
+		'he_IL' => 'he',
+		'hr'    => 'hr',
 		'hu_HU' => 'hu',
 		'id_ID' => 'id',
 		'it_IT' => 'it',
-		'ja_JS' => 'ja',
+		'ja   ' => 'ja',
 		'ko_KO' => 'ko',
 		'kr_KR' => 'kr',
 		'lt_LT' => 'lt',
-		'lv_LV' => 'lv',
+		'lv'    => 'lv',
 		'mk_MK' => 'mk',
-		'mn_MN' => 'mn',
+		'mn'    => 'mn',
 		'nl_NL' => 'nl',
-		'no_NO' => 'no',
-		'pl_PT' => 'pl',
+		'nb_NO' => 'no',
+		'pl_PL' => 'pl',
 		'pt_PT' => 'pt',
 		'pt_BR' => 'pt-BR',
 		'ro_RO' => 'ro',
 		'ru_RU' => 'ru',
-		'se_SE' => 'se',
+		'sv_SE' => 'se',
 		'sk_SK' => 'sk',
 		'sl_SL' => 'sl',
-		'sq_SQ' => 'sq',
-		'sr_SR' => 'sr',
+		'sq'    => 'sq',
+		'sr_RS' => 'sr',
 		'sr_YU' => 'sr-YU',
-		'sv_SV' => 'sv',
-		'th_TH' => 'th',
+		'sv_SE' => 'sv',
+		'th'    => 'th',
 		'tr_TR' => 'tr',
-		'uk_UK' => 'uk',
-		'vi_VI' => 'vi',
+		'uk'    => 'uk',
+		'vi'    => 'vi',
 		'zh_ZH' => 'zh',
 		'zh_TW' => 'zh-TW',
 	);
 
-	if( array_key_exists( $lang, $available ) ){
-		$code = $available[ $lang ];
-	}
-
-	return $code;
+	return $available;
 
 }

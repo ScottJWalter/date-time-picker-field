@@ -39,14 +39,8 @@ if ( ! class_exists( 'DateTimePicker' ) ) {
 		 */
 		function scripts() {
 
-			$tzone = get_option('timezone_string');
-			if( $tzone !== '') {
-				date_default_timezone_set( $tzone );
-			} else {
-				$offset        = get_option('gmt_offset');
-				$timezone_name = timezone_name_from_abbr( '', $offset * 3600, false );
-				date_default_timezone_set( $timezone_name );
-			}
+			$tzone = $this->get_timezone_name();
+			date_default_timezone_set( $tzone );
 
 			$version = $this->get_version();
 
@@ -264,14 +258,8 @@ if ( ! class_exists( 'DateTimePicker' ) ) {
 		function get_next_available_time( $opts ) {
 
 			// set timezone
-			$tzone = get_option('timezone_string');
-			if( $tzone !== '') {
-				date_default_timezone_set( $tzone );
-			} else {
-				$offset        = get_option('gmt_offset');
-				$timezone_name = timezone_name_from_abbr( '', $offset * 3600, false );
-				date_default_timezone_set( $timezone_name );
-			}
+			$tzone = $this->get_timezone_name();
+			date_default_timezone_set( $tzone );
 
 			// setup variables
 			$min_time = $opts['minTime'];
@@ -418,14 +406,8 @@ if ( ! class_exists( 'DateTimePicker' ) ) {
 		function hours_range( $min = '00:00', $max = '23:59', $step = '60', $format = 'H:i' ) {
 
 			// timezone
-			$tzone = get_option('timezone_string');
-			if( $tzone !== '') {
-				date_default_timezone_set( $tzone );
-			} else {
-				$offset        = get_option('gmt_offset');
-				$timezone_name = timezone_name_from_abbr( '', $offset * 3600, false );
-				date_default_timezone_set( $timezone_name );
-			}
+			$tzone = $this->get_timezone_name();
+			date_default_timezone_set( $tzone );
 
 			$times    = array();
 			$step     = intval( $step ) <= 60 ? intval( $step ) : 60;
@@ -462,6 +444,22 @@ if ( ! class_exists( 'DateTimePicker' ) ) {
 		 */
 		function time_24( $hour = '' ) {
 			return date( 'H:i', strtotime( $hour ) );
+		}
+
+		/**
+		 * Get timezone name
+		 *
+		 * @return string timezone name
+		 */
+		function get_timezone_name() {
+
+			$tzone = get_option('timezone_string');
+			if( ! $tzone ) {
+				$offset        = get_option('gmt_offset');
+				$tzone = timezone_name_from_abbr( '', $offset * 3600, false );
+			}
+
+			return $tzone;
 		}
 	}
 }

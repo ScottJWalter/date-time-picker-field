@@ -10,7 +10,7 @@
  * @example example/oop-example.php How to use the class
  */
 
-namespace CMoreira\Plugins\DateTimePicker;
+namespace CMoreira\Plugins\DateTimePicker\Admin;
 
 if ( ! class_exists( 'SettingsAPI' ) ) :
 	class SettingsAPI {

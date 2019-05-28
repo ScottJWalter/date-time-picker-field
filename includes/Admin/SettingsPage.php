@@ -8,7 +8,7 @@
  * @author Carlos Moreira
  */
 
-namespace CMoreira\Plugins\DateTimePicker;
+namespace CMoreira\Plugins\DateTimePicker\Admin;
 
 if ( ! class_exists( 'SettingsPage' ) ) {
 	class SettingsPage {

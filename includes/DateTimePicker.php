@@ -6,6 +6,8 @@
 
 namespace CMoreira\Plugins\DateTimePicker;
 
+use \Datetime;
+
 if ( ! class_exists( 'DateTimePicker' ) ) {
 	class DateTimePicker {
 
@@ -38,7 +40,13 @@ if ( ! class_exists( 'DateTimePicker' ) ) {
 		function scripts() {
 
 			$tzone = get_option('timezone_string');
-			date_default_timezone_set( $tzone );
+			if( $tzone !== '') {
+				date_default_timezone_set( $tzone );
+			} else {
+				$offset        = get_option('gmt_offset');
+				$timezone_name = timezone_name_from_abbr( '', $offset * 3600, false );
+				date_default_timezone_set( $timezone_name );
+			}
 
 			$version = $this->get_version();
 
@@ -257,7 +265,13 @@ if ( ! class_exists( 'DateTimePicker' ) ) {
 
 			// set timezone
 			$tzone = get_option('timezone_string');
-			date_default_timezone_set( $tzone );
+			if( $tzone !== '') {
+				date_default_timezone_set( $tzone );
+			} else {
+				$offset        = get_option('gmt_offset');
+				$timezone_name = timezone_name_from_abbr( '', $offset * 3600, false );
+				date_default_timezone_set( $timezone_name );
+			}
 
 			// setup variables
 			$min_time = $opts['minTime'];
@@ -405,7 +419,13 @@ if ( ! class_exists( 'DateTimePicker' ) ) {
 
 			// timezone
 			$tzone = get_option('timezone_string');
-			date_default_timezone_set( $tzone );
+			if( $tzone !== '') {
+				date_default_timezone_set( $tzone );
+			} else {
+				$offset        = get_option('gmt_offset');
+				$timezone_name = timezone_name_from_abbr( '', $offset * 3600, false );
+				date_default_timezone_set( $timezone_name );
+			}
 
 			$times    = array();
 			$step     = intval( $step ) <= 60 ? intval( $step ) : 60;

@@ -62,7 +62,13 @@ if ( ! class_exists( 'SettingsPage' ) ) {
 			global $wp_locale;
 
 			$tzone = get_option('timezone_string');
-			date_default_timezone_set( $tzone );
+			if( $tzone !== '') {
+				date_default_timezone_set( $tzone );
+			} else {
+				$offset        = get_option('gmt_offset');
+				$timezone_name = timezone_name_from_abbr( '', $offset * 3600, false );
+				date_default_timezone_set( $timezone_name );
+			}
 
 			// existing languages in datetime jquery script
 			$available = $this->available_lang_codes();

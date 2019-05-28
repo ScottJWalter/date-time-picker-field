@@ -9,8 +9,11 @@
  * @link https://tareq.co Tareq Hasan
  * @example example/oop-example.php How to use the class
  */
-if ( ! class_exists( 'WeDevs_Settings_API' ) ) :
-	class WeDevs_Settings_API {
+
+namespace CMoreira\Plugins\DateTimePicker;
+
+if ( ! class_exists( 'SettingsAPI' ) ) :
+	class SettingsAPI {
 
 		/**
 		 * settings sections array

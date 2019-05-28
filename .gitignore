@@ -15,9 +15,9 @@ svn
 settings.json
 
 # Composer Files #
-composer.json
-composer.lock
-vendor/autoload.php
-vendor/squizlabs
-vendor/composer
-vendor/bin
+#composer.json
+#composer.lock
+#vendor/autoload.php
+#vendor/squizlabs
+#vendor/composer
+#vendor/bin

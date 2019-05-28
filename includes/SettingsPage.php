@@ -1,17 +1,22 @@
 <?php
 
 /**
- * WordPress settings
+ * WordPress settings for Date Time Picker plugin
+ *
+ * @package date-time-picker-field
  *
  * @author Carlos Moreira
  */
-if ( ! class_exists( 'dtpicker_Settings_API_Test' ) ) :
-	class DTP_Settings_Page {
+
+namespace CMoreira\Plugins\DateTimePicker;
+
+if ( ! class_exists( 'SettingsPage' ) ) {
+	class SettingsPage {
 
 		private $settings_api;
 
 		public function __construct() {
-			$this->settings_api = new WeDevs_Settings_API();
+			$this->settings_api = new SettingsAPI();
 
 			add_action( 'admin_init', array( $this, 'admin_init' ) );
 			add_action( 'admin_menu', array( $this, 'admin_menu' ) );
@@ -60,7 +65,7 @@ if ( ! class_exists( 'dtpicker_Settings_API_Test' ) ) :
 			date_default_timezone_set( $tzone );
 
 			// existing languages in datetime jquery script
-			$available = dtp_available_lang_codes();
+			$available = $this->available_lang_codes();
 			$langs     = array_keys( $available );
 
 			$languages = array();
@@ -153,8 +158,8 @@ if ( ! class_exists( 'dtpicker_Settings_API_Test' ) ) :
 						'name'    => 'saturday_times',
 						'label'   => sprintf( $allowed_string, $wp_locale->get_weekday( 6 ) ),
 						'default' => '',
+						'desc'    => __( 'The allowed times options above will only work if you set the default list of allowed times.', 'date-time-picker-field' ),
 					),
-
 				),
 
 				'dtpicker'          => array(
@@ -356,5 +361,70 @@ if ( ! class_exists( 'dtpicker_Settings_API_Test' ) ) :
 			return $pages_options;
 		}
 
+		/**
+		 * Get array with available languages where key is the WordPress lang code and value is the jquery script lang code.
+		 *
+		 * @return array of language codes
+		 */
+		function available_lang_codes() {
+
+			$available = array(
+				'ar'    => 'ar',
+				'az'    => 'az',
+				'bg_BG' => 'bg',
+				'bs_BG' => 'bs',
+				'ca'    => 'ca',
+				'zh_CN' => 'ch',
+				'cz_CZ' => 'cs',
+				'da_DK' => 'da',
+				'de_DE' => 'de',
+				'el'    => 'el',
+				'en_US' => 'en',
+				'en_GB' => 'en-GB',
+				'es_ES' => 'es',
+				'et'    => 'et',
+				'eu'    => 'eu',
+				'fa_IR' => 'fa',
+				'fi'    => 'fi',
+				'fr_FR' => 'fr',
+				'gl_ES' => 'gl',
+				'he_IL' => 'he',
+				'hr'    => 'hr',
+				'hu_HU' => 'hu',
+				'id_ID' => 'id',
+				'it_IT' => 'it',
+				'ja   ' => 'ja',
+				'ko_KO' => 'ko',
+				'kr_KR' => 'kr',
+				'lt_LT' => 'lt',
+				'lv'    => 'lv',
+				'mk_MK' => 'mk',
+				'mn'    => 'mn',
+				'nl_NL' => 'nl',
+				'nb_NO' => 'no',
+				'pl_PL' => 'pl',
+				'pt_PT' => 'pt',
+				'pt_BR' => 'pt-BR',
+				'ro_RO' => 'ro',
+				'ru_RU' => 'ru',
+				'sv_SE' => 'se',
+				'sk_SK' => 'sk',
+				'sl_SL' => 'sl',
+				'sq'    => 'sq',
+				'sr_RS' => 'sr',
+				'sr_YU' => 'sr-YU',
+				'sv_SE' => 'sv',
+				'th'    => 'th',
+				'tr_TR' => 'tr',
+				'uk'    => 'uk',
+				'vi'    => 'vi',
+				'zh_ZH' => 'zh',
+				'zh_TW' => 'zh-TW',
+			);
+
+			return $available;
+
+		}
+
 	}
-endif;
+}

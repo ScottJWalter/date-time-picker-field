@@ -24,11 +24,11 @@ if ( ! class_exists( 'SettingsPage' ) ) {
 
 		public function admin_init() {
 
-			// set the settings
+			// set the settings.
 			$this->settings_api->set_sections( $this->get_settings_sections() );
 			$this->settings_api->set_fields( $this->get_settings_fields() );
 
-			// initialize settings
+			// initialize settings.
 			$this->settings_api->admin_init();
 		}
 
@@ -70,7 +70,7 @@ if ( ! class_exists( 'SettingsPage' ) ) {
 				date_default_timezone_set( $timezone_name );
 			}
 
-			// existing languages in datetime jquery script
+			// existing languages in datetime jquery script.
 			$available = $this->available_lang_codes();
 			$langs     = array_keys( $available );
 
@@ -85,7 +85,7 @@ if ( ! class_exists( 'SettingsPage' ) ) {
 					$languages[ $available[ $locale ] ] = $translation[ 'native_name' ];
 				} else {
 					if( $locale === 'en_US' ) {
-						// we don't translate this string, since we are displaying in native name
+						// we don't translate this string, since we are displaying in native name.
 						$languages[ 'en' ] = 'English (US)';
 					}
 				}
@@ -239,6 +239,7 @@ if ( ! class_exists( 'SettingsPage' ) ) {
 						'name'    => 'minDate',
 						'label'   => __( 'Disable Past Dates', 'date-time-picker-field' ),
 						'desc'    => sprintf(
+							// translators: the %s will be a timezone name
 								__( 'If enabled, past dates (and times) can\'t be selected. Consider the plugin will use the timezone you have in your general settings to perform this calculation. Your current timezone is %s.', 'date-time-picker-field' ),
 								$tzone
 								),
@@ -372,7 +373,7 @@ if ( ! class_exists( 'SettingsPage' ) ) {
 		 *
 		 * @return array of language codes
 		 */
-		function available_lang_codes() {
+		public function available_lang_codes() {
 
 			$available = array(
 				'ar'    => 'ar',

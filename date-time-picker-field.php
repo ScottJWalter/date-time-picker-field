@@ -86,15 +86,15 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
+	exit; // Exit if accessed directly.
 }
 
-// composer autoload
+// composer autoload.
 if ( file_exists( dirname( __FILE__ ) . '/vendor/autoload.php' ) ) {
 	require_once dirname( __FILE__ ) . '/vendor/autoload.php';
 }
 
-// check if class init exists and load static method
-if( class_exists( 'CMoreira\\Plugins\\DateTimePicker\\Init' ) ) {
+// check if class init exists and load static method.
+if ( class_exists( 'CMoreira\\Plugins\\DateTimePicker\\Init' ) ) {
 	CMoreira\Plugins\DateTimePicker\Init::init();
 }

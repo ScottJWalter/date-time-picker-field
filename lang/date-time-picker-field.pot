@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Date Time Picker Field\n"
-"POT-Creation-Date: 2019-05-25 23:28+0100\n"
+"POT-Creation-Date: 2019-05-28 17:49+0100\n"
 "PO-Revision-Date: 2019-05-24 18:35+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -21,50 +21,54 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 "X-Poedit-SearchPathExcluded-1: svn\n"
 
-#: admin/class-dtp-settings-page.php:31
-msgid "DateTime Picker"
+#: includes/Admin/SettingsAPI.php:372
+msgid "Choose File"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:38
+#: includes/Admin/SettingsPage.php:36
+msgid "Date & Time Picker"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:44
 msgid "Basic Settings"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:43
+#: includes/Admin/SettingsPage.php:49
 msgid "Advanced Settings"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:66
+#: includes/Admin/SettingsPage.php:78
 msgid "Default - Detect page language"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:83
+#: includes/Admin/SettingsPage.php:95
 #, php-format
 msgid "Allowed times for %s"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:89
+#: includes/Admin/SettingsPage.php:101
 msgid "Disable Week Days"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:90
+#: includes/Admin/SettingsPage.php:102
 msgid "Select days you want to <strong>disable</strong>."
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:106
+#: includes/Admin/SettingsPage.php:118
 msgid "Disable specific dates"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:107
+#: includes/Admin/SettingsPage.php:119
 msgid ""
 "Add the dates you want to disable divided by commas, in the format you have "
 "selected. Useful to disable holidays for example."
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:113
+#: includes/Admin/SettingsPage.php:125
 msgid "Default list of allowed times"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:114
+#: includes/Admin/SettingsPage.php:126
 msgid ""
 "Write the allowed times to <strong>override</strong> the time step and serve "
 "as default if you use the options below.<br> Values still need to be within "
@@ -73,85 +77,91 @@ msgid ""
 "list all the options."
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:162
+#: includes/Admin/SettingsPage.php:167
+msgid ""
+"The allowed times options above will only work if you set the default list "
+"of allowed times."
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:174
 msgid "CSS Selector"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:163
+#: includes/Admin/SettingsPage.php:175
 msgid ""
 "Selector of the input field you want to target and transform into a picker. "
 "You can enter multiple selectors separated by commas."
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:164
+#: includes/Admin/SettingsPage.php:176
 msgid ".class_name or #field_id"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:171
+#: includes/Admin/SettingsPage.php:183
 msgid "Language"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:172
+#: includes/Admin/SettingsPage.php:184
 msgid "Language to display the month and day labels."
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:180
+#: includes/Admin/SettingsPage.php:192
 msgid "Theme"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:181
+#: includes/Admin/SettingsPage.php:193
 msgid "Calendar visual style."
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:185
+#: includes/Admin/SettingsPage.php:197
 msgid "Default"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:186
+#: includes/Admin/SettingsPage.php:198
 msgid "Dark"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:192
+#: includes/Admin/SettingsPage.php:204
 msgid "Display Calendar"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:193
+#: includes/Admin/SettingsPage.php:205
 msgid "Display date picker calendar."
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:201
+#: includes/Admin/SettingsPage.php:213
 msgid "Display Time"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:202
+#: includes/Admin/SettingsPage.php:214
 msgid "Display time picker."
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:210
+#: includes/Admin/SettingsPage.php:222
 msgid "Keep Placeholder"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:211
+#: includes/Admin/SettingsPage.php:223
 msgid ""
 "If enabled, original placeholder will be kept. If disabled it will be "
 "replaced with current date or next available time depending on your settings."
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:219
+#: includes/Admin/SettingsPage.php:231
 msgid "Prevent Keyboard Edit"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:220
+#: includes/Admin/SettingsPage.php:232
 msgid ""
 "If enabled, it wont be possible to edit the text. This will also prevent the "
 "keyboard on mobile devices to display when selecting the date."
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:228
+#: includes/Admin/SettingsPage.php:240
 msgid "Disable Past Dates"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:230
+#: includes/Admin/SettingsPage.php:242
 #, php-format
 msgid ""
 "If enabled, past dates (and times) can't be selected. Consider the plugin "
@@ -159,50 +169,50 @@ msgid ""
 "calculation. Your current timezone is %s."
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:240
+#: includes/Admin/SettingsPage.php:252
 msgid "Time Step"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:241
+#: includes/Admin/SettingsPage.php:253
 msgid "Time interval in minutes for time picker options."
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:249
+#: includes/Admin/SettingsPage.php:261
 msgid "Minimum Time"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:250
+#: includes/Admin/SettingsPage.php:262
 msgid ""
 "Time options will start from this. Leave empty for none. Use the format you "
 "selected for the time. For example: 08:00 AM."
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:258
+#: includes/Admin/SettingsPage.php:270
 msgid "Maximum Time"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:259
+#: includes/Admin/SettingsPage.php:271
 msgid ""
 "Time options will not be later than this specified time. Leave empty for "
 "none. Use the format you selected for the time. For example: 08:00 PM."
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:267
+#: includes/Admin/SettingsPage.php:279
 msgid "Offset for available times"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:268
+#: includes/Admin/SettingsPage.php:280
 msgid ""
 "Time interval in minutes to advance next available time. For example, set "
 "\"45\" if you only want time entries 45m from now to be available. Works "
 "better when option to disable past dates is also enabled."
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:276
+#: includes/Admin/SettingsPage.php:288
 msgid "Maximum Date"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:277
+#: includes/Admin/SettingsPage.php:289
 msgid ""
 "Use the European day-month-year format or an english string that is accepted "
 "by the <a target=\"_blank\" href=\"https://php.net/manual/en/function."
@@ -210,79 +220,75 @@ msgid ""
 "empty to set no limit."
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:285
+#: includes/Admin/SettingsPage.php:297
 msgid "Date Format"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:289
+#: includes/Admin/SettingsPage.php:301
 msgid "Year-Month-Day"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:290
+#: includes/Admin/SettingsPage.php:302
 msgid "Year/Month/Day"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:291
+#: includes/Admin/SettingsPage.php:303
 msgid "Day-Month-Year"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:292
+#: includes/Admin/SettingsPage.php:304
 msgid "Day/Month/Year"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:293
+#: includes/Admin/SettingsPage.php:305
 msgid "Month-Day-Year"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:294
+#: includes/Admin/SettingsPage.php:306
 msgid "Month/Day/Year"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:295
+#: includes/Admin/SettingsPage.php:307
 msgid "Day.Month.Year"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:302
+#: includes/Admin/SettingsPage.php:314
 msgid "Hour Format"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:313
+#: includes/Admin/SettingsPage.php:325
 msgid "When to Load"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:314
+#: includes/Admin/SettingsPage.php:326
 msgid ""
 "Choose to search for the css selector across the website or only when the "
 "shortcode [datetimepicker] exists on a page.<br> Use the shortcode to "
 "prevent the script from loading across all pages."
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:317
+#: includes/Admin/SettingsPage.php:329
 msgid "Across the full website"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:318
+#: includes/Admin/SettingsPage.php:330
 msgid "Admin panel only"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:319
+#: includes/Admin/SettingsPage.php:331
 msgid "Full website including admin panel"
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:320
+#: includes/Admin/SettingsPage.php:332
 msgid "Only when shortcode [datetimepicker] exists on a page."
 msgstr ""
 
-#: admin/class-dtp-settings-page.php:333
+#: includes/Admin/SettingsPage.php:345
 msgid "Date & Time Picker Settings"
 msgstr ""
 
-#: date-time-picker-field.php:253
+#: includes/DateTimePicker.php:202
 msgid "Settings"
-msgstr ""
-
-#: includes/class.settings-api.php:369
-msgid "Choose File"
 msgstr ""
 
 #. Plugin Name of the plugin/theme

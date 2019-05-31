@@ -6,8 +6,6 @@
 
 namespace CMoreira\Plugins\DateTimePicker;
 
-use \Datetime;
-
 if ( ! class_exists( 'DateTimePicker' ) ) {
 	class DateTimePicker {
 
@@ -164,7 +162,7 @@ if ( ! class_exists( 'DateTimePicker' ) ) {
 			$opts['timezone']   = $tzone;
 			$toffset            = get_option('gmt_offset');
 			$opts['utc_offset'] = $toffset;
-			$now                = new DateTime();
+			$now                = new \DateTime();
 			$opts['now']        = $now->format( $opts['clean_format'] );
 
 			wp_localize_script( 'dtpicker-build', 'datepickeropts', $opts );
@@ -269,8 +267,8 @@ if ( ! class_exists( 'DateTimePicker' ) ) {
 			$offset   = isset( $opts['offset'] ) ? intval( $opts['offset'] ) : 0;
 
 			$value = '';
-			$now   = new DateTime();
-			$next  = new DateTime();
+			$now   = new \DateTime();
+			$next  = new \DateTime();
 
 			// add offset minutes
 			$now->modify( '+' . $offset . 'minutes' );

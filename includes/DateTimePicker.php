@@ -74,6 +74,10 @@ if ( ! class_exists( 'DateTimePicker' ) ) {
 			// offset.
 			$opts['offset'] = isset( $opts['offset'] ) ? intval( $opts['offset'] ) : 0;
 
+			// step.
+			$opts['step'] = isset( $opts['step'] ) && intval( $opts['step'] ) > 0 ? intval( $opts['step'] ) : 60;
+
+
 			// locale.
 			if( $opts['locale'] === 'auto' ) {
 
@@ -201,7 +205,7 @@ if ( ! class_exists( 'DateTimePicker' ) ) {
 
 		public function get_version() {
 
-			$plugin_version = '1.7.7';
+			$plugin_version = '1.7.8';
 
 			if ( function_exists( 'get_file_data' ) ) {
 

@@ -3,9 +3,9 @@ Contributors: carlosmoreirapt
 Donate link: https://cmoreira.net/date-and-time-picker-for-wordpress/
 Tags: datetimepicker, datetime, date picker, jquery
 Requires at least: 4.5
-Tested up to: 5.2.1
+Tested up to: 5.2.2
 Requires PHP: 5.6.2
-Stable tag: 1.7.8
+Stable tag: 1.7.8.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -43,6 +43,21 @@ In the settings page for the plugin you can find a 'Advanced Settings' tab were 
 3. Advanced Settings.
 
 == Changelog ==
+
+= v.1.7.8.2 =
+ * Default settings improvement
+
+= v.1.7.8.1 =
+ * Refractor code
+ * Language Improvements
+
+= v.1.7.7 =
+ * Option to set maximum date
+ * Option to detect language automatically
+
+ = v.1.7.6 =
+ * option to disable specific dates
+ * improved time handling - it will now consider the site timezone
 
 = v.1.7.6 =
  * option to disable specific dates
@@ -102,6 +117,18 @@ In the settings page for the plugin you can find a 'Advanced Settings' tab were 
 * Initial Release
 
 == Upgrade Notice ==
+
+= v.1.7.8.2 =
+ * Default settings improvement
+
+= v.1.7.8.1 =
+ * Refractor code
+ * Language Improvements
+
+= v.1.7.7 =
+ * Option to set maximum date
+ * Option to detect language automatically
+
 = v.1.7.6 =
  * option to disable specific dates
  * improved time handling - it will now

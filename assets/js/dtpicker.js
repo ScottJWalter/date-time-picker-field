@@ -199,7 +199,8 @@ function dtp_init() {
 		opts.allowTimes = datepickeropts.allowed_times;
 	}
 
-	jQuery(datepickeropts.selector).datetimepicker( opts );
+
+	jQuery(datepickeropts.selector).attr( 'type','text' ).datetimepicker( opts );
 	jQuery.datetimepicker.setLocale(datepickeropts.locale);
 
 }

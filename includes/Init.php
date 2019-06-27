@@ -10,8 +10,9 @@ if ( ! class_exists( 'Init' ) ) {
 
 		public static function init(){
 
-			// Creates Settings Page.
+			// Creates Settings Page & Link.
 			new Admin\SettingsPage();
+			new Admin\SettingsLink();
 
 			// Create Date Picker Instance
 			new DateTimePicker();

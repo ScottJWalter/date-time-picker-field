@@ -61,11 +61,11 @@ if ( ! class_exists( 'SettingsPage' ) ) {
 
 			global $wp_locale;
 
-			$tzone = get_option('timezone_string');
-			if( $tzone !== '') {
+			$tzone = get_option( 'timezone_string' );
+			if ( $tzone !== '' ) {
 				date_default_timezone_set( $tzone );
 			} else {
-				$offset        = get_option('gmt_offset');
+				$offset        = get_option( 'gmt_offset' );
 				$timezone_name = timezone_name_from_abbr( '', $offset * 3600, false );
 				date_default_timezone_set( $timezone_name );
 			}
@@ -74,19 +74,19 @@ if ( ! class_exists( 'SettingsPage' ) ) {
 			$available = $this->available_lang_codes();
 			$langs     = array_keys( $available );
 
-			$languages = array();
+			$languages         = array();
 			$languages['auto'] = __( 'Default - Detect page language', 'date-time-picker-field' );
 
-			require_once( ABSPATH . 'wp-admin/includes/translation-install.php' );
+			require_once ABSPATH . 'wp-admin/includes/translation-install.php';
 			$translations = wp_get_available_translations();
 			foreach ( $langs as $locale ) {
 				if ( isset( $translations[ $locale ] ) ) {
-					$translation = $translations[ $locale ];
-					$languages[ $available[ $locale ] ] = $translation[ 'native_name' ];
+					$translation                        = $translations[ $locale ];
+					$languages[ $available[ $locale ] ] = $translation['native_name'];
 				} else {
-					if( $locale === 'en_US' ) {
+					if ( $locale === 'en_US' ) {
 						// we don't translate this string, since we are displaying in native name.
-						$languages[ 'en' ] = 'English (US)';
+						$languages['en'] = 'English (US)';
 					}
 				}
 			}
@@ -241,8 +241,8 @@ if ( ! class_exists( 'SettingsPage' ) ) {
 						'desc'    => sprintf(
 							// translators: the %s will be a timezone name
 								__( 'If enabled, past dates (and times) can\'t be selected. Consider the plugin will use the timezone you have in your general settings to perform this calculation. Your current timezone is %s.', 'date-time-picker-field' ),
-								$tzone
-								),
+							$tzone
+						),
 						'type'    => 'checkbox',
 						'value'   => 'on',
 						'default' => 'off',

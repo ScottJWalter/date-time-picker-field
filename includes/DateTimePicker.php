@@ -29,7 +29,7 @@ if ( ! class_exists( 'DateTimePicker' ) ) {
 		 * @return void
 		 */
 		public function load_plugin_textdomain() {
-			load_plugin_textdomain( 'date-time-picker-field', "", basename( dirname( dirname( __FILE__ ) ) ) . '/lang/' );
+			load_plugin_textdomain( 'date-time-picker-field', '', basename( dirname( dirname( __FILE__ ) ) ) . '/lang/' );
 		}
 
 		/**
@@ -47,7 +47,7 @@ if ( ! class_exists( 'DateTimePicker' ) ) {
 			wp_enqueue_script( 'dtp-moment', plugins_url( 'assets/js/vendor/moment/moment.js', dirname( __FILE__ ) ), array( 'jquery' ), $version, true );
 			wp_enqueue_style( 'dtpicker', plugins_url( 'assets/js/vendor/datetimepicker/jquery.datetimepicker.min.css', dirname( __FILE__ ) ), array(), $version, 'all' );
 			wp_enqueue_script( 'dtpicker', plugins_url( 'assets/js/vendor/datetimepicker/jquery.datetimepicker.min.js', dirname( __FILE__ ) ), array( 'jquery' ), $version, true );
-			wp_enqueue_script( 'dtpicker-build', plugins_url( 'assets/js/dtpicker.js', dirname( __FILE__ ) ), array( 'dtpicker','dtp-moment' ), $version, true );
+			wp_enqueue_script( 'dtpicker-build', plugins_url( 'assets/js/dtpicker.js', dirname( __FILE__ ) ), array( 'dtpicker', 'dtp-moment' ), $version, true );
 
 			$opts    = get_option( 'dtpicker' );
 			$optsadv = get_option( 'dtpicker_advanced' );
@@ -63,12 +63,12 @@ if ( ! class_exists( 'DateTimePicker' ) ) {
 			$opts['disabled_days']          = isset( $opts['disabled_days'] ) && is_array( $opts['disabled_days'] ) ? array_values( array_map( 'intval', $opts['disabled_days'] ) ) : '';
 			$opts['disabled_calendar_days'] = isset( $opts['disabled_calendar_days'] ) && '' !== $opts['disabled_calendar_days'] ? explode( ',', $opts['disabled_calendar_days'] ) : '';
 			$opts['allowed_times']          = isset( $opts['allowed_times'] ) && '' !== $opts['allowed_times'] ? array_map( array( $this, 'time_24' ), explode( ',', $opts['allowed_times'] ) ) : '';
-			$opts['sunday_times']           = isset( $opts['sunday_times'] ) && '' !== $opts['sunday_times'] ? array_map( array( $this, 'time_24' ),explode( ',', $opts['sunday_times'] ) ) : '';
-			$opts['monday_times']           = isset( $opts['monday_times'] ) && '' !== $opts['monday_times'] ? array_map( array( $this, 'time_24' ),explode( ',', $opts['monday_times'] ) ) : '';
-			$opts['tuesday_times']          = isset( $opts['tuesday_times'] ) && '' !== $opts['tuesday_times'] ? array_map( array( $this, 'time_24' ),explode( ',', $opts['tuesday_times'] ) ) : '';
-			$opts['wednesday_times']        = isset( $opts['wednesday_times'] ) && '' !== $opts['wednesday_times'] ? array_map( array( $this, 'time_24' ),explode( ',', $opts['wednesday_times'] ) ) : '';
-			$opts['thursday_times']         = isset( $opts['thursday_times'] ) && '' !== $opts['thursday_times'] ? array_map( array( $this, 'time_24' ),explode( ',', $opts['thursday_times'] ) ) : '';
-			$opts['friday_times']           = isset( $opts['friday_times'] ) && '' !== $opts['friday_times'] ? array_map( array( $this, 'time_24' ),explode( ',', $opts['friday_times'] ) ) : '';
+			$opts['sunday_times']           = isset( $opts['sunday_times'] ) && '' !== $opts['sunday_times'] ? array_map( array( $this, 'time_24' ), explode( ',', $opts['sunday_times'] ) ) : '';
+			$opts['monday_times']           = isset( $opts['monday_times'] ) && '' !== $opts['monday_times'] ? array_map( array( $this, 'time_24' ), explode( ',', $opts['monday_times'] ) ) : '';
+			$opts['tuesday_times']          = isset( $opts['tuesday_times'] ) && '' !== $opts['tuesday_times'] ? array_map( array( $this, 'time_24' ), explode( ',', $opts['tuesday_times'] ) ) : '';
+			$opts['wednesday_times']        = isset( $opts['wednesday_times'] ) && '' !== $opts['wednesday_times'] ? array_map( array( $this, 'time_24' ), explode( ',', $opts['wednesday_times'] ) ) : '';
+			$opts['thursday_times']         = isset( $opts['thursday_times'] ) && '' !== $opts['thursday_times'] ? array_map( array( $this, 'time_24' ), explode( ',', $opts['thursday_times'] ) ) : '';
+			$opts['friday_times']           = isset( $opts['friday_times'] ) && '' !== $opts['friday_times'] ? array_map( array( $this, 'time_24' ), explode( ',', $opts['friday_times'] ) ) : '';
 			$opts['saturday_times']         = isset( $opts['saturday_times'] ) && '' !== $opts['saturday_times'] ? array_map( array( $this, 'time_24' ), explode( ',', $opts['saturday_times'] ) ) : '';
 
 			// offset.
@@ -77,17 +77,16 @@ if ( ! class_exists( 'DateTimePicker' ) ) {
 			// step.
 			$opts['step'] = isset( $opts['step'] ) && intval( $opts['step'] ) > 0 ? intval( $opts['step'] ) : 60;
 
-
 			// locale.
-			if( $opts['locale'] === 'auto' ) {
+			if ( $opts['locale'] === 'auto' ) {
 
 				global $wp_locale;
 				$opts['locale'] = 'en';
 
 				// i18n - the datetime script needs the locale code to exist,
 				// we can't create new ones, so we just overwrite the english one.
-				$opts['i18n'][ 'en' ] = array(
-					'months' => array(
+				$opts['i18n']['en'] = array(
+					'months'         => array(
 						$wp_locale->month['01'],
 						$wp_locale->month['02'],
 						$wp_locale->month['03'],
@@ -110,7 +109,7 @@ if ( ! class_exists( 'DateTimePicker' ) ) {
 						$wp_locale->weekday_abbrev[ $wp_locale->weekday[5] ],
 						$wp_locale->weekday_abbrev[ $wp_locale->weekday[6] ],
 					),
-					'dayOfWeek' => array(
+					'dayOfWeek'      => array(
 						$wp_locale->weekday[0],
 						$wp_locale->weekday[1],
 						$wp_locale->weekday[2],
@@ -118,7 +117,7 @@ if ( ! class_exists( 'DateTimePicker' ) ) {
 						$wp_locale->weekday[4],
 						$wp_locale->weekday[5],
 						$wp_locale->weekday[6],
-					)
+					),
 				);
 			}
 
@@ -139,13 +138,12 @@ if ( ! class_exists( 'DateTimePicker' ) ) {
 				$clean_format .= $this->format( $opts['dateformat'] );
 
 				// max date.
-				if( isset( $opts['max_date'] ) && $opts['max_date'] !== '' ){
+				if ( isset( $opts['max_date'] ) && $opts['max_date'] !== '' ) {
 					$opts['max_date'] = strtotime( $opts['max_date'] );
 
-					if( $opts['max_date'] ){
+					if ( $opts['max_date'] ) {
 						$opts['max_date'] = date( $clean_format, $opts['max_date'] );
 					}
-
 				}
 			}
 
@@ -164,9 +162,9 @@ if ( ! class_exists( 'DateTimePicker' ) ) {
 				$opts['value'] = $this->get_next_available_time( $opts );
 			}
 
-			$tzone              = get_option('timezone_string');
+			$tzone              = get_option( 'timezone_string' );
 			$opts['timezone']   = $tzone;
-			$toffset            = get_option('gmt_offset');
+			$toffset            = get_option( 'gmt_offset' );
 			$opts['utc_offset'] = $toffset;
 			$now                = new DateTime();
 			$opts['now']        = $now->format( $opts['clean_format'] );
@@ -284,11 +282,11 @@ if ( ! class_exists( 'DateTimePicker' ) ) {
 
 				$found = false;
 
-				while( ! $found ) {
+				while ( ! $found ) {
 
 					// if weekday is disabled, skip
 					$wday = intval( $next->format( 'w' ) );
-					if( is_array( $opts['disabled_days'] ) && in_array( $wday, $opts['disabled_days'] ) ){
+					if ( is_array( $opts['disabled_days'] ) && in_array( $wday, $opts['disabled_days'] ) ) {
 						$next->modify( '+1 day' );
 						continue;
 					}
@@ -296,18 +294,18 @@ if ( ! class_exists( 'DateTimePicker' ) ) {
 					$week_day = strtolower( $next->format( 'l' ) );
 
 					// if there's a defined number of allowed hours for this day
-					if( is_array( $opts[ $week_day . '_times' ] ) ) {
+					if ( is_array( $opts[ $week_day . '_times' ] ) ) {
 
 						foreach ( $opts[ $week_day . '_times' ] as $hour ) {
 
-							$dtime  = DateTime::createFromFormat( 'H:i', trim( $hour ) );
+							$dtime = DateTime::createFromFormat( 'H:i', trim( $hour ) );
 
-							if( ! $dtime ) {
+							if ( ! $dtime ) {
 								return '';
 							}
 
-							$hour   = intval( $dtime->format('H') );
-							$minute = intval( $dtime->format('i') );
+							$hour   = intval( $dtime->format( 'H' ) );
+							$minute = intval( $dtime->format( 'i' ) );
 
 							$next->setTime( $hour, $minute );
 
@@ -316,17 +314,15 @@ if ( ! class_exists( 'DateTimePicker' ) ) {
 								$value = $next->format( $opts['clean_format'] );
 								break;
 							}
-
 						}
-
 					}
 					// use default allowed times
 					else {
-						foreach ( $opts[ 'allowed_times' ] as $hour ) {
+						foreach ( $opts['allowed_times'] as $hour ) {
 
 							$dtime  = DateTime::createFromFormat( 'H:i', trim( $hour ) );
-							$hour   = intval( $dtime->format('H') );
-							$minute = intval( $dtime->format('i') );
+							$hour   = intval( $dtime->format( 'H' ) );
+							$minute = intval( $dtime->format( 'i' ) );
 
 							$next->setTime( $hour, $minute );
 
@@ -335,9 +331,7 @@ if ( ! class_exists( 'DateTimePicker' ) ) {
 								$value = $next->format( $opts['clean_format'] );
 								break;
 							}
-
 						}
-
 					}
 
 					$next->modify( '+1 day' );
@@ -349,19 +343,19 @@ if ( ! class_exists( 'DateTimePicker' ) ) {
 			}
 
 			// if there's no default allowed times, we calculate them with min/max and step values
-			$min  = isset( $opts['minTime'] ) && $opts['minTime'] !== '' ? $opts['minTime'] : '00:00';
-			$max  = isset( $opts['maxTime'] ) && $opts['maxTime'] !== '' ? $opts['maxTime'] : '23:59';
+			$min = isset( $opts['minTime'] ) && $opts['minTime'] !== '' ? $opts['minTime'] : '00:00';
+			$max = isset( $opts['maxTime'] ) && $opts['maxTime'] !== '' ? $opts['maxTime'] : '23:59';
 
 			$range = $this->hours_range( $min, $max, $opts['step'], $opts['hourformat'] );
 
 			// if weekday is disabled, skip to next enabled day
 			$included = false;
 
-			while( ! $included ) {
+			while ( ! $included ) {
 
 				$wday = intval( $next->format( 'w' ) );
 
-				if( is_array( $opts['disabled_days'] ) && in_array( $wday, $opts['disabled_days'] ) ){
+				if ( is_array( $opts['disabled_days'] ) && in_array( $wday, $opts['disabled_days'] ) ) {
 					$next->modify( '+1 day' );
 					$next->setTime( 0, 0 );
 					continue;
@@ -377,17 +371,16 @@ if ( ! class_exists( 'DateTimePicker' ) ) {
 				foreach ( $range as $hour ) {
 
 					$dtime  = DateTime::createFromFormat( 'H:i', trim( $hour ) );
-					$hour   = intval( $dtime->format('H') );
-					$minute = intval( $dtime->format('i') );
+					$hour   = intval( $dtime->format( 'H' ) );
+					$minute = intval( $dtime->format( 'i' ) );
 
 					$next->setTime( $hour, $minute );
 
 					if ( $next > $now ) {
 						$found = true;
-						$value= $next->format( $opts['clean_format'] );
+						$value = $next->format( $opts['clean_format'] );
 						break;
 					}
-
 				}
 
 				$next->modify( '+1 day' );
@@ -418,7 +411,7 @@ if ( ! class_exists( 'DateTimePicker' ) ) {
 			$date     = DateTime::createFromFormat( 'H:i', $min );
 			$max_hour = DateTime::createFromFormat( 'H:i', $max );
 
-			if( ! $date ){
+			if ( ! $date ) {
 				return $times;
 			}
 
@@ -426,7 +419,6 @@ if ( ! class_exists( 'DateTimePicker' ) ) {
 
 				array_push( $times, $date->format( 'H:i' ) );
 				// increment date - only if it doesn't jump to next hour - we do this because that's what the jquery datetime plugin does
-
 				$minutes = intval( $date->format( 'i' ) );
 
 				if ( ( $minutes + $step ) > 60 ) {
@@ -457,9 +449,9 @@ if ( ! class_exists( 'DateTimePicker' ) ) {
 		 */
 		public function get_timezone_name() {
 
-			$tzone = get_option('timezone_string');
-			if( ! $tzone ) {
-				$offset = get_option('gmt_offset');
+			$tzone = get_option( 'timezone_string' );
+			if ( ! $tzone ) {
+				$offset = get_option( 'gmt_offset' );
 				$tzone  = timezone_name_from_abbr( '', $offset * 3600, false );
 			}
 

@@ -7,7 +7,7 @@
  * Author URI:      https://cmoreira.net
  * Text Domain:     date-time-picker-field
  * Domain Path:     /lang
- * Version:         1.7.8.3
+ * Version:         1.7.9
  * License: GPL v2 or later
  *
  * This program is free software; you can redistribute it and/or modify
@@ -23,7 +23,8 @@
  * @package date-time-picker-field
  *
  * Version Log
- * * v.1.7.8.3 - populate_roles_230()6.06.2019
+ * * v.1.7.9 - 27.06.2019
+ * - add minimum date option
  * - set field type to text
  *
  *  * v.1.7.8.2 - 06.06.2019

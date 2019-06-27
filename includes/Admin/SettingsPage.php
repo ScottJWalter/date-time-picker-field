@@ -62,11 +62,13 @@ if ( ! class_exists( 'SettingsPage' ) ) {
 			global $wp_locale;
 
 			$tzone = get_option( 'timezone_string' );
+
 			if ( $tzone !== '' ) {
 				date_default_timezone_set( $tzone );
 			} else {
 				$offset        = get_option( 'gmt_offset' );
 				$timezone_name = timezone_name_from_abbr( '', $offset * 3600, false );
+				$tzone         = $timezone_name;
 				date_default_timezone_set( $timezone_name );
 			}
 
@@ -281,6 +283,15 @@ if ( ! class_exists( 'SettingsPage' ) ) {
 						'desc'              => __( 'Time interval in minutes to advance next available time. For example, set "45" if you only want time entries 45m from now to be available. Works better when option to disable past dates is also enabled.', 'date-time-picker-field' ),
 						'type'              => 'text',
 						'default'           => '0',
+						'sanitize_callback' => 'sanitize_text_field',
+					),
+
+					array(
+						'name'              => 'min_date',
+						'label'             => __( 'Minimum Date', 'date-time-picker-field' ),
+						'desc'              => __( 'Use the European day-month-year format or an english string that is accepted by the <a target="_blank" href="https://php.net/manual/en/function.strtotime.php">strtotime PHP function</a>. (Ex: "+5 days")<br> Leave empty to set no limit.', 'date-time-picker-field' ),
+						'type'              => 'text',
+						'default'           => '',
 						'sanitize_callback' => 'sanitize_text_field',
 					),
 

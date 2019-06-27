@@ -187,6 +187,10 @@ function dtp_init() {
 		opts.maxDate = datepickeropts.max_date;
 	}
 
+	if( datepickeropts.min_date !== '' ){
+		opts.minDate = datepickeropts.min_date;
+	}
+
 	if( datepickeropts.disabled_days !== ''){
 		opts.disabledWeekDays = datepickeropts.disabled_days;
 	}

@@ -145,6 +145,17 @@ if ( ! class_exists( 'DateTimePicker' ) ) {
 						$opts['max_date'] = date( $clean_format, $opts['max_date'] );
 					}
 				}
+
+				// min date.
+				if ( isset( $opts['min_date'] ) && $opts['min_date'] !== '' ) {
+					$opts['min_date'] = strtotime( $opts['min_date'] );
+
+					if ( $opts['min_date'] ) {
+						$opts['min_date'] = date( $clean_format, $opts['min_date'] );
+					} else {
+						$opts['min_date'] = '';
+					}
+				}
 			}
 
 			if ( isset( $opts['timepicker'] ) && 'on' === $opts['timepicker'] ) {
@@ -159,7 +170,7 @@ if ( ! class_exists( 'DateTimePicker' ) ) {
 			if ( isset( $opts['placeholder'] ) && 'on' === $opts['placeholder'] ) {
 				$opts['value'] = '';
 			} else {
-				$opts['value'] = $this->get_next_available_time( $opts );
+				$opts['value']    = $this->get_next_available_time( $opts );
 			}
 
 			$tzone              = get_option( 'timezone_string' );
@@ -266,6 +277,7 @@ if ( ! class_exists( 'DateTimePicker' ) ) {
 			// setup variables
 			$min_time = $opts['minTime'];
 			$max_time = $opts['maxTime'];
+			$min_date = $opts['min_date'];
 			$step     = $opts['step'];
 			$allowed  = $opts['allowed_times'];
 			$offset   = isset( $opts['offset'] ) ? intval( $opts['offset'] ) : 0;
@@ -274,7 +286,16 @@ if ( ! class_exists( 'DateTimePicker' ) ) {
 			$now   = new DateTime();
 			$next  = new DateTime();
 
-			// add offset minutes
+			if ( '' !== $min_date ) {
+
+				// temp hack to allow strtotime to work.
+				$min_date = str_replace( '/', '-', $min_date );
+
+				$min = strtotime( $min_date );
+				$now->setTimestamp( $min );
+			}
+
+			// add offset minutes.
 			$now->modify( '+' . $offset . 'minutes' );
 
 			// use allowed dates

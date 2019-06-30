@@ -26,6 +26,7 @@
  * * v.1.7.9 - 27.06.2019
  * - add minimum date option
  * - set field type to text
+ * - fix mousewheel issue ( https://github.com/xdan/datetimepicker/pull/685 )
  *
  *  * v.1.7.8.2 - 06.06.2019
  * - default values fix

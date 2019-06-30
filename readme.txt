@@ -46,6 +46,7 @@ In the settings page for the plugin you can find a 'Advanced Settings' tab were 
 = v.1.7.9 =
  * add minimum date option
  * set field type to text
+ * fix mousewheel issue
 
 = v.1.7.8.2 =
  * Default settings improvement
@@ -124,6 +125,7 @@ In the settings page for the plugin you can find a 'Advanced Settings' tab were 
 = v.1.7.9 =
  * add minimum date option
  * set field type to text
+ * fix mousewheel issue
 
 = v.1.7.8.2 =
  * Default settings improvement

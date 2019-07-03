@@ -46,7 +46,7 @@ if ( ! class_exists( 'DateTimePicker' ) ) {
 
 			wp_enqueue_script( 'dtp-moment', plugins_url( 'assets/js/vendor/moment/moment.js', dirname( __FILE__ ) ), array( 'jquery' ), $version, true );
 			wp_enqueue_style( 'dtpicker', plugins_url( 'assets/js/vendor/datetimepicker/jquery.datetimepicker.min.css', dirname( __FILE__ ) ), array(), $version, 'all' );
-			wp_enqueue_script( 'dtpicker', plugins_url( 'assets/js/vendor/datetimepicker/jquery.datetimepicker.min.js', dirname( __FILE__ ) ), array( 'jquery' ), $version, true );
+			wp_enqueue_script( 'dtpicker', plugins_url( 'assets/js/vendor/datetimepicker/jquery.datetimepicker.full.min.js', dirname( __FILE__ ) ), array( 'jquery' ), $version, true );
 			wp_enqueue_script( 'dtpicker-build', plugins_url( 'assets/js/dtpicker.js', dirname( __FILE__ ) ), array( 'dtpicker', 'dtp-moment' ), $version, true );
 
 			$opts    = get_option( 'dtpicker' );

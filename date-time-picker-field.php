@@ -7,7 +7,7 @@
  * Author URI:      https://cmoreira.net
  * Text Domain:     date-time-picker-field
  * Domain Path:     /lang
- * Version:         1.7.9
+ * Version:         1.7.9.1
  * License: GPL v2 or later
  *
  * This program is free software; you can redistribute it and/or modify
@@ -23,6 +23,10 @@
  * @package date-time-picker-field
  *
  * Version Log
+ * * v.1.7.9.1 - 03.07.2019
+ * - time scroll fix
+ * - load custom version of jquery.datetimepicker plugin
+ *
  * * v.1.7.9 - 27.06.2019
  * - add minimum date option
  * - set field type to text

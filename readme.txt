@@ -5,7 +5,7 @@ Tags: datetimepicker, datetime, date picker, jquery
 Requires at least: 4.5
 Tested up to: 5.2.2
 Requires PHP: 5.6.2
-Stable tag: 1.7.9
+Stable tag: 1.7.9.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -43,6 +43,10 @@ In the settings page for the plugin you can find a 'Advanced Settings' tab were 
 3. Advanced Settings.
 
 == Changelog ==
+= v.1.7.9.1 =
+ * time scroll fix
+ * load custom version of jquery.datetimepicker plugin
+
 = v.1.7.9 =
  * add minimum date option
  * set field type to text
@@ -121,6 +125,10 @@ In the settings page for the plugin you can find a 'Advanced Settings' tab were 
 * Initial Release
 
 == Upgrade Notice ==
+
+= v.1.7.9.1 =
+ * time scroll fix
+ * load custom version of jquery.datetimepicker plugin
 
 = v.1.7.9 =
  * add minimum date option

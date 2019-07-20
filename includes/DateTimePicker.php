@@ -277,7 +277,7 @@ if ( ! class_exists( 'DateTimePicker' ) ) {
 			// setup variables
 			$min_time = $opts['minTime'];
 			$max_time = $opts['maxTime'];
-			$min_date = $opts['min_date'];
+			$min_date = isset( $opts['min_date'] ) ? $opts['min_date'] : null;
 			$step     = $opts['step'];
 			$allowed  = $opts['allowed_times'];
 			$offset   = isset( $opts['offset'] ) ? intval( $opts['offset'] ) : 0;
